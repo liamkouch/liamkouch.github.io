@@ -1,31 +1,187 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Liam Kouch</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Liam Kouch!</h1>
-				<p>I'm a first year computer science major at the University of Texas at Dallas. <a href="/about">Read more about my life...</a></p>
-				<br> Website is currently under construction :)
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+    <head>
+        <!--<link rel="stylesheet" href="wide.css">-->
+        <link rel="stylesheet" media="screen and (min-width: 951px)" href="wide.css">
+        <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 950px)" href="medium.css">
+        <link rel="stylesheet" media="screen and (max-width: 640px)" href="narrow.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Liam Kouch</title>
+
+    </head>
+    <body>
+        <a id="top"></a>
+        <div class="top_nav" id="myTopnav">
+            <a class="left_bar" title="this is a title attribute">Liam Kouch</a>
+            <div class="container0">
+                <!--<span style="font-size:0px;padding:0px;border:2px solid red;"></span>-->
+                <a href="#top" id="home">home</a>
+                <a href="#about me">about</a>
+                <a href="#projects">projects</a>
+                <a href="#writing">writing</a>
+                <a href="#random">misc</a>
+                <a class="right_bar"href="/C:/Users/liamv/Downloads/Resume.pdf" target="_blank"rel="noopener noreferrer">resume</a>
+                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776</a>
+            </div>
+        </div>
+
+        
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+            myFunction();
+        </script>
+
+        <div id="main">
+            <br>
+
+            <div class="center">
+                <div class="container">
+            
+                    
+                    <img src="uploads/picofme.jpg" class="personal_pic">
+                    
+                    <div class="bio">
+                        <br>
+                        <h1>Liam Kouch</h1>
+                        <span>contact: liam [dot] kouch {at} utdallas [dot] edu</span><br>
+                        <span>location: richardson, tx</span>
+                        <h2>interests</h2>
+                        <ul>
+                            <li>physics and engineering</li>
+                            <li>ordinary and partial differential equations and their applications</li>
+                            <li>algorithms</li>
+                            <li>web design <strong>:</strong>D</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="about me" class="center">
+                <h2>about me.</h2>
+                <p>
+                    Hi! Welcome to my personal website. My name is Liam Kouch and I'm a first-year at the University of Texas at Dallas studying Computer Science.
+                    <br><br>
+                    Currently, I'm studying
+                </p>
+            </div>
+
+            <div id="projects" class="center">
+                <h2>projects i'm working on</h2>
+                <div class="container">
+                    <div>
+                        <strong>Swarm Robotic Algorithms Comparison</strong><br>
+                        <span><a href="https://docs.google.com/presentation/d/1z0LMlhreKgtravO3Y9woaxbhnQVt8GnaICxQz0BqqiE/edit?usp=sharing" target="_blank"rel="noopener noreferrer">Poster</a></span><sspan> | </span><a href="https://github.com/ACM-Research/swarm-robotics-algorithm-comparison"target="_blank"rel="noopener noreferrer">github</a><br>
+                        <span><strong>Liam Kouch</strong>, Amrit Rathie, Sachi Chundu, Caleb Lim</span>
+                        <p>
+                            Swarm robotics is an area of research that involves the utilization of 
+                            many decentralized agents to accomplish a global task. Due to the abundance
+                            and decentralized nature of each individual bot, the advantages of
+                            these systems are robustness and scalability.
+                            The goal of this project was to explore swarm robotics algorithms 
+                            by researching them, implementing such algorithms, and comparing 
+                            various performance features in a virtual environment for resource aggregation.
+                             Specifically, we designed and tested two bio-inspired algorithms, namely pheromone 
+                             and cockroach, in the Unreal Engine. Research results were presented at the 
+                             3rd UTD ACM Research Symposium in Fall 2021. Advised by <a href="https://personal.utdallas.edu/~daescu/">
+                            Dr. Ovidiu Daescu</a>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="uploads\ACM Research Poster.jpg" id="acmposter" class="project_pic">
+                    </div>
+                </div>
+
+            
+            </div>
+
+            <div id="writing" class="center">
+                <h2>some writing i've done from IB during high school</h2>
+                <div class="container">
+                    <div>
+                        <h3>Physics Essay (Unabridged version from physics IA)</h3>
+                        <p>
+                            In my high school physics class, I learned that the restoring force
+                            of a simple pendulum is directly proportional to the displacement for
+                            angles less than 10 degrees which was used to derive the common formula
+                            for the period. Why 10? Well, this fact is only an approximation and within
+                            10 degrees the error is relatively small. 
+                            So what is the actual relationship? Is there a better formula for period?
+                            My <a href="uploads/physicsia.pdf">essay</a> 
+                            <!--<a href="https://docs.google.com/document/d/1f6xxtQqLT2cAL0_Hmamr_K5PpdKV2jzfN8-yqSCwNJ0/edit?usp=sharing"target="_blank"rel="noopener noreferrer">essay</a>-->
+                             explores this topic.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://th.bing.com/th/id/OIP.yAU48OokyZoCcxz7BrnrSQHaF5?w=251&h=200&c=7&r=0&o=5&pid=1.7" class="essay_pic">
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div>
+                        <h3>Math IA Essay</h3>
+                        <p>
+                            When I was learning about mechanics, I wondered where the formulae
+                            for moments of inertia of various 3D objects came from. In this 
+                            <a href="https://docs.google.com/document/d/1tNxZqSI3JsbfEpvLe2szIJw81f8i1LC7MCt8QG3QBB0/edit?usp=sharing"target="_blank"rel="noopener noreferrer">essay</a>,
+                            I use multiple methods to find moments of inertia of different
+                            3D objects such as multiple integrals and solids of revolution.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://i.pinimg.com/originals/ce/2c/c0/ce2cc051d3696b183e2223338b81c7ee.jpg" class="essay_pic">
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div>
+                        <h3>Extended Essay (EE)</h3>
+                        <p>
+                            Quaternions. The word itself appears quite strange yet enticing
+                            as the mathematical system it describes. I do a bunch of math to
+                            show the equivalency between quaternions and rotation matrices.
+                            In hindsight, this <a href="https://docs.google.com/document/d/1WBLDmA96cCfCsbKe1fy0AZ6QovbzKacLmTcAIIVauUU/edit?usp=sharing"target="_blank"rel="noopener noreferrer">essay</a>
+                            was unnecessarily drawn out. The image is a plaque to commemorate
+                            William Hamilton's discovery of quaternions.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://1.bp.blogspot.com/-QYc2EUAi-BU/VVIZKudbjbI/AAAAAAAACRU/etGdvA9cqMo/s320/Quaternion%2Bplaque.jpg" class="essay_pic">
+                    </div>
+                </div>
+            </div>
+
+           
+            <div id="random" class="center">
+                <h2>miscellaneous</h2>
+                <div class="container">
+                    <div>
+                        <h3>Boid Simulation</h3>
+                        <p>
+                            A boid simulation simulates flocking behavior found in many species
+                            such as birds and fish. The importance of this simulation is 
+                            the boids' complex and emergent behavior stemming from three simple rules.    
+                            Seperation: boids accelerate to avoid crashing to other boids. 
+                            Alignment: boids try to align with the local heading. Cohesion: boids steer
+                            towards average position of locality. I programmed a simple version
+                            in javascript. <a href="https://editor.p5js.org/liamvkouch/full/bq-N5Vhjw">
+                            Click here to go to the simulation.</a>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="uploads/boidsimulation.png" class="misc_pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">website built and designed by liam kouch. last updated jan 2022.</div>
+    </body>
 </html>

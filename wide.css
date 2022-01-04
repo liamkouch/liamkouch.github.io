@@ -1,0 +1,95 @@
+*{
+    font-family: 'Arial';
+    line-height: 1.5em;
+    /*border: 1px solid red;*/
+}
+
+h2{
+    background-color: lightskyblue;
+    border-radius: 10px;
+}
+
+.topnav{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightskyblue;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.topnav a{
+    display: block;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+}
+
+.container0 {
+    float: right;
+}
+
+a.right_bar {
+    padding-right: 14px;
+}
+
+a.left_bar {
+    float: left;
+}
+
+.topnav a:hover:not(.left_bar){
+    background-color: rgb(18, 148, 205);
+    transition: background 0.50s;
+}
+
+div.container {
+    width: 900px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.personal_pic{
+    padding-top: 50px;
+    width: 400px;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.center{
+    width: 900px;
+    display: block;
+    margin: 0 auto;
+}
+
+.project_pic {
+    width: 350px;
+}
+
+.essay_pic {
+    width: 350px;
+}
+
+.misc_pic {
+    width: 350px;
+}
+
+.footer{
+    width: 100%;
+    left: 0px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: lightskyblue;
+
+}
