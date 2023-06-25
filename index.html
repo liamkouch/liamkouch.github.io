@@ -41,9 +41,9 @@
         found on <a href="https://github.com/vincentdoerig/latex-css">GitHub</a>.
         This layout comes from a single CSS file. If you would like to try the layout
         add the following code in the figure below to the head tag
-        of your project and you should be good to go. That's it.
+        of your project and you should be good to go. That's it. 
         <pre><code class="language-html"> &lt;link rel="stylesheet" href="https://latex.now.sh/style.css"&gt;</code></pre>
-        
+        For now this website mainly contains the math I am trying to get through.
         <!--
         <pre>
           <code class="language-html">
@@ -59,99 +59,39 @@
     <nav class="toc">
       <h2>Contents</h2>
       <ol>
-        <li><a href="#math"> Maths</a></li>
-        <li>Something</li>
-        <li>Something</li>
+        <li><a href="#math">Maths</a></li>
+        <!--
+        <li><a href="#tutorials">Tutorials</a></li>
+        <li><a href="#experience">Experience</a>
+          <ol>
+            <li><a href="#mathnasium">Mathnasium</a></li>
+          </ol>
+        </li>
+      -->
+
       </ol>
     </nav>
     <main>
         <article>
           <h2 id="math">Maths</h2>
+          Here is a list of books I have gone or currently going through. The links
+          take you to the exercises I am writing out.
           <ul>
-            <li>Number Theory Through Inquiry</li>
-            <li>Principles of Mathematical Analysis</li>
-            <li>Topology Through Inquiry</li>
-            <li><a href="wackerly.html">Wackerly</a></li>
+            <li><a href="marshall.html">Number Theory Through Inquiry</a> by Marhsall, Odell, and Starbird</li>
+            <li><a href="rudin.html">Principles of Mathematical Analysis</a> by Rudin</li>
+            <li><a href="starbird.html">Topology Through Inquiry</a> by Starbird and Su</li>
+            <li><a href="wackerly.html">Mathematical Statistics with Applications</a> by Wackerly, Mendenhall, and Scheaffer</li>
           </ul>
+
+          <!--
+          <h2 id="tutorials">Tutorials</h2>
+          
+          
+          <h2 id="experience">Experience</h2>
+          <h4 id="mathnasium">Mathnasium</h4>
+          -->
+          
         </article>
-
-        <div class="definition">
-          Suppose \(X\) is a set. Then \(\tau\) is a <strong>topology</strong> on \(X\) if and only if \(\tau\)
-          is a collection of subsets of \(X\) such that
-          <ol>
-            <li>\(\varnothing \in \tau\)</li>
-            <li>\(X \in \tau\)</li>
-            <li>if \(U \in \tau\) and \(V \in \tau\), then \(U \cap V \in \tau\), and </li>
-            <li>if \(\{U_\alpha \}_{\alpha \in \lambda}\) is any collection of sets of
-              \(\tau\), then \(\cup_{\alpha \in \lambda} U_\alpha \in \tau\).
-            </li>
-          </ol>
-        </div>
-        <div class="definition">
-          A <strong>topological space</strong> is an ordered pair \((X,\tau)\), where \(X\)
-          is a set and \(\tau\) is a topology on \(X\). 
-        </div>
-        <div class="definition">
-          A set \(U \subset X\) is called an <strong>open set</strong> in \((X,\tau)\)
-          if and only if \(U \in \tau\).
-        </div>
-        <div class="theorem">
-          Let \(\{U_i\}_{i=1}^n\) be a finite collection of open sets in a topological 
-          \((X, \tau)\). Then \(\cap_{i=1}^n U_i\) is open.
-        </div>
-        <div class="proof">
-          We prove by inducting on \(n\). The base case for \(n = 1\) is trivially true.
-          For the inductive hypothesis assume \(P(m)\) is true where \(P(m)\) denotes
-          the theorem statement for \(n = m\). We show \(P(m+1)\) is true. Now suppose we 
-          a collection of \(m+1\) open sets, \(\{U_i\}_{i=1}^{m+1}\). By the hypothesis
-          it follows \(\cap_{i=1}^m U_i\) is open. Since the intersection of two open
-          sets is an open set we have \((\cap_{i=1}^m U_i) \cap U_{m+1} \in \tau\). Hence,
-          \(\cap_{i=1}^{m+1} U_i \in \tau\). This concludes the induction.
-        </div>
-
-        <div class="theorem">
-          A set \(U\) is open in a topological space \((X,\tau)\) if and only if for 
-          every point \(x \in U\), there exists an open set \(U_x\) such that
-          \(x \in U_x \subset U\).
-        </div>
-        <div class="proof">
-          For the forward direction take \(U_x = U\). For the reverse direction
-          consider \(\cup_{x \in U} U_x\) and note it is open since it is a union 
-          of open sets. We show \(U = \cup_{x \in U} U_x\). First we show
-          \(U \subset \cup_{x \in U} U_x\). Let \(p \in U\). Then there exists 
-          a corresponding \(U_p\). Then \(p \in U_p \subset \cup_{x \in U} U_x\).
-          Hence, \(U \subset \cup_{x \in U} U_x\). Now we show
-          \(U \supset \cup_{x \in U} U_x\). Let \(q \in \cup_{x \in U} U_x\). Then
-          \(q \in U_x\) for some \(x \in U\). Moreover, \(U_x \subset U\) for any
-           \(x\). Hence, \(q \in U_x \subset U\). Therefore, 
-           \(U \supset \cup_{x \in U} U_x\). It follows \(U = \cup_{x \in U} U_x\).
-           Furthermore, we know the right side is open so then \(U\) must also be
-           open.
-        </div>
-        <div class="definition">
-          In \(\mathbb{R}^n\), the <strong>Euclidean distance</strong> between 
-          points \(x = (x_1,\dots,x_n)\) and \(y=(y_1,\dots,y_n)\) is defined as
-          \[d(x,y) = (\sum_{i=1}^n (x_i-y_i)^2)^{1/2}\]
-          <label for="sn-anything" class="sidenote-toggle">⊕</label>
-          <input type="checkbox" id="sn-anything" class="sidenote-toggle" />
-          <span class="sidenote">The map \(d\colon \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}\)
-            we defined is the standard metric on \(\mathbb{R}^n\).
-          </span>
-          Then an <strong>open ball</strong> of radius \(\varepsilon > 0\) around
-          point \(p \in \mathbb{R}^n\) is the set
-          \[B(p,\varepsilon) = \{x \mid d(p,x) < \varepsilon\}\]
-          Moreover, the <stong>standard topology</strong> \(\tau_{\text{std}}\) on 
-          \(\mathbb{R}^n\) is defined as follows: a subset \(U\) of \(\mathbb{R}^n\)
-          belongs to \(\tau_{\text{std}}\) if and only if for each point \(p\) of
-          \(U\) there is an \(\varepsilon_p > 0\) such that \(B(p,\varepsilon_p)
-          \subset U\).
-        </div>
-        <div class="theorem">
-          The \(\tau_{\text{std}}\) is a topology on \(\mathbb{R}^n\).
-        </div>
-        <div class="proof">
-          Because I say so!
-        </div>
     </main>
 
     <script>

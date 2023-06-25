@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="node_modules/latex.css/style_topology.css">
+    <!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>My Website</title>
+  </head>
+  <body>
+    <header>
+        <h1>
+          <span class="latex">
+            L<span>a</span>T<span>e</span>X 
+          </span>
+        </h1>
+        <p class="author">
+           Liam
+          <br>
+          Last updated June 2023
+        </p>
+      </header>
+      <div class="abstract">
+        <h2>Abstract</h2>
+        <p>Notes from Topology Through Inquiry</p>
+      </div>
+      <a href="index.html">Home</a>
+      <br>
+      <button id="dark-mode-toggle">Toggle dark mode</button>
+      
+
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#ch1">Cardinality: To Infinity and Beyond</a>
+            <ol>
+              <li><a>Sets and Functions</a></li>
+              <li><a>Cardinality and Countable Sets</a></li>
+              <li><a>Uncountable Sets and Power Sets</a></li>
+              <li><a>The Schroeder-Bernstein Theorem</a></li>
+              <li><a>Axiom of Choice</a></li>
+              <li><a>Ordinal Numbers</a></li>
+              <li><a>To Infinity and Beyond</a></li>
+            </ol>
+          </li>
+          <li><a href="#ch2">Topological Spaces</a>
+            <ol>
+              <li><a href="#2.1">Rubber Sheet Geometry and Special Sets</a></li>
+              <li><a href="#2.2">Open Sets and the Definition of a Topological Space</a></li>
+              <li><a href="#2.3">Limit Points and Closed Sets</a></li>
+              <li><a>Interior and Boundary</a></li>
+              <li><a>Convergence of Sequences</a></li>
+              <li><a>Topological Essentials</a></li>
+            </ol>
+          </li>
+
+          <li>Something</li>
+        </ol>
+      </nav>
+
+      <main>
+        <h2 class="chapter" id="ch1">
+          1 Cardinality: To Infinity and Beyond
+        </h2>
+        <h2 class="chapter" id="ch2">
+          2 Topological Spaces: Fundamentals
+        </h2>
+        <h4 id="ch2.1">2.1 Rubber Sheet Geometry and Special Sets</h4>
+      
+
+        <h4 id="ch2.2">2.2 Open Sets and the Definition of a Topological Space</h4>
+        <div class="definition">
+          Suppose $X$ is a set. Then $\tau$ is a <strong>topology</strong> on $X$ if and only if $\tau$
+          is a collection of subsets of $X$ such that
+        </div>
+      
+        
+          <ol>
+            <li>$\varnothing \in \tau$</li>
+            <li>$X \in \tau$</li>
+            <li>if $U \in \tau$ and $V \in \tau$, then $U \cap V \in \tau$, and </li>
+            <li>if $\{U_\alpha \}_{\alpha \in \lambda}$ is any collection of sets of
+              $\tau$, then $\cup_{\alpha \in \lambda} U_\alpha \in \tau$.</li>
+          </ol>
+        </div>
+        
+        <div class="definition">
+          A <strong>topological space</strong> is an ordered pair $(X,\tau)$, where $X$
+          is a set and $\tau$ is a topology on $X$. 
+        </div>
+        <div class="definition">
+          A set $U \subset X$ is called an <strong>open set</strong> in $(X,\tau)$
+          if and only if $U \in \tau$.
+        </div>
+        <div class="theorem">
+          Let $\{U_i\}_{i=1}^n$ be a finite collection of open sets in a topological 
+          $(X, \tau)$. Then $\cap_{i=1}^n U_i$ is open.
+        </div>
+        <div class="proof">
+          We prove by inducting on $n$. The base case for $n = 1$ is trivially true.
+          For the inductive hypothesis assume $P(m)$ is true where $P(m)$ denotes
+          the theorem statement for $n = m$. We show $P(m+1)$ is true. Now suppose we 
+          a collection of $m+1$ open sets, $\{U_i\}_{i=1}^{m+1}$. By the hypothesis
+          it follows $\cap_{i=1}^m U_i$ is open. Since the intersection of two open
+          sets is an open set we have $(\cap_{i=1}^m U_i) \cap U_{m+1} \in \tau$. Hence,
+          $\cap_{i=1}^{m+1} U_i \in \tau$. This concludes the induction.
+        </div>
+
+        <div class="exercise">
+          Why does your proof not prove the false statement that the infinite 
+          intersection of open sets is necessarily open?
+        </div>
+        The above proof only shows that a finite intersection is open. Counterexample: 
+        consider $\tau_\text{std}$ on $\mathbb{R}$. Then the intersection over the 
+        collection $\{I_i\}_{i=1}^n$ where $I_j = (-1/j,1/j)$ is just $\{0\}$. However,
+        this is not open. 
+        <div class="theorem">
+          A set $U$ is open in a topological space $(X,\tau)$ if and only if for 
+          every point $x \in U$, there exists an open set $U_x$ such that
+          $x \in U_x \subset U$.
+        </div>
+        <div class="proof">
+          For the forward direction take $U_x = U$. For the reverse direction
+          consider $\cup_{x \in U} U_x$ and note it is open since it is a union 
+          of open sets. We show $U = \cup_{x \in U} U_x$. First we show
+          $U \subset \cup_{x \in U} U_x$. Let $p \in U$. Then there exists 
+          a corresponding $U_p$. Then $p \in U_p \subset \cup_{x \in U} U_x$.
+          Hence, $U \subset \cup_{x \in U} U_x$. Now we show
+          $U \supset \cup_{x \in U} U_x$. Let $q \in \cup_{x \in U} U_x$. Then
+          $q \in U_x$ for some $x \in U$. Moreover, $U_x \subset U$ for any
+          $x$. Hence, $q \in U_x \subset U$. Therefore, 
+          $U \supset \cup_{x \in U} U_x$. It follows $U = \cup_{x \in U} U_x$.
+          Furthermore, we know the right side is open so then $U$ must also be
+          open.
+        </div>
+        <div class="definition">
+          In $\mathbb{R}^n$, the <strong>Euclidean distance</strong> between 
+          points $x = (x_1,\dots,x_n)$ and $y=(y_1,\dots,y_n)$ is defined as
+          \[d(x,y) = (\sum_{i=1}^n (x_i-y_i)^2)^{1/2}\]
+          <label for="sn-anything" class="sidenote-toggle">⊕</label>
+          <input type="checkbox" id="sn-anything" class="sidenote-toggle" />
+          <span class="sidenote">The map $d\colon \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}$
+            we defined is the standard metric on $\mathbb{R}^n$.
+          </span>
+          Then an <strong>open ball</strong> of radius $\varepsilon > 0$ around
+          point $p \in \mathbb{R}^n$ is the set
+          \[B(p,\varepsilon) = \{x \mid d(p,x) < \varepsilon\}\]
+          Moreover, the <stong>standard topology</strong> $\tau_{\text{std}}$ on 
+          $\mathbb{R}^n$ is defined as follows: a subset $U$ of $\mathbb{R}^n$
+          belongs to $\tau_{\text{std}}$ if and only if for each point $p$ of
+          $U$ there is an $\varepsilon_p > 0$ such that $B(p,\varepsilon_p)
+          \subset U$.
+        </div>
+        <div class="exercise">
+          The $\tau_{\text{std}}$ is a topology on $\mathbb{R}^n$.
+        </div>
+     
+        <div class="proof">
+          The empty set is open vacuously. For whole set $\mathbb{R}^n$ consider 
+          any point $p \in \mathbb{R}^n$. Then we can take the ball $B(p,1)$. Then 
+          $p \in B(p,1) \subset \mathbb{R}^n$. It follows the whole set is open.
+          Now consider two open sets $U$ and $V$. Consider a point $p$ in their 
+          intersection $U \cap V$. Since $U$ and $V$ are open and $p \in U$ and
+          $p \in V$ there exists $r_u,r_v > 0$ such that $B(p,r_u) \subset U$ and 
+          $B(p,r_v) \subset V$. Take $r = \min\{r_u,r_v\}$. Then $B(p,r) \subset U$
+          and $B(p,r)\subset V$. Hence, $B(p,r) \subset U \cap V$. Now consider a
+          collection of open sets $\{U_\alpha\}_{\alpha \in \lambda}$. Take a point 
+          $p \in \cup_{\alpha \in \lambda} U_\alpha$. 
+          Then $p \in U_\beta$ for some $\beta \in \lambda$. Since $U_\beta$ is open we have 
+          $p \in B(p,r) \subset \cup_{\alpha \in \lambda} U_\alpha$ for some $r > 0$. 
+          Hence, the union over the collection 
+          $\{U_\alpha\}_{\alpha \in \lambda}$ is open. It follows $\tau_\text{std}$ is a topology.
+        </div>
+
+        <div class="example">
+          Given a set $X$, let $\tau = 2^X$, the set of all subsets of $X$. This topology 
+          $\tau$ is called the <strong>discrete topology</strong> on $X$. We call the 
+          space $(X,2^X)$ a <strong>discrete topological space</strong>. 
+        </div>
+
+        <div class="example">
+          Given a set $X$, the collection $\tau = \{\varnothing, X\}$ is called the 
+          <strong>indiscrete topology</strong> on $X$. We call the space 
+          $(X, \{\varnothing,X\})$ an <strong>indiscrete topological space</strong>. 
+          In this space, there are only two open sets: the empty set and the entire set 
+          $X$.
+        </div>
+
+        <div class="example">
+          Given a set $X$, the <strong>finite complement</strong> of cofinite topology 
+          on $X$ is described as follows: a subset $U$ of $X$ is open if and only if 
+          $X-U$ is finite or $U = \varnothing$.
+        </div>
+
+        <div class="example">
+          Given a set $X$, the <strong>countable complement</strong> or cocountable topology on $X$ 
+          is described as follows: a subset $U$ of $X$ is open if and only if $X-U$ is 
+          countable or $U = \varnothing$.
+        </div>
+        
+        <div class = "exercise">
+          Verify that the discrete, indiscrete, finite complement, and countable complement 
+          topologies are indeed topologies for any set $X$.
+        </div>
+        <div class="proof">
+          We first verify the discrete topology. Since every subset of $X$ is open, 
+          $\varnothing$ and $X$ itself are open. If $U$ and $V$ are open sets. Then their
+          intersection is another subset of $X$. Hence, $U \cap V$ is open. Moreover, an 
+          arbitrary union of open sets is a subset of $X$ so then the union must also be 
+          open. It follows the discrete topology is in fact a topology.
+          <br><br>
+          Second we verify the indiscrete topology. By definition $\varnothing$ and $X$ 
+          are open. Since these are the only two sets, there is only one intersection to 
+          consider, $\varnothing \cap X = \varnothing$. Hence, open sets are closed under 
+          intersection. Consider an arbitrary collection of open sets $\{U_\alpha\}_{\alpha \in \lambda}$.
+          If for all $\alpha \in \lambda$, $U_\alpha = \varnothing$, then the union over
+          the collection is $\varnothing$. Otherwise if for some $\alpha \in \lambda$ we have
+          $U_\alpha = X$, then the union of the collection is $X$. In either case, the union 
+          over the collection is open. It follows the indiscrete topology is indeed a topology.
+          <br><br>
+          Third, we verify the cofinite topoology. By definition the empty set is open. 
+          Since $X - X = \varnothing$ which is finite, it follows $X$ is open. Now consider 
+          two open sets $U$ and $V$. Then consider $X - (U \cap V)$. By De Morgan's law 
+          we have $(X - U) \cup (X - V)$. We know $X-U$ and $X-V$ are finite and the union 
+          of two finite sets is finite. Hence, $U \cap V$ is open. Now consider the arbitrary 
+          collection of open sets $\{U_\alpha\}_{\alpha \in \lambda}$. Consider $X-\cup_{\alpha \in \lambda} U_\alpha$. 
+          This equates to $\cap_{\alpha \in \lambda} (X - U_\alpha)$. We know $X - U_\beta$
+          for some $\beta \in \lambda$ is finite and $\cap_{\alpha \in \lambda} (X - U_\alpha) \subset X-\beta$. 
+          It follows $\cap_{\alpha \in \lambda} (X - U_\alpha)$ is finite. Hence, the arbitrary 
+          collection of open sets is in fact open. Therefore, the confinite topology is a topology.
+          <br><br>
+          Lastly, we verify the cocountable topology. By definition the empty set is again 
+          open. $X-X = \varnothing$ which is finite implying countable. Since the union of 
+          two countable sets is countable, it follows if $X-V$ and $X-U$ are countable, their 
+          intersection is as well. Consider the arbitrary collection of open sets $\{U_\alpha\}_{\alpha \in \lambda}$. 
+          Then consider $X - \cup_{\alpha \in \lambda}U_\alpha$. This is equivalent to 
+          $\cap_{\alpha \in \lambda} (X-U_\alpha)$. This is at most countable. Hence, the 
+          cocountable topology is a topology.
+        </div>
+
+        <div class="exercise">
+          Describe some of the open sets you get if $\mathbb{R}$ is endowed with the 
+          topologies described above. Specifically, identify sets that demonstrate the differences 
+          among these topologies, that is, find sets that are open in some topologies but not 
+          in others. For each of the topologies, determine if the interval $(0,1)$ is an 
+          open set in that topology.
+        </div>
+        Let $\mathbb{R}_\text{indiscrete}, \mathbb{R}_\text{cofinite}, \mathbb{R}_\text{cocountable},
+      \mathbb{R}_\text{discrete}$ be the $\mathbb{R}$ endowed with the indiscrete, cofinite, cocountable,
+      and discrete topologies. What do you find, there,
+
+
+        <div class="exercise">
+          Give an example of a topological space and a collection of open sets in that 
+          topological space that show that the infinite intersection of open sets need 
+          not be open.
+        </div>
+
+        <h4 id="2.3">2.3 Limit Points and Closed Sets</h4>
+        <div class="definition">
+          Let $(X,\tau)$ be a topological space, $A$ a subset of $X$, and $p$ a point 
+          in $X$. Then $p$ is a <strong>limit point</strong> of $A$ if and only if for 
+          each open set $U$ containing $p$, $(U-\{p\})\cap A \ne \varnothing$. Notice 
+          that $p$ may or may not belong to $A$.
+        </div>
+         
+        <div class="exercise">
+          Let $X = \mathbb{R}$ and $A = (1,2)$. Verify that $0$ is a limit point of $A$
+          in the indiscrete topology and the finite complement topology, but not in the 
+          standard topology nor the discrete topology on $\mathbb{R}$.
+        </div>
+
+        <div class="theorem">
+          Suppose $p \notin A$ in a topological space $(X,\tau)$. Then $p$ is not a 
+          limit point of $A$ if and only if there exists a neighborhood of $U$ of $p$
+          such that $U \cap A = \varnothing$.
+        </div>
+
+        <div class="definition">
+          Let $(X,\tau)$ be a topological space, $A$ a subset of $X$, and $p$ is a point
+          in $X$. If $p \in A$ but $p$ is not a limit point of $A$, then $p$ is an 
+          <strong>isolated point</strong> of $A$.
+        </div>
+
+        <div class="exercise">
+          If $p$ is an isolated point of a set $A$ in a topological space $X$, show that 
+          there exists an open set $U$ such that $U \cap A = \{p\}$.
+        </div>
+
+        <div class="exercise">
+          Give examples of sets $A$ in various topological spaces $(X,\tau)$ with 
+          <ol>
+            <li>a limit point of $A$ that is an element of $A$</li>
+            <li>a limit point of $A$ that is not an element of $A$</li>
+            <li>an isolated point of $A$</li>
+            <li>a point not in $A$ that is not a limit point of $A$</li>
+          </ol>
+        </div>
+
+        <div class="definition">
+          Let $(X,\tau)$ be a topological space and $A \subset X$. Then the 
+          <strong>closure</strong> of $A$ in $X$, denoted $\overline{A}$, is the 
+          set $A$ together with all its limit points in $X$.
+        </div>
+
+        <div class="definition">
+          Let $(X,\tau)$ be a topological space and $A \subset X$. The subset $A$ 
+          is <strong>closed</strong> if and only if $\overline{A} = A$, in other words,
+          if $A$ contains all its limit points.
+        </div>
+      </main>
+      <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle')
+        darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('latex-dark')
+        })
+        
+        MathJax = {
+          tex: {
+            inlineMath: [['$','$'],],
+          },
+        }
+      </script>
+  </body>
