@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="node_modules/latex.css/style_topology.css">
+ 
+    <link rel="stylesheet" href="style_topology.css">
     <!--MathJax for writing latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!--code highlighting-->
@@ -17,6 +18,18 @@
     <title>My Website</title>
   </head>
   <body>
+    <script>
+      const darkModeToggle = document.getElementById('dark-mode-toggle')
+      darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('latex-dark')
+      })
+      
+      MathJax = {
+        tex: {
+          inlineMath: [['$','$'],],
+        },
+      }
+    </script>
     <header>
         <h1>
           <span class="latex">
@@ -36,7 +49,6 @@
       <a href="index.html">Home</a>
       <br>
       <button id="dark-mode-toggle">Toggle dark mode</button>
-      
 
       <nav class="toc">
         <h2>Contents</h2>
@@ -318,16 +330,4 @@
           if $A$ contains all its limit points.
         </div>
       </main>
-      <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle')
-        darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('latex-dark')
-        })
-        
-        MathJax = {
-          tex: {
-            inlineMath: [['$','$'],],
-          },
-        }
-      </script>
   </body>
