@@ -18,18 +18,6 @@
     <title>My Website</title>
   </head>
   <body>
-    <script>
-      const darkModeToggle = document.getElementById('dark-mode-toggle')
-      darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('latex-dark')
-      })
-      
-      MathJax = {
-        tex: {
-          inlineMath: [['$','$'],],
-        },
-      }
-    </script>
     <header>
         <h1>
           <span class="latex">
@@ -330,4 +318,16 @@
           if $A$ contains all its limit points.
         </div>
       </main>
+      <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle')
+        darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('latex-dark')
+        })
+        
+        MathJax = {
+          tex: {
+            inlineMath: [['$','$'],],
+          },
+        }
+      </script>
   </body>
