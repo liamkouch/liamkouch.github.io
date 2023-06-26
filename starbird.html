@@ -53,7 +53,7 @@
               <li><a>To Infinity and Beyond</a></li>
             </ol>
           </li>
-          <li><a href="#ch2">Topological Spaces</a>
+          <li><a href="#ch2">Topological Spaces: Fundamentals</a>
             <ol>
               <li><a href="#2.1">Rubber Sheet Geometry and Special Sets</a></li>
               <li><a href="#2.2">Open Sets and the Definition of a Topological Space</a></li>
@@ -64,7 +64,10 @@
             </ol>
           </li>
 
-          <li>Something</li>
+          <li><a href="#ch3">Bases, Subspaces, Products: Creating New Spaces</a></li>
+          <li><a href="#ch4">Separation Properties: Separating This from That</a></li>
+          <li><a href="#ch5">Countable Features of Spaces: Size Restrictions</a></li>
+          <li><a href="#ch6">Compactness: The Next Best Thing to Being Finite</a></li>
         </ol>
       </nav>
 
@@ -881,7 +884,306 @@
           Let $A$ be a subset of a topological space $X$. Then $A^\circ$, $\partial A$, and 
           $(X-A)^\circ$ form a partition on $X$.
         </div>
+
+
+        <h2 class="chapter" id="ch3">3 Bases, Subspaces, Products: Creating New Spaces</h2>
+        <h4>3.1 Bases</h4>
+        <div class="definition">
+          Let $\tau$ be a topology on a set $X$, and let $\mathcal{B} \subset \tau$. 
+          Then $\mathcal{B}$ is a <strong>basis</strong> for the topology $\tau$ if 
+          and only if every open set in $\tau$ is the union of elements of $\mathcal{B}$. 
+          If $B \in \mathcal{B}$, we say $B$ is a <strong>basis element</strong> or 
+          <strong>basic open set</strong>. Note that $B$ is an element of the basis 
+          $\mathcal{B}$, but a subset of the space $X$.
+        </div>
+
+        <!--3.1-->
+        <div class="theorem">
+          Let $(X,\tau)$ be a top. space, and let $\mathcal{B}$ be a collection of subsets 
+          of $X$. Then $\mathcal{B}$ is a basis for $\tau$ if and only if 
+          <ol>
+            <li>$\mathcal{B} \subset \tau$, and </li>
+            <li>for each set $U$ in $\tau$ and point $p$ in $U$ there is a 
+              set $V$ in $\mathcal{B}$ such that $p \in V \subset U$.
+            </li>
+          </ol>
+        </div>
+
+        <!--3.2-->
+        <div class="exercise">
+
+        </div>
+
+        <!--3.3-->
+        <div class="theorem">
+          Suppose $X$ is a set and $\mathcal{B}$ is a collection of subsets of $X$.
+          Then $\mathcal{B}$ is a basis for some topology on $X$ if and only if 
+          <ol>
+            <li>each point of $X$ is in some element of $\mathcal{B}$</li>
+            <li>if $U$ and $V$ are sets in $\mathcal{B}$ and $p$ is a point 
+              in $U \cap V$, there is a set $W$ in $\mathcal{B}$ such that 
+              $p \in W \subset (U \cap V)$.
+            </li>
+          </ol>
+        </div>
+
+        <h2 class="chapter" id="ch4">4 Separation Properties: Separating This from That</h2>
+        <h4>4.1 Hausdorff, Regular, and Normal Spaces</h4>
+        <div class="definition">
+          Let $(X,\tau)$ be a top. space. 
+          <ol>
+            <li>$X$ is a $T_1$-space if and only if for every pair $x,y$ of
+              distinct points there are open sets $U,V$ such that $U$ contains 
+              $x$ but not $y$, and $V$ contains $y$ but not $x$.
+            </li>
+            <li>$X$ is <strong>Hausdorff</strong>, or a $T_2$-space, if and only 
+              if for every pair $x,y$ of disinct points there are disjoint open 
+              sets $U,V$ such that $x \in U$ and $y \in V$. 
+            </li>
+            <li>$X$ is <strong>regular</strong> if and only if for every point 
+              $x \in X$ and closed set $A \subset X$ not containing $x$, there 
+              are disjoint open sets $U,V$ such that $x \in X$ and $A \subset V$. 
+              A $T_3$-space is any space that is both $T_1$ and regular. 
+            </li>
+            <li>$X$ is <strong>normal</strong> if and only if for every pair 
+              of disjoint closed sets $A,B$ in $X$, there are disjoint open 
+              sets $U,V$ such that $A \subset U$ and $B \subset V$. A 
+              $T_4$-space is any space that is both $T_1$ and normal.
+            </li>
+            The most important property of a $T_1$-space is that points are closed.
+          </ol>
+        </div>
+
+        <div class="theorem">
+          A space $(X,\tau)$ is $T_1$ if and only if every point in $X$ is a closed 
+          set.
+        </div>
+
+        <!--4.2-->
+        <div class="exercise">
+          Let $X$ be a space with the finite complement topology. Show that $X$ 
+          is $T_1$.
+        </div>
+        <!--4.3-->
+        <div class="exercise">
+
+        </div>
+        <!--4.4-->
+        <div class="exercise">
+
+        </div>
+        <!--4.5-->
+        <div class="exercise">
+
+        </div>
+        <!--4.6-->
+        <div class="exercise">
+
+        </div>
+        <!--4.7-->
+        <div class="theorem">
+          Show the following three properties hold.
+          <ol>
+            <li>A $T_2$-space is a $T_1$-space</li>
+            <li>A $T_3$-space is a $T_2$-space</li>
+            <li>A $T_4$-space is a $T_3$-space</li>
+          </ol>
+        </div>
+        <!--4.8-->
+        <div class="theorem">
+          A topological space $X$ is regular if and only if for each point 
+          $p$ in $X$ and open set $U$ containing $p$ there exists an open 
+          set $V$ such that $p \in V$ and $\overline{V} \subset U$.
+        </div>
+        <!--4.9-->
+        <div class="theorem">
+          A top. space $X$ is normal if and only if for each closed set $A$ 
+          in $X$ and open set $U$ containing $A$ there exists an open set 
+          $V$ such that $A \subset V$ and $\overline{V} \subset U$.
+        </div>
+        <!--4.10-->
+        <div class="theorem">
+          A top. space $X$ is normal if and only if for each pair of disjoint closed 
+          sets $A$ and $B$, there are disjoint open sets $U$ and $V$ such that 
+          $A \subset U$, $B \subset V$, and $\overline{U} \cap \overline{V} = 
+          \varnothing$.
+        </div>
+
+        <h2 class="chapter" id="ch5">5 Countable Features of Spaces: Size Restrictions</h2>
+        <h4>5.1 Separable Spaces, An Unfortunate Name</h4>
+        <div class="definition">
+          Let $A$ be a subset of a top. space $X$. Then $A$ is 
+          <strong>dense</strong> in $X$ if and only if $\overline{A} = X$.
+        </div>
+
+        <div class="exercise">
+          Show that $A$ is dense in $X$ if and only if every non-empty open 
+          set of $X$ contains a point of $A$.
+        </div>
+
+        <div class="definition">
+          A top. space $X$ is <strong>separable</strong> if and only if $X$ 
+          has a countable dense subset.
+        </div>
+
+        <div class="exercise">
+          Show that $\mathbb{R}_\text{std}$ is separable. With which of the 
+          topologies on $\mathbb{R}$ that you have studied is $\mathbb{R}$ 
+          not separable?
+        </div>
+
+        <!--5.3-->
+        <div class="exercise">
+
+        </div>
+
+        <!--5.4-->
+        <div class="exercise">
+
+        </div>
+
+        <!--5.5-->
+        <div class="theorem">
+
+        </div>
+
+        <!--5.6-->
+        <div class="theorem">
+
+        </div>
+
+        <!--5.7-->
+        <div class="exercise">
+
+        </div>
+
+        <!--5.8-->
+        <div class="exercise">
+
+        </div>
+
+        <h4>5.2 2$^\text{nd}$ Countable Spaces</h4>
+        <div class="definition">
+          A space $X$ is 2$^\text{nd}$ <strong>countable</strong> 
+          if and only if $X$ has a countable basis.
+        </div>
+
+        <!--5.9-->
+        <div class="theorem">
+          Let $X$ be a 2$^\text{nd}$ countable space. Then $X$ is separable.
+        </div>
+
+        <!--5.10-->
+        <div class="exercise">
+
+        </div>
+
+        <!--5.11-->
+        <div class="theorem"></div>
+
+        <!--5.12-->
+        <div class="exercise"></div>
+
+        <!--5.13-->
+        <div class="exercise"></div>
+
+        <h4>5.3 1$^\text{st}$ Countable Spaces</h4>
+        <div class="definition">
+          Let $p$ be a point in a space $X$. A collection of open sets 
+          $\{U_\alpha\}_{\alpha \in \lambda}$ in $X$ is a <strong>
+            neighborhood basis 
+          </strong> for $p$ if and only if: (1) each $U_\alpha$ contains $p$,
+          and (ii) every open set containing $p$ contains some $U_\alpha$.
+        </div>
+
+        <div class="definition">
+          A top. space $X$ is <strong>1<sup>st</sup> countable</strong> if and 
+          only if every point of $X$ has a countable neighborhood basis.
+        </div>
+
+        <!--5.14-->
+        <div class="theorem">
+          Let $X$ be a 2<sup>nd</sup> countable space. Then $X$ is 
+          1<sup>st</sup> countable.
+        </div>
+
+        <!--5.15-->
+        <div class="theorem">
+          If $X$ is a top. space, $p \in X$, and $p$ has a countable neighborhood 
+          basis, then $p$ has a nested countable neighborhood basis.
+        </div>
+
+        <h2 class="chapter" id="ch6">6 Compactness: The Next Best Thing to Being Finite</h2>
+        <h4>6.1 Compact Sets</h4>
+        <div class="definition">
+          Let $A$ be a subset of $X$ and let $\mathcal{C} = \{C_\alpha\}_{\alpha\in\lambda}$
+          be a collection of subsets of $X$. Then $\mathcal{C}$ is a <strong>cover</strong> 
+          of $A$ if and only if $A \subset \bigcup_{\alpha \in \lambda} C_\alpha$. The 
+          collection $\mathcal{C}$ is an <strong>open cover</strong> of $A$ if and only if 
+          $\mathcal{C}$ is a cover of $A$ and each $C_\alpha$ is open. A <strong>
+            subcover
+          </strong> $\mathcal{C}'$ of a cover $\mathcal{C}$ of $A$ is a subcollection 
+          of $\mathcal{C}$ whose elements form a cover of $A$.
+        </div>
+
+        <div class="definition">
+          A space $X$ is <strong>compact</strong> if and only if every open cover 
+          of $X$ has a finite subcover.
+        </div>
+
+        <!--6.1-->
+        <div class="theorem">
+          Let $X$ be a finite top. space. Then $X$ is compact.
+        </div>
+
+        <!--6.2-->
+        <div class="theorem">
+          Let $C$ be a compact subset of $\mathbb{R}_\text{std}$. Them $C$ has 
+          maximum point, that is, there is a point $m \in C$ such that for every 
+          $x \in C$, $x \leq m$.
+        </div>
+
+        <!--6.3-->
+        <div class="theorem">
+          If $X$ is a compact space, then every infinite subset of $X$ has a 
+          limit point. 
+        </div>
+
+        <!--6.4-->
+        <div class="corollary">
+          If $X$ is compact and $E$ is a subset of $X$ with no limit points, then 
+          $E$ is finite.
+        </div>
+
+        <div class="definition">
+          A collection fo sets has the <strong>finite intersection property</strong>
+          if and only if every finite subcollection has a non-empty intersection.
+        </div>
+
+        <!--6.5-->
+        <div class="theorem">
+          A space $X$ is compact if and only if every collection of closed sets with 
+          the finite intersection property has a non-empty intersection.
+        </div>
+
+        <!--6.6-->
+        <div class="theorem">
+          A space $X$ is compact if and only if for any open set $U$ in $X$ and 
+          any collection of closed sets $\{K_\alpha\}_{\alpha \in \lambda}$ 
+          such that $\bigcap_{\alpha \in \lambda} K_\alpha \subset U$, there 
+          exist a finite number of $K_\alpha$'s whose intersection lies in $U$.
+        </div>
+
+        <!--6.7-->
+        <div class="exercise">
+          If $A$ and $B$ are compact subsets of $X$, then $A \cup B$ is compact. 
+          Suggest and prove a generalization.
+        </div>
+        
       </main>
+
+
+      
       <script>
         const darkModeToggle = document.getElementById('dark-mode-toggle')
         darkModeToggle.addEventListener('click', () => {
