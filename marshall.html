@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style_marshall.css">
     <!--MathJax for writing latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--Forget what this does-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <title>My Website</title>
   </head>
@@ -36,9 +37,16 @@
       <a href="index.html">Home</a>
       <br>
       <button id="dark-mode-toggle">Toggle dark mode</button>
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#ch1">Divide and Conquer</a></li>
+          <li><a href="#ch2">Prime Time</a></li>
+        </ol>
+      </nav>
 
       <main>
-        <h2 class="chapter">Divide and Conquer</h2>
+        <h2 class="chapter" id="ch1">Divide and Conquer</h2>
         <div class="theorem">
 
         </div>
@@ -171,7 +179,7 @@
         <div class="theorem">
           Prove the existence part of the Division Algorithm.
         </div>
-        <h2 class="chapter">Prime Time</h2>
+        <h2 class="chapter" id="ch2">Prime Time</h2>
       </main>
       <script>
         const darkModeToggle = document.getElementById('dark-mode-toggle')

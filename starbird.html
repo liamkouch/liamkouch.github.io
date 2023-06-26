@@ -8,15 +8,8 @@
     <link rel="stylesheet" href="style_topology.css">
     <!--MathJax for writing latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--Forget what this does-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <!--code highlighting
-    <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
-    -->
-    <!---
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    -->
     <title>My Website</title>
   </head>
   <body>
@@ -34,7 +27,13 @@
       </header>
       <div class="abstract">
         <h2>Abstract</h2>
-        <p>Notes from Topology Through Inquiry</p>
+        <p>Notes from Topology Through Inquiry. Here is a pdf file for 
+          what I had previously worked on so far. For some of the exercises 
+          I will be just using what I have already done in the pdf 
+          <a href="topology_starbird_my_solutions.pdf">file</a>. Other 
+          times I will completely rewrite the proofs as a refresher or if I 
+          think there is a better way to write it.
+        </p>
       </div>
       <a href="index.html">Home</a>
       <br>
@@ -59,7 +58,7 @@
               <li><a href="#2.1">Rubber Sheet Geometry and Special Sets</a></li>
               <li><a href="#2.2">Open Sets and the Definition of a Topological Space</a></li>
               <li><a href="#2.3">Limit Points and Closed Sets</a></li>
-              <li><a>Interior and Boundary</a></li>
+              <li><a href="#2.4">Interior and Boundary</a></li>
               <li><a>Convergence of Sequences</a></li>
               <li><a>Topological Essentials</a></li>
             </ol>
@@ -73,6 +72,144 @@
         <h2 class="chapter" id="ch1">
           1 Cardinality: To Infinity and Beyond
         </h2>
+        <h4>1.1 Sets and Functions</h4>
+        <div class="exercise">
+          For sets $A_1,A_2 \subset X$ show that 
+          \[X - (A_1 \cup A_2) = (X-A_1) \cap (X-A_2)\]
+        </div>
+        <div class="exercise">
+          Let $X$ be a set, and let $\{A_k\}_{k=1}^N$ be a finite collection of sets such 
+          that $A_k \subset X$ for each $k = 1,2,\dots,N$. Then 
+          \[X - \left(\bigcup_{k=1}^N A_k\right) = \bigcap_{k=1}^N (X-A_k)\]
+          and 
+          \[X - \left(\bigcap_{k=1}^N A_k\right) = \bigcup_{k=1}^N (X-A_k)\]
+        </div>
+
+        <div class="exercise">
+          For a function $f \colon X \to Y$ and sets $A,B \subset Y$, show that 
+          $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$ and $f^{-1}(A \cap B) = 
+          f^{-1}(A) \cap f^{-1}(B)$.
+        </div>
+
+        <div class="exercise">
+          If $f \colon X \to Y$ is injective and $y \in Y$, then $f^{-1}(y)$ contains at 
+          most one point.
+        </div>
+
+        <div class="exercise">
+          If $f \colon X \to Y$ is surjective and $y \in Y$, then $f^{-1}(y)$ contains at 
+          least one point. 
+        </div>
+        <h4>1.2 Cardinality and Countable Sets</h4>
+
+        <div class="theorem">
+          Let $2\mathbb{N}$ denote the set of positive even integers. Then $2\mathbb{N}$ 
+          has the same cardinality as $\mathbb{N}$.
+        </div>
+
+        <!--1.7-->
+        <div class="theorem">
+          The set $\mathbb{Z}$ has the same cardinality as $\mathbb{N}$.
+        </div>
+
+        <!--1.8-->
+        <div class="theorem">
+          Every subset of $\mathbb{N}$ is either finite or has the same cardinality 
+          as $\mathbb{N}$.
+        </div>
+
+        <div class="definition">
+          A set is <strong>countable</strong> if and only if it is finite or
+          has the same cardinality as $\mathbb{N}$. A set is <strong>uncountable</strong>
+          if and only if it is not countable.
+        </div>
+
+        <div class="theorem">
+          Every infinite set has a countably infinite subset.
+        </div>
+
+        <div class="theorem">
+          A set is infinite if and only if there is an injection from the set into 
+          a proper subset of itself.
+        </div>
+
+        <div class="theorem">
+          The union of two countable sets is countable.
+        </div>
+
+        <div class="theorem">
+          The union of countably many countable sets is countable.
+        </div>
+
+        <div class="theorem">
+          The set $\mathbb{Q}$ is countable.
+        </div>
+
+        <div class="theorem">
+          The set of all finite subsets of a countable set is countable.
+        </div>
+
+        <!--1.15-->
+        <div class="exercise">
+          Suppose a submarine is moving in the plane along a straight line at a 
+          constant speed such that at each hour, the submarine is at a lattice 
+          point, that is, a point whose two coordinates are both integers. 
+          Suppose at each hour you can explode one depth charge at a lattice 
+          point that will hit the submarine if it is there. You do not know the 
+          submarine's direction, speed, or its current position. Prove that you 
+          can explode one depth charge each hour in such a way that you will be 
+          guaranteed to eventually hit the submarine.
+        </div>
+        <h4>1.3 Uncountable Sets and Power Sets</h4>
+        <div class="theorem">
+          The cardinality of the set of natural numbers is not the same as the 
+          cardinality of the set of real numbers. That is the set of real numbers 
+          is uncountable.
+        </div>
+
+        <div class="definition">
+          For any set $A$, the set of all subsets of $A$ is called the 
+          <strong>power set</strong> of $A$ and is denoted $2^A$.
+        </div>
+
+        <!--1.17-->
+        <div class="exercise">
+          Suppose $A = \{a,b,c\}$. Explicitly write out $2^A$, the power set of $A$.
+        </div>
+
+        <!--1.18-->
+        <div class="theorem">
+          If a set $A$ is finite, then the power set of $A$ has cardinality $2^{|A|}$,
+          that is, $|2^A| = 2^{|A|}$.
+        </div>
+
+        <!--1.19-->
+        <div class="theorem">
+          For any set $A$, there is an injection from $A$ into $2^A$.
+        </div>
+
+        <!--1.20-->
+        <div class="theorem">
+          For a set $A$, let $P$ be the set of all functions from $A$ to the two-point set
+          $\{0,1\}$. Then $|P| = |2^A|$.
+        </div>
+
+        <!--1.21-->
+        <div class="theorem">
+          There is a one-to-one correspondence between $2^\mathbb{N}$ and the set of 
+          all infinite sequences of $0$'s and $1$'s.
+        </div>
+
+        <!--1.22-->
+        <div class="theorem">
+          There is no surjection from a set $A$ onto $2^A$. Thus for any set $A$, the cardinality 
+          of $A$ is not the same as the cardinality of its power set. 
+        </div>
+        <h4>1.4 The Schroeder-Bernstein Theorem</h4>
+        <h4>1.5 Axiom of Choice</h4>
+        <h4>1.6 Ordinal Numbers</h4>
+        <h4>1.7 To Infinity and Beyond</h4>
+
         <h2 class="chapter" id="ch2">
           2 Topological Spaces: Fundamentals
         </h2>
@@ -256,9 +393,60 @@
           in others. For each of the topologies, determine if the interval $(0,1)$ is an 
           open set in that topology.
         </div>
-        Let $\mathbb{R}_\text{indiscrete}, \mathbb{R}_\text{cofinite}, \mathbb{R}_\text{cocountable},
-      \mathbb{R}_\text{discrete}$ be the $\mathbb{R}$ endowed with the indiscrete, cofinite, cocountable,
-      and discrete topologies. What do you find, there,
+        Let $\tau_1, \tau_2, \tau_3,\tau_4$ be the $\mathbb{R}$ endowed with the indiscrete, cofinite, cocountable,
+      and discrete topologies respectively. Then we have $\tau_i \subset \tau_{i+1}$ for 
+      $i=1,2,3$. In other words $\tau_{i+1}$ is <emph>finer</emph> than $\tau_j$ for 
+      $1\leq j < i+1$ for $i=1,2,3$. 
+        <div class="scroll-wrapper">
+          <table class="center">
+            <caption>Openness of Sets in Different Topologies</caption>
+            <tbody>
+              <tr>
+                <th scope="col">Set</th>
+                <th scope="col">$\tau_1$</th>
+                <th scope="col">$\tau_2$</th>
+                <th scope="col">$\tau_3$</th>
+                <th scope="col">$\tau_4$</th>
+              </tr>
+              <tr>
+                <th scope="row">$\mathbb{Q}$</th>
+                <td>&#x2715;</td>
+                <td>&#x2715;</td>
+                <td>&#x2715;</td>
+                <td>&#x2713;</td>
+              </tr>
+              
+              <tr>
+                <th scope="row">$\mathbb{R}-\mathbb{Q}$</th>
+                <td>&#x2715;</td>
+                <td>&#x2715;</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <th scope="row">$\mathbb{R} - \{0\}$</th>
+                <td>&#x2715;</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <th scope="row">$\varnothing$</th>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <th scope="row">$(0,1)$</th>
+                <td>&#x2715;</td>
+                <td>&#x2715;</td>
+                <td>&#x2715;</td>
+                <td>&#x2713;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
 
         <div class="exercise">
@@ -266,6 +454,22 @@
           topological space that show that the infinite intersection of open sets need 
           not be open.
         </div>
+        We construct a case for the cofinite topology on $\mathbb{R}$. 
+        For $i \in \mathbb{N}$ define $U_i = \mathbb{R} - \{1,\dots,i\}$. Each of 
+        these sets is open in the cofinite topology. We show the infinite intersection 
+        over these sets is not open.
+        \[\mathbb{R}-\bigcap_{i \in \mathbb{N}} U_i = \bigcup_{i \in \mathbb{N}} (\mathbb{R}-U_i)
+        = \bigcup_{i \in \mathbb{N}} \{1,2,\dots,i\} = \mathbb{N}\]
+        The complement of the infinite intersection is not finite, so not open.
+        <br><br>
+        Now we construct a case for the cocountable topology on $\mathbb{R}$. 
+        We define a collection of sets as follows: for $\alpha \in 
+        \left[0,1\right)$ define $U_\alpha$ as 
+        \[U_\alpha = \left\{\alpha + x \mid x \in \mathbb{R}-\mathbb{N}\right\}\]
+        We show the infinite intersection is not open.
+        \[\mathbb{R} - \bigcap_{\alpha \in \left[0,1\right)} U_\alpha = 
+        \bigcup_{\alpha \in \left[0,1\right)} (\mathbb{R}-U_\alpha) = \left[1,\infty\right)\]
+        The complement of the infinite intersection is not countable, hence not open.
 
         <h4 id="2.3">2.3 Limit Points and Closed Sets</h4>
         <div class="definition">
@@ -280,11 +484,30 @@
           in the indiscrete topology and the finite complement topology, but not in the 
           standard topology nor the discrete topology on $\mathbb{R}$.
         </div>
+        <div class="proof">
+          In the indiscrete topology, the only open set that contains $0$ is $\mathbb{R}$.
+          Then $(\mathbb{R}-\{0\}) \cap (1,2) = (1,2)$. Hence, $0$ is a limit point 
+          of $A$ in the indiscrete topology. Now consider the cofinite topology. Let $U$ 
+          be an open neighborhood of $0$. Suppose $U \cap (1,2) = \varnothing$. Then 
+          $(1,2) \subset \mathbb{R}-U$. This contradicts the complement of $U$ being finite.
+          Hence, $U \cap (1,2) \ne \varnothing$ and $0$ is a limit point of $(1,2)$ in the 
+          finite complement topology. For the standard topology and discrete topology 
+          take $(-1,1)$ as an open neighborhood. It follows $0$ is not a limit point of $(1,2)$
+          in these last two topologies.
+        </div>
 
         <div class="theorem">
           Suppose $p \notin A$ in a topological space $(X,\tau)$. Then $p$ is not a 
-          limit point of $A$ if and only if there exists a neighborhood of $U$ of $p$
+          limit point of $A$ if and only if there exists a neighborhood $U$ of $p$
           such that $U \cap A = \varnothing$.
+        </div>
+        <div class="proof">
+          We prove the forward direction. Suppose $p$ is not a limit point of $A$. Then
+          by definition of a limit point, for some open set $U$ containing $p$ 
+          $(U-\{p\}) \cap A = \varnothing$. Since $p \notin A$ it follows $U \cap A = \varnothing$. 
+          For the backward direction, suppose there exists a neighborhood $U$ of $p$ such 
+          that $U \cap A = \varnothing$. Then $(U - \{p\}) \cap A = \varnothing$. It follows 
+          $p$ is not a limit point of $A$.
         </div>
 
         <div class="definition">
@@ -296,6 +519,10 @@
         <div class="exercise">
           If $p$ is an isolated point of a set $A$ in a topological space $X$, show that 
           there exists an open set $U$ such that $U \cap A = \{p\}$.
+        </div>
+        <div class="proof">
+          Since $p$ is not a limit point, there exists an open neighborhood $U$ such that 
+          $(U-\{p\}) \cap A = \varnothing$. But $p \in A$ so $U \cap A = \{p\}$.
         </div>
 
         <div class="exercise">
@@ -318,6 +545,341 @@
           Let $(X,\tau)$ be a topological space and $A \subset X$. The subset $A$ 
           is <strong>closed</strong> if and only if $\overline{A} = A$, in other words,
           if $A$ contains all its limit points.
+        </div>
+
+        <div class="exercise">
+          <ol>
+            <li>Which sets are closed in a set $X$ with the discrete topology?</li>
+            <li>Which sets are closed in a set $X$ with the indiscrete topology?</li>
+            <li>Which sets are closed in a set $X$ with the cofinite topology?</li>
+            <li>Which sets are closed in a set $X$ with the cocountable topology?</li>
+          </ol>
+        </div>
+
+        <!--theorem 2.13-->
+        <div class="theorem">
+          For any topological space $(X,\tau)$ and $A \subset X$, the set $\overline{A}$ 
+          is closed. That is, for any set $A$ in a topological space, $\overline{\overline{A}} = \overline{A}$.
+        </div>
+        <div class="proof">
+          We show that $\overline{A}$ contains all its limit points. Let $p$ be a limit point 
+          of $\overline{A}$. If $p \in A$ then $p \in \overline{A}$. Thus, we assume 
+          $p \notin A$. Now to prove $p \in \overline{A}$ it is sufficient to show $p$ is 
+          a limit point of $A$ which is what we prove. Since $p$ is a limit point of $\overline{A}$, 
+          by definition we have $(U-\{p\}) \cap \overline{A} \ne \varnothing$ for any open 
+          neighborhood $U$ of $p$. Let $q$ be in this intersection. There are two cases. If 
+          $q \in A$ then we are done. Now consider the case where $q$ is a limit point of $A$.
+          Since $U$ is also an open neighborhood of $q$ and $q$ is a limit point of $A$, it follows 
+          $(U-\{q\} \cap A \ne \varnothing)$. Note $p$ is not in this intersection since we 
+          assumed $p \notin A$. Then $(U-\{p\}) \cap A \ne \varnothing$. Hence, $p$ is a limit 
+          point of $A$. Then, $p \in \overline{A}$. Therefore, $\overline{A}$ is closed.
+        </div>
+
+        <!--theorem 2.14-->
+        <div class="theorem"> 
+          Let $(X,\tau)$ be a topological space. Then the set $A$ is closed if and only 
+          if $X-A$ is open.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. Let $p \in X-A$. Since $A$ is closed, $p$ 
+          is not in $A$ and is not a limit point of $A$. Then there exists an open neighborhood $U$
+          of $p$ such that $U \cap A = \varnothing$. Then $U \subset X-A$. Altogether, we have
+          $p \in U \subset X-A$. Hence, by Theorem 2.3 $X-A$ is open. Now we prove the 
+          reverse direction. Say $X-A$ is open. We show $A$ is closed. Let $q$ be a limit point 
+          of $A$. Then for every open neighborhood $V$ of $q$, $(V-\{q\}) \cap A \ne \varnothing$. 
+          For the sake of contradiction suppose $p \in X-A$. Since, $X-A$ is open, there exists 
+          some open neighborhood $W$ of $p$ such that $p \in W \subset X-A$. Then 
+          $(W-\{p\}) \cap A = \varnothing$. But this contradicts $p$ being a limit point of $A$.
+          Hence, $p$ must be in $A$. Thus $A$ is closed.
+        </div>
+
+        <!--theorem 2.15-->
+        <div class="theorem">
+          Let $(X,\tau)$ be a topological space, and let $U$ be an open set and $A$ 
+          a closed subset of $X$. Then the set $U-A$ is open and the set $A-U$ is 
+          closed.
+        </div>
+        <div class="proof">
+          $U-A$ is equivalent to $U \cap (X-A)$. By Theorem 2.14 we know $X-A$ is open.
+          It follows $U-A$ is open. Now we show $A-U$ is closed. Equivalently, we show 
+          $X-(A-U) = (X-A) \cup U$ is open. We know $X-A$ and $U$ are open so their union 
+          is open. Hence, $A-U$ is closed. 
+        </div>
+
+        <!--theorem 2.16-->
+        <div class="theorem">
+          Let $(X,\tau)$ be a topological space. Then:
+          <ol>
+            <li>$\varnothing$ is closed</li>
+            <li>$X$ is closed</li>
+            <li>The union of finitely many closed sets is closed</li>
+            <li>Let $\{A_\alpha\}_{\alpha \in \lambda}$ be a collection 
+              of closed subsets in $(X,\tau)$. Then $\bigcap_{\alpha \in \lambda}A_\alpha$ 
+              is closed.
+            </li>
+          </ol>
+        </div>
+        <div class="proof">
+          We utililze mainly Theorem 2.13. Since $X$ and $\varnothing$ are open we 
+          know their complements are closed, that is $\varnothing$ and $X$ are closed 
+          respectively. Suppose we have a finite union of closed sets
+          $\cup_{i=1}^n U_i$. We show this is closed by showing the complement is open.
+          The complement of this finite union is the finite intersection $\cap_{i=1}^n (X-U_i)$.
+          This is a finite intersection of open sets. This is open. Hence, the finite union 
+          is closed. Now suppose we have a collection of closed sets $\{A_\alpha\}_{\alpha \in \lambda}$. 
+          To show the intersection over the collection is closed we show the complement is open.
+          The complement of the intersection is the union $\bigcup_{\alpha \in \lambda} (X-A_\alpha)$.
+          This is an arbitrary union of open sets which is open. Hence, the arbitrary intersection 
+          is closed.
+        </div>
+
+        <!--2.17-->
+        <div class="exercise">
+
+        </div>
+
+        <!--2.18-->
+        <div class="exercise">
+
+        </div>
+
+        <!--2.19-->
+        <div class="exercise">
+
+        </div>
+
+        <!--2.20-->
+        <div class="theorem">
+          For any set $A$ in a topological space $X$, the closure of $A$ equals 
+          the intersection of all closed sets containing $A$, that is,
+          \[\overline{A} = \bigcap_{B \supset A, B \in C} B,\]
+          where $C$ is the collection of all closed sets in $X$.
+        </div>
+        <div class="proof">
+          For convenience let $W = \bigcap_{B \supset A, B \in C} B$. Since
+          $\overline{A} \supset A$ and $\overline{A} \in C$, it follows 
+          $W \subset \overline{A}$. Now we show $\overline{A} \subset W$. Take 
+          $p \in \overline{A}$. Suppose $p \in A$. If $B \supset A$ then $p \in B$. 
+          It follows $p \in W$. Now suppose $p \notin A$. Then $p$ is a limit point 
+          of $A$. Then for any open neighborhood $U$ of $p$ we have 
+          $(U-\{p\}) \cap A \ne \varnothing$. Since $A \subset B$ it follows 
+          $(U - \{p\}) \cap B \ne \varnothing$. Then $p$ is also a limit of $B$.
+          Since $B$ is closed $p$ is in $B$. This holds for any $B$. Thus $p \in W$. 
+          Since $\overline{A} \subset W$ and $W \subset \overline{A}$ it follows 
+          $\overline{A} = W$.
+        </div>
+
+        <!--2.21-->
+        <div class="exercise">
+
+        </div>
+
+        <!--2.22-->
+        <div class="theorem">
+          Let $A$ and $B$ be subsets of a topological space $X$. Then:
+          <ol>
+            <li>$A \subset B$ implies $\overline{A} \subset \overline{B}$</li>
+            <li>$\overline{A \cup B} = \overline{A} \cup \overline{B}$</li>
+          </ol>
+        </div>
+        <div class="proof">
+          We prove part (1) first. Let $p$ be a limit point of $A$. Then for any open 
+          neighborhood $U$ of $p$ we have $(U-\{p\}) \cap A \ne \varnothing$. Since 
+          $A \subset B$ it follows $(U-\{p\}) \cap B \ne \varnothing$. Then $p$ is 
+          a limit point of $B$. Thus $\overline{A} \subset \overline{B}$.
+          <br><br>
+          Now we prove part (2). First we show $\overline{A \cup B} \subset \overline{A} \cup \overline{B}$. 
+          Equivalently, we show $X-(\overline{A} \cup \overline{B}) \subset X-(\overline{A \cup B})$.
+          Let $p \in X-(\overline{A} \cup \overline{B})$. Then there exists some neighborhoods
+          $U$ and $V$ of $p$ such that $(U-\{p\}) \cap A = \varnothing$ and $(V-\{p\}) \cap B = \varnothing$. 
+          Then take $W = U \cap V$. Then $(W-\{p\}) \cap (A \cup B) = \varnothing$. It follows 
+          $p$ is not a limit point of $A \cup B$. Moreover, $p \notin A \cup B$. Thus, 
+          $p \in X - \overline{A \cup B}$. Now we show $\overline{A} \cup \overline{B} \subset 
+          \overline{A \cup B}$. Let $p \in \overline{A} \cup \overline{B}$. If $p \in \overline{A}$ 
+          then $p \in \overline{A \cup B}$ since $A \subset A \cup B$ and part (1) of this theorem.
+          The same argument holds for when $p \in \overline{B}$. Thus $\overline{A} \cup \overline{B} \subset 
+          \overline{A \cup B}$.
+        </div>
+
+        <!--2.23-->
+        <div class="exercise">
+
+        </div>
+
+        <!--2.24-->
+        <div class="exercise">
+
+        </div>
+
+        <!--2.25-->
+        <div class="exercise">
+
+        </div>
+        <div class="proof">
+          We show the cantor set satisfies the criteria above. 
+          We construct the cantor set. Let $C_0 = \left[0,1\right]$. 
+          Then $C_{n-1}$ consists of $2^n$ closed intervals. For each interval, 
+          take out the middle third. Then this is defined to be $C_n$. For example,
+          
+          \[C_0 = \left[0,1\right] \]
+          \[C_1 = \left[0,1/3\right] \cup \left[2/3, 1\right]\]
+          \[C_2 = \left[0,1/9\right] \cup \left[2/9,3/9\right] \cup \left[6/9,7/9\right] \cup \left[8/9, 1\right]\]
+          Generally we have
+          \[C_n = I_n^1 \cup I_n^2 \cup I_n^3 \cup \cdots \cup I_n^{2^n}\]
+          
+          Where if $j < k$ then $x < y$ for all $x \in I_i^j, y \in I_i^k$ 
+          for all $j,k \in \{1,2,3,...,2^i\}$ and all $i \in \mathbb{N}\cup\{0\}$. 
+          Then the cantor set is defined to be $C = \cap_{i=1}^\infty C_i$. We now show 
+          $C$ is a subset of the interval $\left[0,1\right]$, closed, contains no non-empty 
+          open interval, and no point of $C$ is an isolated point.
+
+          Since  $\left[0,1\right]  \supset C_0 \supset C_1  \supset \cdots$ it follows $C 
+          \subset \left[0,1\right]$. Moreover, $C$ is an infinite intersection of closed 
+          sets which is closed by Theorem 2.16. Now we show that $C$ contains no non-empty 
+          open interval. For sake of contradiction, suppose that $C$ contains a non-empty open 
+          interval $(s,t)$ where $s < t$ and $s,t \in \mathbb{R}$.
+
+          Let $P(n)$ be the statement "Let $a,b\in\mathbb{R}$ and $a < b$. 
+          If $(a,b) \subset C_n$ then $|a-b| \leq 1/3^n$ for some non-negative 
+          integer $n$." We show that $p(n)$ is true for all $n \geq 0$ by induction. 
+          For the base case, consider $n=0$. Then suppose $(a,b) \subset C_0 = 
+          \left[0,1\right]$. Then we have $0 \leq a < b \leq 1$. It follows $|a-b| 
+          \leq 1 = 1/3^0$. It follows $P(0)$ is true. 
+
+          Now we move on to the inductive step. For the inductive hypothesis 
+          we assume $P(m)$ is true. Now assume $(a,b) \subset C_{m+1}$. Since 
+          $C_{m+1} \subset C_m$ it follows $(a,b) \subset C_m$. Then $C_m$ has 
+          $2^m$ disjoint closed intervals.
+          \[C_m = I_m^1 \cup I_m^2 \cup I_m^3 \cup \cdots \cup I_m^{2^m}\]
+          where $I_w^z$ is the zth closed interval for $C_w$. It follows $(a,b)$ 
+          is in exactly one of these intervals. Then let $(a,b) = I_m^k$ for some 
+          $k \in \{1,2,...,2^m\}$. Then $I_m^k=\left[c,d\right]$ where $c,d \in 
+          \mathbb{R}$. Since $(a,b)\subset\left[c,d\right]$ we have $c \leq a < b 
+          \leq d$. It follows $|a-b|\leq d-c$. For the sake of contradiction 
+          suppose $d-c>1/3^m$. Then there exists $p,q\in\mathbb{R}$ such that 
+          $(p,q) \subset C_m$ and $|p-q| > 1/3^m$; however, since $(p,q) \subset 
+          C_m$ we must have $|p-q| \leq 1/3^m$ by the inductive hypothesis. This 
+          is a contradiction. It follows $d-c\leq 1/3^m$. 
+
+          Since $(a,b)\subset \left[c,d\right] \subset C_m$ and by assumption 
+          $(a,b)\subset C_{m+1}$, it follows $(a,b)$ falls in the left or right 
+          third of $\left[c,d\right]$. Specifically, $(a,b) \subset 
+          \left[c,c+\frac{1}{3}(d-c)\right]$ or $(a,b) \subset 
+          \left[c+\frac{2}{3}(d-c),d\right]$. Then we have 
+          \[c \leq a < b \leq c+\frac{1}{3}(d-c)\]
+          or
+          \[c + \frac{2}{3}(d-c) \leq a < b \leq d\]
+          In either case we have $|a-b| \leq (d-c)/3$. But $d-c \leq 1/3^m$ 
+          so then $|a-b| \leq 1/3^{m+1}$. It follows $P(m+1)$ is true. This 
+          concludes the induction. Hence, $P(n)$ is true for all $n \geq 0$. 
+
+          We assumed that $(s,t) \subset C$. Then $(s,t) \subset C_m$ for all 
+          $m \in \mathbb{N}\cup\{0\}$. Since we showed $P(n)$ is true for all 
+          $n \in \mathbb{N}\cup\{0\}$, it follows $|s-t| \leq 1/3^m$ for all $m$. 
+          Suppose $|s-t| > 0$. Then by the archimedean property there exists a 
+          sufficiently large $m$ such that $|s-t| > 1/3^m$. It follows $|s-t| = 0$. 
+          Moreover $(s,t) \in \left[0,1\right]$ so then $0 < s,t$ which implies $s=t$.
+           But this is a contradiction since this implies $(s,t)$ is an empty open 
+           interval. Moreover, we assumed $s < t$. Hence, $C$ contains no non-empty 
+           open interval.
+
+          Now we show $C$ contains no isolated points. Let $P^*(n)$ be the statement 
+          "let $x \in \mathbb{R}$. If $x \in C_n$ there exists $y \in \mathbb{R}$ such 
+          that $y\ne x$, $y \in C$, and $|x-y| \leq 1/3^n$ for some non-negative integer
+           $n$." We show $P^*(n)$ is true for all non-negative integers. Suppose 
+           $x \in \mathbb{R}$ and $x \in C_i$ for some $i \in \mathbb{N}\cup\{0\}$.
+          Then 
+          \[C_i = I_i^1 \cup I_i^2 \cup I_i^3 \cup \cdots \cup I_i^{2^i} \]
+          Then $x \in I_i^j$ for some $j \in \{1,2,3,...,2^i\}$. 
+          Then $I_i^j = \left[c,d\right]$ where $c,d \in \mathbb{R}$ and $c < d$. 
+          Then $c \leq x \leq d$. If $x < d$ then let $y = d$ so then $(x,y) 
+          \subset C_i$. Otherwise if $x = d$ then let $y = c$ so then $(y,x) 
+          \subset C_i$. In either case, the hypothesis of $P(i)$ (note $P(i)$ 
+          not $P^*(i)$) is satisfied so then by the implication of $P(i)$ we have 
+          $|x-y| \leq 1/3^i$. Moreover $y \ne x$.
+
+          Now we show $y \in C$. Notice $y =d$ or $y = c$ for $I_i^j$. 
+          If suffices to show that if $y$ is an endpoint of some closed 
+          interval $I_p^q$ (where $p \in \mathbb{N}\cup\{0\}$ and $q \in 
+          \{1,2,3,...,2^p\}$), then $y \in C$. 
+
+          Suppose $y$ is an endpoint of some interval in $C_k$ where 
+          $k\geq0$. Then 
+          \[
+          y \in I_k^\ell = \left[c_k^\ell, d_k^\ell \right]
+          \]
+          for some $\ell \in \{1,2,3,...,2^k\}$ and $c_k^\ell$ and 
+          $d_k^\ell$ are the corresponding endpoints. Since $y$ is an 
+          endpoint of $I_k^\ell$ we have either $y = c_k^\ell$ or $y = d_k^\ell$.
+           If $y = c_k^\ell$ then 
+          \[
+          y \in I_{k+1}^{2\ell-1} = 
+          \left[y,d_{k+1}^{2\ell-1}\right]=\left[y,c_k^\ell+(d_k^\ell-c_k^\ell)/3\right]
+          \]
+          Then $y = c_{k+1}^{2\ell-1}$. If $y = d_k^\ell$ then 
+          \[
+          y \in I_{k+1}^{2\ell} = \left[c_{k+1}^{2\ell}, y\right] = 
+          \left[c_k^\ell+2(d_k^\ell-c_k^\ell)/3,y\right]
+          \]
+          Then $y = d_{k+1}^{2\ell}$. It follows $y$ is an endpoint of some interval 
+          in $C_{k+1}$. Hence, we have shown if $y$ is an endpoint of some interval
+           in $C_k$ then $y$ is an endpoint of some interval in $C_{k+1}$. 
+
+          Recall that we showed that if $x \in C_i$ then there exists $x\ne y \in C_i$
+          such $|x-y|\leq 1/3^i$. Moreover, we take $y$ as an endpoint in some closed 
+          interval $I_i^j$. It follows $y$ is an endpoint of some interval in $C_i$.
+          We have shown that if $y$ is an endpoint of some interval in $C_k$ then $y$
+          is an endpoint of some interval in $C_{k+1}$ for all $k\geq 0$. By induction,
+          t follows $y$ is an endpoint of $C_m$ and therefore $y \in C_m$ for all 
+          $m \geq i$. Moreover, we have $C_0 \supset C_1 \supset \cdots \supset C_i$.
+          It follows $y \in C_v$ (but not necessarily an endpoint of) for all 
+          $0 \leq v < i$. It follows $y \in C_w$ for all $w \in \mathbb{N} \cup \{0\}$. 
+          Thus $y \in C$. It follows $P^*(n)$ is true for all $n \in \mathbb{N}\cup\{0\}$.
+
+          Using $P^*(n)$ we show there exists no isolated points in $C$. 
+          Let $x \in C$ and suppose we have the open set $U = (x-\epsilon, x+\epsilon)$ 
+          where $\epsilon\in\mathbb{R}$ and $\epsilon>0$. Then by the archimedean 
+          property there exists a sufficiently large $n \in \mathbb{N} \cup \{0\}$ 
+          such that $1/3^n < \epsilon$. Then let $m \in \mathbb{N} \cup \{0\}$ such 
+          that $1/3^m < \epsilon$. Since $x \in C$ it follows $x \in C_m$. Then by 
+          $P^*(m)$ it follows there exists a $y \in C$ such that $|x-y| \leq 1/3^m < \epsilon$.
+           It follows $((x-\epsilon, x+\epsilon) - \{x\}) \cap C \ne \varnothing$ 
+           since $y \in ((x-\epsilon, x+\epsilon) - \{x\}) \cap C$ and $y \ne x$. 
+           Thus $x$ is a limit point and not an isolated point.
+
+          We have shown the cantor set, denoted as $C$, is a non-empty subset of the
+          closed unit interval $\left[0,1\right]$ that is closed, contains no non-empty
+          open interval, and no isolated points.
+        </div>
+
+        <h4 id="2.4"">2.4 Interior and Boundary</h4>
+        <div class="definition">
+          The <strong>interior</strong> of a set $A$ in a topological space $X$, denoted 
+          $A^\circ$, is defined as 
+          \[A^\circ = \bigcup_{U \subset A, U \in \tau} U,\]
+          Points of $A^\circ$ are called <strong>interior points</strong> of $A$.
+        </div>
+
+        <!--2.26-->
+        <div class="theorem">
+          Let $A$ be a subset of a topological space $X$. Then $p$ is an interior point of $A$
+          if and only if there exists an open set $U$ with $p \in U \subset A$.
+        </div>
+
+        <div class="exercise">
+          Show that a set $U$ is open in a topological space $X$ if and only if every 
+          point of $U$ is an interior point of $U$.
+        </div>
+
+        <div class="definition">
+          The <strong>boundary</strong> of $A$, denoted $\partial A$, is defined 
+          to be $\overline{A} \cap \overline{X-A}$.
+        </div>
+
+        <!--2.28-->
+        <div class="theorem">
+          Let $A$ be a subset of a topological space $X$. Then $A^\circ$, $\partial A$, and 
+          $(X-A)^\circ$ form a partition on $X$.
         </div>
       </main>
       <script>
