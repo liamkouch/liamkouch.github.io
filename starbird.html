@@ -954,15 +954,33 @@
           </ol>
         </div>
 
+        <!--4.1-->
         <div class="theorem">
           A space $(X,\tau)$ is $T_1$ if and only if every point in $X$ is a closed 
           set.
+        </div>
+        <div class="proof">
+          We prove the forward direction. Let $p \in X$. We show that $\{p\}$ is closed.
+          Take a different point $q \in X$. Since $(X,\tau)$ is $T_1$ it follows 
+          there exists an open set $U$ such that $q \in U$ but $p \notin U$. 
+          It follows $(U-\{q\}) \cap \{p\} = \varnothing$. Hence, $q$ is not a limit 
+          point of $\{p\}$. It follows $\{p\}$ is closed. Now we prove the reverse 
+          direction. Suppose every point in $X$ is a closed set. We show that 
+          the space $(X,\tau)$ is $T_1$. Take two distinct points $x,y$ in $X$. 
+          Since every point is a closed set, the sets $X-\{x\}$ and $X-\{y\}$ are open.
+          Then $y \in X-\{x\}$ and $x \in X-\{y\}$. It follows the top. space is $T_1$.
         </div>
 
         <!--4.2-->
         <div class="exercise">
           Let $X$ be a space with the finite complement topology. Show that $X$ 
           is $T_1$.
+        </div>
+        <div class="proof">
+          Take two distinct points $p$ and $q$ in $X$. Consider the sets $X-\{p\}$ 
+          and $X-\{q\}$. These sets are open since their complements are finite. 
+          Moreover, $p \in X-\{q\}$, $q \in X-\{p\}$, $p \notin X-\{p\}$, and 
+          $q \notin X-\{q\}$. Therefore, $X$ with the cofinite topology is $T_1$.
         </div>
         <!--4.3-->
         <div class="exercise">
@@ -989,11 +1007,54 @@
             <li>A $T_4$-space is a $T_3$-space</li>
           </ol>
         </div>
+        <div class="proof">
+          Suppose we have a $T_2$-space. Then any two distinct points $p$
+          and $q$ can be separated by two disjoint open sets $U$ and $V$
+          respectively. Since they are disjoint, it follows $p \notin V$ 
+          and $q \notin U$. Thus this top. space is $T_1$.
+          <br><br>
+          Let $(X,\tau)$ be $T_3$. Then the space is regular and $T_1$. Let 
+          $p$ and $q$ be two distinct points. Since the space is $T_1$ there 
+          exists an open set $U$ such that $p \in U$ but $q \notin U$. Then 
+          $q \in X - U$. Note $X-U$ is closed and $p \notin X-U$. Then by 
+          regularity, it follows there are two disjoint sets $V$ and $W$ 
+          such that $p \in V$ and $X-U \subset W$. In particular, $q 
+          \in W$. Thus, $(X,\tau)$ is Hausdorff.
+          <br><br>
+          Let $(X,\tau)$ be $T_4$. This the space is normal and $T_1$. We show 
+          the space must also be regular. Let $p$ be a point in $X$ and let 
+          $A$ be a closed subset of $X$. Since the space is $T_1$, for every 
+          point $q \in A$ there exists an open neighborhood $U_q$ such that 
+          $p \notin U_q$. Then let $U = \bigcup_{q \in A} U_q$. Note $U \in \tau$
+          and $p \notin U$. Then $p \in X-U$ and $X-U$ is closed. Moreover, 
+          $X-U$ and $U$ are disjoint. Since $A \subset U$ it follows $X-U$ 
+          and $A$ are disjoint closed subsets of $X$. Then by normality, there 
+          exist disjoint open sets $V$ and $W$ such that $X-U \subset V$ and 
+          $A \subset W$. In particular, $p \in X-U$. It follows the space is 
+          regular.
+        </div>
+
         <!--4.8-->
         <div class="theorem">
           A topological space $X$ is regular if and only if for each point 
           $p$ in $X$ and open set $U$ containing $p$ there exists an open 
           set $V$ such that $p \in V$ and $\overline{V} \subset U$.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. Take point $p \in X$ and an 
+          open neighborhood $U$ of $p$. Then by regularity there exists disjoint 
+          open sets $V$ and $W$ such that $p \in V$ and $X-U \subset W$. Then $X-W 
+          \subset U$. Since $V \cap W = \varnothing$ we have $V \subset X-W$. Then 
+          $\overline{V} \subset \overline{X-W} = X-W$ with the last equality holding
+          since $X-W$ is already closed. Altogether we have $p \in V$ and 
+          $\overline{V} \subset U$.
+          <br><br>
+          Now we prove the reverse direction. Let $p$ be a point in $X$ and $A$
+          be a closed set that does not contain $p$. Then $X-A$ is an open neighborhood 
+          of $p$. Then by the alternative property for regularity there exists an open
+          set $U$ such that $p \in U$ and $\overline{U} \subset X-A$. Then 
+          $A \subset X-\overline{U}$. Notice that $U$ and $X-\overline{U}$ are open 
+          and disjoint. It follows the space is regular.
         </div>
         <!--4.9-->
         <div class="theorem">
@@ -1001,12 +1062,36 @@
           in $X$ and open set $U$ containing $A$ there exists an open set 
           $V$ such that $A \subset V$ and $\overline{V} \subset U$.
         </div>
+        <div class="proof">
+          We prove the forward direction first. Let $A$ be a closed set and $U$ be 
+          an open set that contains $A$. Then $X-U$ is closed and $A \cap (X-U) = \varnothing$. 
+          Then by normality there exists disjoint open sets $V$ and $W$ such that 
+          $A \subset V$ and $X-U \subset W$. Then $X-W \subset U$. Since $V$ and 
+          $W$ are disjoint $V \subset X-W$. Then $\overline{V} \subset \overline{X-W}$
+          but $X-W$ is closed so $\overline{V} \subset X-W$. Altogether we have 
+          $A \subset V$ and $\overline{V} \subset U$. 
+          <br><br>
+          Now we prove reverse direction. Let $A$ and $B$ be two disjoint closed sets. 
+          Then $X-B$ is an open set that contains $A$. By the alternative property for 
+          normality there exists an open set $U$ such that $A \subset U$ and 
+          $\overline{U} \subset X-B$. Then $B \subset X-\overline{U}$. Note that 
+          $U$ and $X-\overline{U}$ are open and disjoint sets. It follows the space 
+          is normal.
+        </div>
         <!--4.10-->
         <div class="theorem">
           A top. space $X$ is normal if and only if for each pair of disjoint closed 
           sets $A$ and $B$, there are disjoint open sets $U$ and $V$ such that 
           $A \subset U$, $B \subset V$, and $\overline{U} \cap \overline{V} = 
           \varnothing$.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. Let $A$ and $B$ be two disjoint closed 
+          sets. By normality there exists disjoint open sets $W_1$ and $W_2$ such that 
+          $A \subset W_1$ and $B \subset W_2$. By Theorem 4.9 there exists open sets 
+          $U$ and $V$ such that $A \subset U$, $\overline{U} \subset W_1$, $B \subset V$,
+          and $\overline{V} \subset W_2$. Since $W_1 \cap W_2 = \varnothing$, it follows 
+          $\overline{U} \cap \overline{V} = \varnothing$. The reverse direction is trivial.
         </div>
 
         <h2 class="chapter" id="ch5">5 Countable Features of Spaces: Size Restrictions</h2>
@@ -1016,9 +1101,15 @@
           <strong>dense</strong> in $X$ if and only if $\overline{A} = X$.
         </div>
 
+        <!--5.1-->
         <div class="exercise">
           Show that $A$ is dense in $X$ if and only if every non-empty open 
           set of $X$ contains a point of $A$.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. We prove by contradiction. Suppose 
+          there exists some non-empty open set $U$ that does not contain 
+          a point of $A$. Then $U \cap A = \varnothing$. 
         </div>
 
         <div class="definition">
@@ -1026,11 +1117,13 @@
           has a countable dense subset.
         </div>
 
+        <!--5.2-->
         <div class="exercise">
           Show that $\mathbb{R}_\text{std}$ is separable. With which of the 
           topologies on $\mathbb{R}$ that you have studied is $\mathbb{R}$ 
           not separable?
         </div>
+        
 
         <!--5.3-->
         <div class="exercise">
@@ -1156,7 +1249,7 @@
         </div>
 
         <div class="definition">
-          A collection fo sets has the <strong>finite intersection property</strong>
+          A collection of sets has the <strong>finite intersection property</strong>
           if and only if every finite subcollection has a non-empty intersection.
         </div>
 
