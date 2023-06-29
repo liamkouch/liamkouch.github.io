@@ -80,7 +80,7 @@
           For sets $A_1,A_2 \subset X$ show that 
           \[X - (A_1 \cup A_2) = (X-A_1) \cap (X-A_2)\]
         </div>
-        <div class="exercise">
+        <div class="theorem">
           Let $X$ be a set, and let $\{A_k\}_{k=1}^N$ be a finite collection of sets such 
           that $A_k \subset X$ for each $k = 1,2,\dots,N$. Then 
           \[X - \left(\bigcup_{k=1}^N A_k\right) = \bigcap_{k=1}^N (X-A_k)\]
@@ -92,6 +92,19 @@
           For a function $f \colon X \to Y$ and sets $A,B \subset Y$, show that 
           $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$ and $f^{-1}(A \cap B) = 
           f^{-1}(A) \cap f^{-1}(B)$.
+        </div>
+        <div class="proof">
+          We show $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$. Let $x \in 
+          f^{-1}(A \cup B)$. Then $f(x) \in A \cup B$. If $f(x) \in A$ then 
+          $x \in f^{-1}(A)$ or if $f(x) \in B$ then $x \in f^{-1}(B)$. Thus 
+          $x \in f^{-1}(A) \cup f^{-1}(B)$. Thus $f^{-1}(A \cup B) 
+          \subset f^{-1}(A) \cup f^{-1}(B)$.
+          
+          Now suppose $x \in f^{-1}(A) \cup f^{-1}(B)$. 
+          Then $f(x) \in A$ or $f(x) \in B$. Then $f(x) \in A \cup B$. It follows 
+          $x \in f^{-1}(A \cup B)$. Hence $f^{-1}(A \cup B) 
+          \supset f^{-1}(A) \cup f^{-1}(B)$
+          Therefore $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$
         </div>
 
         <div class="exercise">
@@ -868,10 +881,27 @@
           Let $A$ be a subset of a topological space $X$. Then $p$ is an interior point of $A$
           if and only if there exists an open set $U$ with $p \in U \subset A$.
         </div>
+        <div class="proof">
+          We prove the forward direction. Let $p$ be an interior point of $A$. 
+          Then $p \in \bigcup_{U\subset A, U \in \tau}U$. Then $p$ is in some 
+          open set $V$ where $V \subset A$. Altogether $p \in V \subset A$. For 
+          the reverse direction let $p \in W$ where $W \subset A$ and is open. Then 
+          $W \subset \bigcup_{U\subset A, U \in\tau}U$. It follows $p$ is an interior 
+          point.
+        </div>
 
         <div class="exercise">
           Show that a set $U$ is open in a topological space $X$ if and only if every 
           point of $U$ is an interior point of $U$.
+        </div>
+        <div class="proof">
+          We prove the forward direction. Let $U$ be an open set. Then for every point 
+          $p \in U$ there is an open set $U_p$ such that $p \in U_p \subset U$. By 
+          Theorem 2.26 it follows $p$ is an interior point. For the reverse direction 
+          suppose every point of $U$ is an interior point. Then for every point $p \in U$
+          there is an open neighborhood $U_p$ of $p$ such that $p \in U_p \subset U$. 
+          Then $U = \bigcup_{p \in U} U_p$. This is a union of open sets. Hence, $U$ is 
+          open.
         </div>
 
         <div class="definition">
@@ -884,7 +914,105 @@
           Let $A$ be a subset of a topological space $X$. Then $A^\circ$, $\partial A$, and 
           $(X-A)^\circ$ form a partition on $X$.
         </div>
+        <div class="proof">
+          We first show that these sets are disjoint. We show $A^\circ \cap \partial A = \varnothing$.
+          Let $p \in A^\circ \cap \partial A$. Then $p \in \overline{A} \cap \overline{X-A}$. 
+          Then for every open set $U$ of $p$ we have $(U-\{p\}) \cap (X-A) \ne \varnothing$. 
+          Moreover, $p \in A$ since $p \in A^\circ$ so for every open set $U$ of $p$ 
+          we have in particular $U \cap (X-A) \ne \varnothing$. Since $p \in A^\circ$ 
+          there exists an open neighborhood $V$ such that $p \in V \subset A$. Then 
+          $V \cap (X-A) = \varnothing$. This is a contradiction to $p$ being a limit 
+          point of $X-A$. Hence, $A^\circ$ and $\partial A$ are disjoint. A similar 
+          argument show $\partial A$ and $(X-A)^\circ$ are disjoint. Lastly, it cannot be 
+          $p \in A^\circ$ and $p \in (X-A)^\circ$ because that would imply $p \in A$ and 
+          $p \in X-A$. Therefore, the sets $A^\circ, \partial A, (X-A)^\circ$ are disjoint. 
+          <br><br>
+          Now we show every point in $X$ is in one of these sets. We show that if 
+          $p \notin (A^\circ \cup \partial A \cup (X-A)^\circ)$ then $p \notin X$. 
+          Let $p \notin A^\circ$ and $p \notin \partial A$. For the sake of contradiction, 
+          suppose $p \in A$. Then either $p$ is a limit point of $A$ or an isolated point 
+          of $A$. Consider the case where $p$ is a limit point of $A$. Then $p$
+          is in the closure of $A$. If $p$ is in the closure of $X-A$ then $p \in
+          \partial A$ which is a contradiction. Thus, assume $p \notin \overline{X-A}$. 
+          Then there exists some open neighborhood $V$ of $p$ such that 
+          $V \cap (X-A) = \varnothing$ or equivalently $V \subset A$. Then we have 
+          $p \in V \subset A$ which means $p$ is an interior point, $p \in A^\circ$. This 
+          is a contradiction. Then $p$ cannot be a limit point of $A$ so assume $p$ is 
+          an isolated point of $A$. For the sake of contradiction suppose $p$ is not a limit 
+          point of $X-A$. Then there exists an open neighborhood $V$ of $p$ such that 
+          $(V-\{p\}) \cap X-A = \varnothing$. In particular, $V \cap X-A = \varnothing$ since 
+          $p \in A$. Then $V \subset A$. Then $p \in V \subset A$. Then $p \in A^\circ$. 
+          This is a contradiction so $p$ is a limit point of $X-A$. Hence, 
+          $p \in \overline{A} \cap \overline{X-A} = \partial A$. Once more, this is a 
+          contradiction. Therefore, $p$ cannot be in $A$ since assuming $p \in A$ leads 
+          to contradictions. Using the facts that $p \notin \partial A$ and $p \notin 
+          (X-A)^\circ$, we can use an analogous argument to show $p \notin X-A$. If 
+          $p \notin A$ and $p \notin X-A$, then $p \notin X$.  
+          
+          Then there exists some open neighborhood $W$ of $p$ 
+          such that $(W-\{p\}) \cap A = \varnothing$. Then $(W-\{p\}) \subset X-A$. 
+        </div>
 
+        <!--2.29-->
+        <div class="exercise">
+          
+        </div>
+        <h4>2.5 Convergence of Sequences</h4>
+        <div class="definition">
+          A <strong>sequence</strong> in a topological space $X$ is a function 
+          from $\mathbb{N}$ to $X$. The image of $i$ under this function is a 
+          point of $X$ denoted as $x_i$ and we traditionally write the sequence 
+          by listing its images: $x_1,x_2,\dots$ or in shorted form: $(x_i)_{i \in \mathbb{N}}$.
+        </div>
+
+        <div class="definition">
+          A point $p \in X$ is a <strong>limit of the sequence</strong> $(x_i)_{i \in \mathbb{N}}$,
+          or, equivalently, $(x_i)_{i \in \mathbb{N}}$ <strong>converges</strong> to 
+          $p$ (written $x_i \to p$), if and only if for every open set $U$ containing $p$,
+          there is an $N \in \mathbb{N}$ such that for all $i > N$, the point $x_i$ is in $U$.
+        </div>
+
+        <!--2.30-->
+        <div class="theorem">
+          Let $A$ be a subset of the topological space $X$, and let $p$ be a point 
+          in $X$. If the set $\{x_i\}_{i \in \mathbb{N}} \subset A$ and $x_i \to p$, 
+          then $p$ is in the closure of $A$. 
+        </div>
+        <div class="proof">
+          If $p \in A$ then $p$ is in the closure of $A$ so assume $p \notin A$. 
+          We show $p$ is a limit point of $A$. Take an open set $U$ of $p$. Since 
+          $x_i \to p$ there exists an $N \in \mathbb{N}$ such that $x_i \in U$ for 
+          all $i > N$. Moreover, we have $\{x_i\}_{i \in \mathbb{N}} \subset A$ and 
+          $p \notin A$ so then $(U-\{p\}) \cap A \ne \varnothing$. Hence, $p$ is 
+          a limit point of $A$ and in the closure of $A$.
+        </div>
+
+        <!--2.31-->
+        <div class="theorem">
+          In the standard topology on $\mathbb{R}^n$, if $p$ is a limit point of a 
+          set $A$, then there is a sequence of points in $A$ that converges to $p$.
+        </div>
+        <div class="proof">
+          Let $p$ be a limit point of the set $A$. Then we construct a sequence 
+          in $A$ that converges to $p$. For every $i \in \mathbb{N}$ take $x_i$ to 
+          be some point in $B(p,1/i) \cap A$. Moreover, $B(p,1/i) \cap A$ is non-empty 
+          for all $i$ since $p$ is a limit point of $A$. Now we show the sequence 
+          $(x_i)_{i\in\mathbb{N}}$ converges to $p$. Take an open set $U$ of $p$. 
+          Since $\mathbb{R}^n$ is endowed with the standard topology, for some 
+          $r > 0$ we have $B(p,r) \subset U$. Then for some $n \in \mathbb{N}$ we 
+          have $0 < 1/n < r$. It follows $x_i \in U$ for all $i \geq n$. Hence, our 
+          sequence converges to $p$.
+        </div>
+
+        <!--2.32-->
+        <div class=exercise>
+
+        </div>
+
+        <!--2.33-->
+        <div class=exercise>
+
+        </div>
 
         <h2 class="chapter" id="ch3">3 Bases, Subspaces, Products: Creating New Spaces</h2>
         <h4>3.1 Bases</h4>
@@ -908,10 +1036,30 @@
             </li>
           </ol>
         </div>
+        <div class="proof">
+          We prove the forward direction first. The first property is true by definition. 
+          Now let $U$ be an open set and $p \in U$. By definition of a basis we have 
+          $U = \cup_{V \in \mathcal{B}} V$. Then $p \in V$ for some $V \in \mathcal{B}$ 
+          and $V \subset U$. Now we prove the reverse direction. Let $U$ be an open 
+          set. By the second property, for every point $p$ in $U$ there exists a 
+          basic open set $V_p$ such that $p \in V_p$ and $V_p \in \mathcal{B}$.
+          Take $W = \cup_{V_p \in \mathcal{B}}V_p$. We show $W = U$. First we show 
+          $W \subset U$. Let $p \in W$. then $p \in V_p \subset U$. Hence, $W \subset U$. 
+          Now we show $U \subset W$. Let $p \in U$. Then there is some $V_p$ such that 
+          $p \in V_p$. It follows $p \in \cup_{V_p \in \mathcal{B}}V_p = W$. Therefore, 
+          $U = W$. 
+        </div>
 
         <!--3.2-->
         <div class="exercise">
-
+          Prove the following bases are in fact bases for the corresponding topology on $\mathbb{R}$. 
+          <ol>
+            <li>Let $\mathcal{B}_1 = \{(a,b) \subset \mathbb{R} \mid a,b \in \mathbb{Q}\}$. Show 
+              that $\mathcal{B}_1$ is a basis for the standard topology on $\mathbb{R}$.</li>
+            <li>Let $\mathcal{B}_2 = \{(a,b) \cup (c,d) \subset \mathbb{R} \mid 
+              a < b < c < d \text{ are distinct irrational numbers}\}$. Show that 
+            $\mathcal{B}_2$ is also a basis for the standard topology on $\mathbb{R}$.</li>
+          </ol>
         </div>
 
         <!--3.3-->
@@ -925,6 +1073,602 @@
               $p \in W \subset (U \cap V)$.
             </li>
           </ol>
+        </div>
+        <div class="proof">
+          We prove the reverse direction first. Let $\mathcal{B}$ be a collection of 
+          subsets of $X$ such that properties (1) and (2) hold. We show that $\mathcal{B}$
+          is the basis for some topology on $X$. Specifically, we construct a topology, $\tau$ on $X$
+          and show $\mathcal{B}$ is a basis for $\tau$. Now define we define $\tau$: a 
+          set $U$ is in $\tau$ if and only if $U$ is a union of elements in $\mathcal{B}$
+          or is the empty set $\varnothing$. Now we verify $\tau$ is in fact a topology 
+          on $X$. By definition of $\tau$, $\varnothing \in \tau$. Now we show $X \in \tau$. 
+          By the first property of $\mathcal{B}$, for every point $p \in X$ there exists 
+          an element $B_p \in \mathcal{B}$ such that $p \in B_p$. Then $X = \cup_{p \in X}B_p$. 
+          This is a union of elements in $\mathcal{B}$ so $X$ is in fact open. Let 
+          $U$ and $V$ be open sets. We show $U \cap V$ is also open. Since $U$ and $V$ are 
+          open let $U = \cup_{C \in \mathcal{B}_1}C$ and $V = \cup_{D \in \mathcal{B}_2}D$ 
+          where $\mathcal{B}_1,\mathcal{B}_2 \subset \mathcal{B}$. Let $p \in U \cap V$. 
+          Then $p \in (\cup_{C \in \mathcal{B}_1}C) \bigcap (\cup_{D \in \mathcal{B}_2}D)$.
+          Then $p \in C$ for some $C \in \mathcal{B}_1 \subset \mathcal{B}$ and 
+          $p \in D$ for some $D \in \mathcal{B}_2 \subset \mathcal{B}$. Then by 
+          the second property of $\mathcal{B}$, there a set $W_p \in \mathcal{B}$ such that 
+          $p \in W_p \subset C \cap D$. In particular, $p \in W_p \subset U \cap V$. 
+          Take $W = \cup_{p \in U \cap V} W_p$. Now we show $W = U \cap V$. If $p \in W$
+          then $p \in W_q$ for some $q \in U \cap V$. Moreover, $W_q \subset U \cap V$. 
+          Thus $p \in U \cap V$ and hence $W \subset U \cap V$. Let $p \in U \cap V$. Then 
+          there is an associated $W_p$ such that $p \in W_p \subset \cup_{q \in U\cap V}W_q = W$. 
+          Hence, $p \in W$ and $U \cap V \subset W$. Then $U\cap V = W$. Furthermore, $W$
+          is a union of elements in $\mathcal{B}$ so $W$ is open in $\tau$. Thus, $U \cap V$
+          must be in $\tau$. Suppose we have an arbitrary collection of sets 
+          $\{U_\alpha\}_{\alpha \in \lambda}$ such that $U_\alpha \in \tau$ for all 
+          $\alpha \in \lambda$. Then $\cup_{\alpha \in \lambda}U_\alpha$ is in $\tau$
+          since each $U_\alpha$ is a union of sets in $\mathcal{B}$. It follows $\tau$ is 
+          in fact a topology on $X$. Moreover, $\mathcal{B}$ is a basis for $\tau$ since 
+          by definition every set in $\tau$ is a union of elements in $\mathcal{B}$.
+          <br><br>
+          Now we prove the forward direction. We prove property (1) first. Let $\tau$
+          be an arbitrary topology on $X$. Then $X = \cup_{B \in \mathcal{B}'}B$ 
+          where $\mathcal{B}' \subset \mathcal{B}$. Let $p \in X$. Then 
+          $p \in B$ for some $B \in \mathcal{B}' \subset \mathcal{B}$. Hence, the first 
+          property holds. Now we prove the second property. Let $U,V \in \mathcal{B}$. 
+          Then $U,V \in \tau$. Then $U \cap V \in \tau$ and 
+          $U \cap V = \cup_{C \in \mathcal{B}''}C$ where $\mathcal{B}'' \subset \mathcal{B}$.
+           Let $p \in U \cap V$. Then $p \in C$ for some $C \in \mathcal{B}'' \subset \mathcal{B}$.
+           Therefore property (2) holds.
+        </div>
+
+        <div class="example">
+          The lower limit topology on $\mathbb{R}$ is generated by a basis $\mathcal{B}$
+          where $B \in \mathcal{B}$ if and only if $B = \{x \in \mathbb{R} \mid a \leq x < b\}$
+          where $a,b \in \mathbb{R}$. This space is denoted as $\mathbb{R}_\text{LL}$.
+        </div>
+
+        <!--3.4-->
+        <div class="exercise">
+          Check that the basis proposed above for the lower limit topology is in fact 
+          a basis.
+        </div>
+        <div class="proof">
+          To check that $\mathcal{B}$ is a basis of some topology on $\mathbb{R}$ we implement Theorem 
+          3.3. Let $x \in \mathbb{R}$. Then $x \in \left[x-1,x+1\right) \in \mathcal{B}$.
+          Now suppose $U,V \in \mathcal{B}$ and $x \in U \cap V$. Let $U = \left[a,b\right)$ 
+          and $V = \left[c,d\right)$. Then let $\ell = \max\{a,c\}$ and $u = \min\{b,d\}$. 
+          It follows $x \in \left[\ell,u\right) \in \mathcal{B}$. It follows by Theorem 3.3 
+          that $\mathcal{B}$ is indeed a basis for a topology on $\mathbb{R}$.
+        </div>
+
+        <!--Theorem 3.5-->
+        <div class="theorem">
+          Every open set in $\mathbb{R}_\text{std}$ is an open set in $\mathbb{R}_\text{LL}$, 
+          but not vice versa.
+
+        </div>
+
+        <div class="definition">
+          Suppose $\tau$ and $\tau'$ are two topologies on the same underlying set $X$. 
+          If $\tau \subset \tau'$, then we say $\tau'$ is finer than $\tau$ and $\tau$
+          is coarser than $\tau'$. We say strictly coarser or strictly finer if 
+          $\tau \ne \tau'$.
+        </div>
+
+        <!--3.6-->
+        <div class="exercise">
+          Give an example of two topologies on $\mathbb{R}$ such that neither is finer than 
+          the other, that is, the two topologies are not comparable.
+        </div>
+
+        <!--Example needs to be inserted here-->
+        <div class="example">
+          We construct a topological space called the <strong>Double Headed 
+          Snake</strong>. Let $\mathbb{R}_{+00}$ be the set consisting 
+          of the positive real numbers together with two points 
+          which are denoted as $0'$ and $0''$. Put a topology on it 
+          generated by a basis consisting of all intervals in
+          $\mathbb{R}_+$ (positive reals) of the form $(a,b)$ or else of the 
+          form $(0,b) \cup \{0'\}$ or $(0,b) \cup \{0''\}$ for $a,b \in \mathbb{R}_+$.
+        </div>
+
+        <!--3.7-->
+        <div class="exercise">
+          Check that the collection of sets that are specified as a basis for the Double 
+          Headed Snake actually forms the basis for a topology.
+        </div>
+        <div class="proof">
+          We use Theorem 3.3. First denote $\mathcal{B}$ as proposed basis. 
+          Let $p \in \mathbb{R}_{+00}$. If $p \in \mathbb{R}_+$ then 
+          $p \in (0, p+1) \in \mathcal{B}$. If $p = 0'$ then $p \in (0,1)\cup\{0'\}$
+          and if $p = 0''$ then $p \in (0,1) \cup \{0''\}$. It follows every point 
+          in $\mathbb{R}_{+00}$ is contained in some element of $\mathcal{B}$. Now 
+          let $U,V \in \mathcal{B}$ and $p \in U \cap V$. 
+          <br><br>
+          Consider the case where $U = (a,b)$ and $V = (c,d)$. Then 
+          let $\ell = \max\{a,c\}$ and $u = \min\{b,d\}$. Then 
+          $p \in (\ell, u)$. 
+          <br><br>
+          Consider the case where $U=(a,b)$ and $V=(0,d)\cup\{0'\}$. Then 
+          $p \in (a,b) \cap (0,d)$. Then $p \in (0, \min\{b,d\})$. A similar 
+          argument applies for the case where $U=(a,b)$ and $V=(0,d)\cup\{0''\}$.
+          <br><br>
+          Consider the case where $U=(0,b)\cup\{0'\}$ and $V=(0,d)\cup\{0'\}$. 
+          There are two cases. If $p = \{0'\}$. Then $p \in (0,b)\cup\{0'\}$. 
+          Else $p \in (0, \min\{b,d\})$. An analogous argument holds for when 
+          $U=(0,b)\cup\{0''\}$ and $V=(0,d)\cup\{0''\}$.
+          <br><br>
+          Consider the case where $U=(0,b)\cup\{0'\}$ and $V=(0,d)\cup\{0''\}$. 
+          Then $p \in (0, \min\{b,d\})$. 
+        </div>
+
+        <!--3.8-->
+        <div class="exercise">
+
+        </div>
+
+        <!--3.9-->
+        <div class="exercise">
+
+        </div>
+
+        <div class="example">
+          Let $\mathbb{H}_\text{bub}$ be the upper half-plane $\{(x,y) \mid 
+            x,y \in \mathbb{R}, y \geq 0\}$ with a topology whose basis 
+            consists of 
+            <ol>
+              <li>all balls $B((x,y),r)$, where $0 \lt r \leq y$ and </li>
+              <li>all sets $B((x,y),r) \cup \{(x,0)\}$, where $r=y \gt 0$</li>
+            </ol>
+        </div>
+
+        <!--3.10-->
+        <div class="exercise">
+          There are five parts.
+          <ol>
+            <li>In $\mathbb{H}_\text{bub}$ what is the closure of 
+              the set of rational points on the $x$-axis?
+            </li>
+            <li>In $\mathbb{H}_\text{bub}$ which subsets of the x-axis 
+              are closed sets?
+            </li>
+            <li>In $\mathbb{H}_\text{bub}$ let $A$ be a countable 
+              set on the x-axis and let $z$ be a point on the x-axis 
+              not in $A$. Show that there exist disjoint open sets $U$ 
+              and $V$ such that $A \subset U$ and $x \in V$.
+            </li>
+            <li>In $\mathbb{H}_\text{bub}$, let $A$ and $B$ be countable 
+              sets on the x-axis such that $A$ and $B$ are disjoint. Show 
+              that there exist disjoint open sets $U$ and $V$ such that 
+              $A \subset U$ and $B \subset V$.
+            </li>
+            <li>In $\mathbb{H}_\text{bub}$ let $A$ be the rational 
+              numbers and let $B$ be the irrational numbers. Do there 
+              exist disjoint open sets $U$ and $V$ such that $A \subset U$
+              and $B \subset V$?
+            </li>
+          </ol>
+        </div>
+        <div class="proof">
+          For parts (1) and (2), all subsets of the x-axis are closed. Now 
+          we prove part (3). Since $A$ is countable let $A = \cup_{i\in\mathbb{N}} 
+          (a_i,0)$ and let $z = (x,0)$. Now let $V = B((x,0),r)\cup \{(x,0)\}$ and 
+          then $z \in V$. 
+          Moreover, let for all $i\in\mathbb{N}$ let 
+          \[U_i = B((a_i,r_i),r_i) \cup \{(a_i,0)\}\]
+          where $r_i = (x-a_i)^2/(4r)$
+          Then let $U = \cup_{i\in\mathbb{N}} U_i$. It follows 
+          $A \subset U$ and we also know $z \in V$. Now we show $U \cap V = \varnothing$. 
+          For the sake of contradiction let $(c,d) \in U \cap V$. Then $(c,d)
+          \in U_i \cap V$ for some $i$. Then $(c,d) \in B((a_i,r_i),r_i)$ and 
+          $(c,d) \in B((x,r),r)$. Then we have $d((c,d),(a_i,r_i)) \lt r_i$ and 
+          $d((c,d),(x,r)) \lt r$. Then by the triangle inequality we have
+          $d((a_i,r_i),(x,r)) \lt r_i + r$. Note the distance function here is 
+          defined as $d \colon \mathbb{R} \times \mathbb{R} \to \mathbb{R}$ as 
+          $d(x,y) = (x^2+y^2)^{1/2}$. Then we have 
+          \[\sqrt{(x-a_i)^2 + (r_i-r)^2} \lt (x-a_i)^2/(4r) + r\] 
+          Then this inequality results in 
+          \[r_i \lt (x-a_i)^2/(4r)\]
+          But $r_i = (x-a_i)^2/(4r)$. This is a contradiction. Hence $U \cap V = \varnothing$. 
+          <br><br>
+          Now we prove part (4). Let $A$ and $C$ be disjoint countable sets on the 
+          x-axis. Let $A = \cup_{i\in\mathbb{N}} (a_i,0)$ and $C = \cup_{i\in\mathbb{N}} (c_i,0)$.
+          Then define $D = \cup_{i\in\mathbb{N}}(d_i,0)$ where 
+          \[d_i = \begin{cases} 
+          a_{i/2} & i \equiv 0 \pmod{2}\\
+          c_{(i+1)/2} & i \equiv 1 \pmod{2}
+          \end{cases}\]
+          Now we define $W_i$ such that $W_i \in \tau$, $d_i \in W_i$, and $i \ne j$
+          implies $W_i \cap W_j = \varnothing$. We construct $W_i$ recursively. 
+          First let $W_1 = B((d_1,r_1),r_1) \cup \{(d_1,0)\}$ and take $r_1 > 0$. 
+          Now given we constructed $W_1,W_2,\dots,W_{n-1}$, we construct $W_n$. 
+          Let the set $R$ be defined as 
+          \[R = \{\frac{1}{4r_i}(d_i-d_n)^2 \mid i = 1,2,\dots,n-1\}\]
+          Take $r_n = \min R$ which is well-defined since $R$ is finite. 
+          Then let $W_n = B((d_n,r_n),r_n)\cup\{(d_n,0)\}$. All that is 
+          left to show is if $i \ne j$ then $W_i \cap W_j = \varnothing$. The 
+          argument is analogous to part (3): by contradiction suppose there is 
+          a point $p$ in the intersection which leads to a contradiction by 
+          the triangle inequality. 
+
+        </div>
+
+        <!--3.11-->
+        <div class="exercise">
+
+        </div>
+
+        <!--3.12-->
+        <div class="exercise">
+
+        </div>
+
+        <h4>3.2 Subbases</h4>
+        <div class="definition">
+          Let $(X,\tau)$ be a top. space and let $S$ be a collection of subsets 
+          of $X$. Then $S$ is a <strong>subbasis</strong> for $\tau$ if and only 
+          if the collection $\mathcal{B}$ of all finite intersections of sets 
+          in $S$ is a basis for $\tau$. An element of $S$ is called a subbasis 
+          element or an <strong>subbasic open set</strong>. 
+        </div>
+
+        <!--3.13-->
+        <div class="exercise">
+          A basis for a topology is also a subbasis for that topology.
+        </div>
+        <div class="proof">
+          Let $\mathcal{B}$ be a basis for a topology. Then let $A$ be the set of all finite 
+          intersections of elements in $\mathcal{B}$ Then $\mathcal{B} \subset A$. 
+          Note that any open set in $\tau$ is a union of elements in $\mathcal{B}$. 
+          But all elements in $\mathcal{B}$ are elements of $A$. Hence, any open set 
+          in $\tau$ is the union of elements in $A$. It follows, $\mathcal{B}$ is 
+          a subbasis for $\tau$.
+        </div>
+
+        <!--3.14-->
+        <div class="exercise">
+          Show that $\mathbb{R}$ with the standard topology has a subbasis $S$ 
+          consisting of rays $\{x \mid x < a, a \in \mathbb{R}\}$ and 
+          $\{x \mid a < x, a \in \mathbb{R}\}$.
+        </div>
+
+        <!--3.15-->
+        <div class="theorem">
+          Let $(X,\tau)$ be a top. space, and let $S$ be a collection of subsets 
+          of $X$. Then $S$ is a subbasis for $\tau$ if and only if 
+          <ol>
+            <li>$S \subset \tau$</li>
+            <li>for each set $U \in \tau$ and point $p$ in $U$ there is a finite 
+              collection $\{V_i\}_{i=1}^n$ of elements of $S$ such that 
+              \[p \in \bigcap_{i=1}^n V_i \subset U\]
+            </li>
+          </ol>
+        </div>
+        <div class="proof">
+          We prove the forward direction first. The first property is trivial. 
+          For the second property, recall Theorem 3.1. Let $U \in \tau$ and 
+          let $p$ be a point in $U$. Also let $\mathcal{B}$ be the set of 
+          all finite intersections of elements in $S$. Since $S$ is a subbasis 
+          it follows $\mathcal{B}$ is a basis for $\tau$. Then by Theorem 3.1 
+          there exists a basic open set $V \in \mathcal{B}$ such that 
+          $p \in V \subset U$. Moreover, since $V \in \mathcal{B}$, $V$ is a 
+          finite intersection of elements in $S$. Then we have $V = \cap_{i=1}^n V_i$
+          where $V_i \in S$ for $i = 1,2,\dots,n$. 
+          <br><br>
+          Let $S$ satsify properties (1) and (2). We show $S$ is a subbasis. 
+          Let $\mathcal{B}$ be the set of all finite intersections of elements 
+          in $S$. Since $S \subset \tau$ and finite intersections of open sets 
+          are open, $\mathcal{B} \subset \tau$. Now let $U$ be an open set and 
+          let $p$ be a point in $U$. Then by property (2) there is a 
+          finite collection $\{V_i\}_{i=1}^n$ of elements of $S$ such that 
+          $p \in \cap_{i=1}^n \subset U$. Moreover, $\cap_{i=1}^n \in \mathcal{B}$. 
+          Let $W = \cap_{i=1}^n$. Then we have $p \in W \subset U$ where 
+          $W \in \mathcal{B}$. It follows $\mathcal{B}$ is a basis for $\tau$ 
+          by Theorem 3.1. Hence, $S$ is a subbasis.
+        </div>
+
+        <!--3.16-->
+        <div class="theorem">
+          Suppose $X$ is a set and $S$ is a collection of subsets of $X$. Then 
+          $S$ is a subbasis for some topology on $X$ if and only if every point of $X$ 
+          is in some element of $S$.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. Let $\mathcal{B}$ be the set of 
+          all finite intersections of elements in $S$. $\mathcal{B}$ is a basis 
+          for some topology on $X$. Then by Theorem 3.3 it follows every point in $X$
+          is in some element of $\mathcal{B}$. Let $p \in X$. Then $p \in B$ for some 
+          $B \in \mathcal{B}$. Then $B = \cap_{i=1}^n V_i$ where $V_i \in S$ for all $i$. 
+          Then $p \in V_i$ for all $i$. It follows every point in $X$ is in some 
+          element of $S$. Now we prove the reverse direction. Suppose every point of 
+          $X$ is in some element of $S$. Then let $\mathcal{B}$ be the set of all 
+          finite intersections of elements in $S$. It follows every point in $X$ 
+          is in some element of $\mathcal{B}$. Consider $U,V \in \mathcal{B}$ and 
+          a point $p \in U \cap V$. Take $W = U \cap V$. By definition of $\mathcal{B}$
+          we have $W \in \mathcal{B}$. Then $p \in W \subset U \cap V$ and $W \in \mathcal{B}$. 
+          It follows $\mathcal{B}$ is a basis for some topology on $X$. Then $S$ is 
+          the subbasis for that topology. 
+        </div>
+
+        <!--3.17-->
+        <div class="exercise">
+          Let $S$ be the following collection of subsets of $\mathbb{R}$: 
+          $\{x \mid x < a, a \in \mathbb{R}\}$ and $\{x \mid x \leq a, a \in \mathbb{R}\}$.
+          For what topology on $\mathbb{R}$ is $S$ a subbasis?
+        </div>
+
+        <h4>3.3 Order Topology</h4>
+        <div class="definition">
+          Let $X$ be a set totally ordered by $\leq$. Let $\mathcal{B}$ be the 
+          collection of all subsets of $X$ that are any of the following terms:
+          $\{x \in X \mid x < a\}$ or $\{x \in X \mid a < x\}$ or $\{x \in X \mid 
+            a < x < b\}$ for $a,b \in X$. Then $\mathcal{B}$ is a basis for a 
+            topology $\tau$, called the <strong>order topology</strong> on $X$.
+        </div>
+
+        <!--3.18-->
+        <div class="exercise">
+          Let $X$ be a set totally ordered by $\leq$. Let $S$ be the collection of sets 
+          of the form $\{x \in X \mid x < a\}$ or $\{x \in X \mid a < x\}$
+          for $a \in X$. Then $S$ forms a subbasis for the order topology on $X$.
+        </div>
+
+        <!--3.19-->
+        <div class="exercise">
+          Verify that the order topology on $\mathbb{R}$ with the usual $\leq$ order 
+          is the standard topology on $\mathbb{R}$.
+        </div>
+
+        <!---->
+        <div class="definition">
+
+        </div>
+
+        <div class="example">
+
+        </div>
+
+        <!--3.20-->
+        <div class="exercise">
+
+        </div>
+        <!--3.21-->
+        <div class="exercise">
+
+        </div>
+        <!--3.22-->
+        <div class="exercise">
+
+        </div>
+        <!--3.23-->
+        <div class="theorem">
+
+        </div>
+        <!--3.24-->
+        <div class="theorem">
+
+        </div>
+        <h4>3.4 Subspaces</h4>
+        <div class="definition">
+          Let $(X,\tau)$ be a topological space. For $Y \subset X$, the collection 
+          \[\tau_Y = \{U \mid U = V \cap Y, V \in \tau\}\]
+          is a topology on $Y$ called the <strong>subspace topology</strong>. 
+          It is also called the <strong>relative topology</strong> on $Y$ 
+          <strong>inherited</strong> from $X$. The space $(Y,\tau_Y)$ is called 
+          a (topological) <strong>subspace</strong> of $X$. If $U \in \tau_Y$ we 
+          say $U$ is <strong>open in</strong> $Y$.
+        </div>
+
+        <!--theorem 3.25-->
+        <div class="theorem">
+          Let $(X,\tau)$ be a top. space and $Y \subset X$. Then the collection of 
+          sets $\tau_Y$ is in fact a topology on $Y$.
+        </div>
+        <div class="proof">
+          Since $\varnothing \in \tau$ then $\varnothing \cap X = \varnothing \in \tau_Y$. 
+          $X$ is open in $\tau$ and $X \cap Y = Y$ so $Y \in \tau_Y$. Let $U$ and $V$
+          be open in $\tau_Y$. Then there exist $U',V' \in \tau$ such that 
+          $U = U' \cap Y$ and $V = V' \cap Y$. Then $U' \cap V' \in \tau$. Then 
+          \[Y \cap (U' \cap V') = (Y \cap U') \cap (Y \cap V') = U \cap V \in \tau_Y\]
+          Now suppose we have a collection of open sets $\{U_\alpha\}_{\alpha \in \lambda}$ 
+          in $\tau_Y$. Then for each $\alpha \in \lambda$ there exists an open set $U_\alpha '$ 
+          in $\tau$. Then $\cup_{\alpha \in \lambda}U_\alpha' \in \tau$. Intersecting this 
+          with $Y$ gives 
+          \[Y \cap (\cup_{\alpha \in \lambda}U_\alpha') = 
+          \cup_{\alpha \in \lambda} (Y \cap U_\alpha') = \cup_{\alpha\in\lambda}U_\alpha\]
+          It follows $\cup_{\alpha\in\lambda}U_\alpha$ is open. Thus, $\tau_Y$ is indeed 
+          a topology on $Y$.
+        </div>
+
+        <!--3.26-->
+        <div class="exercise">
+          Consider $Y = \left[0,1\right)$ as a subspace of $\mathbb{R}_\text{std}$. 
+          In $Y$, is the set $\left[1/2,1\right)$ open, closed, neither, or both?
+        </div>
+
+        <!--3.27-->
+        <div class="exercise">
+          Consider a subspace $Y$ of the top. space $X$. Is every subset $U \subset Y$
+          that is open in $Y$ also open in $X$?
+        </div>
+
+        <!--3.28-->
+        <div class="theorem">
+          Let $(Y,\tau_Y)$ be a subspace of $(X,\tau)$. A subset $C \subset Y$ is 
+          closed in $(Y,\tau_Y)$ if and only if there is a set $D \subset X$, closed 
+          in $(X,\tau)$, such that $C = D \cap Y$.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. If $C$ is closed in $(Y,\tau_Y)$ then 
+          $Y-C$ is open. Then for some $U \in \tau_X$, $U \cap Y = Y-C$. Note $X-U$ 
+          is closed. Let $D = X-U$. We show $D \cap Y = C$. 
+          \[Y \cap D = Y \cap (X-U) = Y-U\]
+          Now we show $Y-U = C$. Recall $U \cap Y = Y - C$. Then 
+          $Y - (U \cap Y) = Y - (Y - C)$. Then $Y-U = C$. Hence, $D \cap Y = C$. 
+          <br><br>
+          Now we prove the reverse direction. Suppose there is a set $D \subset X$ 
+          that is closed in the ambient topology such that $C = D \cap Y$. We 
+          show $C$ is closed in the subspace topology. Now $X-D \in \tau_X$. Then 
+          $Y \cap (X-D) \in \tau_Y$. Then
+          \[Y - (Y \cap (X-D)) = Y - (Y - D) = D \cap Y = C\] 
+        </div>
+
+        <!--3.29-->
+        <div class="corollary">
+          Let $(Y, \tau_Y)$ be a subspace of $(X,\tau)$. A subset $C \subset Y$ is 
+          closed in $(Y,\tau_Y)$ if and only if Cl${}_X(C) \cap Y = C$.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. If $C \subset Y$ is closed in $(Y,\tau_Y)$
+          then by Theorem 3.28 there exists a closed set $D$ in $(X,\tau_X)$ such that 
+          $D \cap Y = C$. Note that Cl$_X(C) = \bigcap_{U \supset C, U \in \mathcal{C}} U$
+          where $\mathcal{C}$ is the collection of all closed sets in $(X,\tau_X)$. 
+          It follows $\text{Cl}_X(C) \subset D$ and then $\text{Cl}_X(C) \cap Y \subset D \cap Y = C$. 
+          Moreover, $C \subset$ $\text{Cl}_X(C)$. Altogether we have $C \subset$ $\text{Cl}_X(C)\cap Y \subset C$.
+          Hence, $\text{Cl}_X(C) \cap Y = C$. The reverse direction is trivial. Just apply
+          Theorem 3.28.
+        </div>
+
+        <!--3.30-->
+        <div class="theorem">
+          Let $(X,\tau)$ be a topological space, and let $(Y,\tau_Y)$ be a subspace. If 
+          $\mathcal{B}$ is a basis for $\tau$, then 
+          $\mathcal{B}_Y = \{B \cap Y \mid B \in \mathcal{B}\}$ is a basis for $\tau_Y$.
+        </div>
+        <div class="proof">
+          Since $\mathcal{B} \subset \tau$, $\mathcal{B}_Y \subset \tau_Y$. Let $U \in 
+          \tau_Y$. Let $p \in U$. Then there exists $V \in \tau$ such that 
+          $U = Y \cap V$. Then $p \in B$ for some $B \in \mathcal{B}$ where $B \subset V$. 
+          Since $p \in Y$ and $p \in B$ it follows $p \in Y \cap B$. Moreover, 
+          $Y \cap B \in \mathcal{B}_Y$ and $Y \cap B \subset U = Y \cap V$. Hence, by 
+          Theorem 3.1 $\mathcal{B}_Y$ is a basis for $\tau_Y$.
+        </div>
+
+        <!--3.31-->
+        <div class="exercise">
+
+        </div>
+
+        <h4>3.5 Product Spaces</h4>
+        <div class="definition">
+          Let $X$ and $Y$ be two sets. The <strong>projection functions</strong> 
+          $\pi_X \colon X \times Y \to X$ and $\pi_Y\colon X \times Y \to Y$ are 
+          defined by $\pi_X(x,y) = x$ and $\pi_Y(x,y) = y$.
+        </div>
+
+        <div class="definition">
+          Suppose $X$ and $Y$ are topological spaces. The <strong>product 
+            topology
+          </strong>
+          on the product $X \times Y$ is the topology whose basis is all sets of 
+          the form $U \times V$, where $U \in \tau_X$ and $V \in \tau_Y$.
+        </div>
+
+        <!--3.32-->
+        <div class="exercise">
+          Verify that the collection of basic open sets above satisfies 
+          the conditions of Theorem 3.3, thus confirming that this collection 
+          is the basis for a topology.
+        </div>
+        <div class="proof">
+          We use Theorem 3.3 to show the product topology is in fact a topology 
+          on $X \times Y$. Let $(p,q) \in X \times Y$. Then $p \in X \in \tau_X$
+          and $q \in Y \in \tau_Y$. It follows $X \times Y$ is a basic open set. 
+          It follows every point in $X \times Y$ is contained within a basic 
+          open set for this basis.
+          <br><br>
+          Now suppose we have two basic open sets $U_1 \times V_1$ and $U_2 \times V_2$
+          where $U_1,U_2 \in \tau_X$ and $V_1,V_2 \in \tau_Y$. Let 
+          $(p,q) \in (U_1 \times V_1) \cap (U_2 \times V_2)$. Then 
+          $p \in U_1 \cap U_2 \in \tau_X$ and $q \in V_1 \cap V_2 \in \tau_Y$. 
+          It follows $(U_1 \cap U_2) \times (V_1 \cap V_2)$ is a basic open set.
+          Then by Theorem 3.3 we have verified the collection is a basis for 
+          a topology on $X \times Y$.
+        </div>
+
+        <!--3.33-->
+        <div class="exercise">
+
+        </div>
+
+        <!--3.34-->
+        <div class="exercise">
+
+        </div>
+
+        <!--3.35-->
+        <div class="exercise">
+          Show that the product topology on $X \times Y$ is the same as the topology 
+          generated by the subbasis of inverse images of open sets under the projection 
+          functions, that is, the subbasis is $\{\pi_X^{-1}(U) \mid U \text{ open in } X\} 
+          \cup \{\pi_Y^{-1}(V) \mid V \text{ open in } Y\}$.
+        </div>
+        <div class="proof">
+          Let $\mathcal{B}$ be the set of all finite intersections of elements in the 
+          proposed subbasis $S$. Let us denote the topology generated by $S$ as $\tau_S$.
+          We first show every open set in $X\times Y$ is an open in $\tau_S$. Let $W$ be an open set in $X \times Y$. Then 
+          $W = \cup_{\alpha \in \lambda} U_\alpha \times V_\alpha$ where 
+          $U_\alpha \in \tau_X$ and $V_\alpha \in \tau_Y$. Note that 
+          $U_\alpha \times V_\alpha = \pi_X^{-1}(U_\alpha) \cap \pi_Y^{-1}(V_\alpha)$
+          Then $U_\alpha \times V_\alpha \in \mathcal{B}$ for all $\alpha \in \lambda$. 
+          It follows $W \in \tau_S$. Now we show every open 
+          set in $\tau_S$ is open in $X \times Y$. 
+          Note that 
+          \[\{\pi_X^{-1}(U) \mid U \in \tau_X\} 
+          \cup \{\pi_Y^{-1}(V) \mid V \in \tau_Y\} 
+          = \{U\times Y \mid U \in \tau_X\} \cup \{X \times V \mid V \in \tau_Y\}\]
+          Then every element in $S$ is open in the product topology. Since $\mathcal{B}$
+          is the set of finite intersections of elements in $S$ all elements of $\mathcal{B}$
+          are $X \times Y$. Since an open set in $X\times Y$ is open in $\tau_S$ and 
+          vice versa, it follows these topologies are in fact the same.
+
+        </div>
+
+        <!--3.36-->
+        <div class="exercise">
+
+        </div>
+
+        <div class="definition">
+          Let $\{X_\alpha\}_{\alpha \in \lambda}$ be a collection of 
+          topological spaces. The <strong>product</strong> 
+          $\prod_{\alpha \in \lambda}X_\alpha$ is the set of functions 
+          \[\{f \colon \lambda \to \bigcup_{\alpha \in \lambda} X_\alpha 
+          \mid \text{ for all } \alpha \in \lambda, f(\alpha) \in X_\alpha\}\]
+
+        </div>
+        <div class="definition">
+          For each $\beta$ in $\lambda$, define the <strong>projection function</strong>
+          $\pi_\beta \colon \prod_{\alpha \in \lambda} X_\alpha \to X_\beta$ by 
+          $\pi_\beta(f) = f(\beta)$. We define the <strong>product topology</strong>
+          on $\prod_{\alpha \in \lambda}X_\alpha$ to be the one generated by 
+          the subbasis of sets of the form $\pi_\beta^{-1}(U_\beta)$, where $U_\beta$ 
+          is open in $X_\beta$.
+        </div>
+        
+
+        <div class="theorem">
+          A basis for the product topology on $\prod_{\alpha \in \lambda}X_\alpha$ 
+          is the collection of all sets of the form $\prod_{\alpha \in \lambda}U_\alpha$, 
+          where $U_\alpha$ is open in $X_\alpha$ for each $\alpha$ and $U_\alpha = X_\alpha$ 
+          for all but finitely many $\alpha$.
+        </div>
+        <div class="proof">
+          Let $S$ be a subbasis for the product topology on $\prod_{\alpha \in \lambda}
+          X_\alpha$. Let $\mathcal{B}$ be the set of all finite intersections of elements 
+          in $S$. Take $B \in \mathcal{B}$. Then $B = \cap_{i=1}^n V_i$ where $V_i \in S$. 
+          Since $V_i \in S$ then $V_i = \pi_{\alpha_i}^{-1}(U_i)$ where $U_i$ is open 
+          in $X_{\alpha_i}$. Moreover 
+          \[V_i = \pi_{\alpha_i}^{-1}(U_i) = \prod_{\alpha\in\lambda}W_\alpha\]
+          where $W_\alpha = X_\alpha$ for $\alpha \in \lambda - \{\alpha_i\}$ and 
+          $W_{\alpha_i} = U_i$. For $B$ we then have
+          \[B = \cap_{i=1}^n V_i = \prod_{\alpha \in \lambda}K_\alpha\]
+          where $K_\alpha = X_\alpha$ for $\alpha \in \lambda
+          -\{\alpha_1,\alpha_2,\dots,\alpha_n\}$
+          and $K_{\alpha_i} = U_i$ for $i = 1,2,\dots,n$.
+        </div>
+
+        <div class="definition">
+          A basis for the <strong>box topology</strong> on $\prod_{\alpha \in \lambda}
+          X_\alpha$ is the collection of all sets of the form 
+          $\prod_{\alpha \in \lambda}U_\alpha$, where $U_\alpha$ is open 
+          in $X_\alpha$ for each $\alpha$.
         </div>
 
         <h2 class="chapter" id="ch4">4 Separation Properties: Separating This from That</h2>
@@ -984,20 +1728,85 @@
         </div>
         <!--4.3-->
         <div class="exercise">
-
+          Show that $\mathbb{R}_\text{std}$ is Hausdorff. 
+        </div>
+        <div class="proof">
+          Let $x,y \in \mathbb{R}$. Then take $\varepsilon = |x-y|/2$. 
+          Then take $U = B(x,\varepsilon)$ and $V = B(y,\varepsilon)$. 
+          $U$ and $V$ are both open since balls are open in the standard 
+          topology on $\mathbb{R}$. Now we show $U$ and $V$ are disjoint. 
+          For the sake of contradiction suppose $p \in U \cap V$. 
+          Then $|x-p| < \varepsilon$ and $|y-p| < \varepsilon$. Then by 
+          the triangle inequality we have $|x-y| < 2\varepsilon = |x-y|$. 
+          This is a contradiction so $U \cap V = \varnothing$. It follows 
+          $\mathbb{R}_\text{std}$ is Hausdorff.
         </div>
         <!--4.4-->
         <div class="exercise">
-
+          Show that $\mathbb{H}_\text{bub}$ is regular.
         </div>
         <!--4.5-->
         <div class="exercise">
-
+          Show that $\mathbb{R}_{LL}$ is normal.
         </div>
         <!--4.6-->
         <div class="exercise">
+          There are four parts
+          <ol>
+            <li>Consider $\mathbb{R}^2$ with the standard topology. Let 
+              $p \in \mathbb{R}^2$ be a point not in a closed set $A$. Show 
+              that $\inf \{d(a,p) \mid a \in A\} > 0$.
+            </li>
+            <li>
+              Show that $\mathbb{R}^2$ with the standard topology is regular. 
+            </li>
+            <li>
+              Find two disjoint closed subsets $A$ and $B$ of $\mathbb{R}^2$ 
+              with the standard topology such that 
+              \[\inf \{d(a,b) \mid a \in A, b \in B\} = 0\]
+            </li>
+            <li>
+              Show that $\mathbb{R}^2$ with the standard topology is normal.
+            </li>
+          </ol>
+        </div>
+        <div class="proof">
+          We prove part (1). Certainly $\inf \{d(a,p) \mid a \in A\}$ is non-negative 
+          since the distance function must be non-negative. For the sake of 
+          contradiction suppose $\inf \{d(a,p) \mid a \in A\} = 0$. Then 
+          let $U$ be an open neighborhood of $p$. Then for some $\varepsilon > 0$ we 
+          have $B(p,\varepsilon) \subset U$. Then there exist $a \in A$ such that 
+          $d(a,p) < \varepsilon$ otherwise $\inf \{d(a,p) \mid a \in A\} \geq \varepsilon$. 
+          It follows $(U-\{p\}) \cap A \ne \varnothing$. Then $p$ is a limit point of $A$. 
+          Since $A$ is closed $p \in A$ but this is a contradiction. 
+          <br><br>
+          Now we prove part (2). Let $X = \mathbb{R}^2$, $p \in X$, and $A$ a closed subset 
+          of $X$ that does not contain $p$. Then let $\delta = \inf \{d(a,p) \mid a \in A\}$. 
+          By part (1) $\delta > 0$. Take $U = B(p,\delta/2)$ and 
+          $V = \{x \mid d(p,x) > \delta/2\}$. Then $p \in U$, $A \subset V$, and 
+          $U \cap V = \varnothing$. 
+          <br><br>
+          For part (3) let $A = \{(x,1/x) \mid x \geq 1\}$ and $B = \{(x,0) \mid x \geq 1\}$. 
+          <br><br>
+          Let $A, C$ be closed subsets of $\mathbb{R}^2$ with the standard topology. 
+          Then define the maps $d_A \colon A \to \mathbb{R}$ and $d_C \colon C \to 
+          \mathbb{R}$ as 
+          \[d_A(a) = \inf \{d(a,c) \mid c \in C\}\]
+          \[d_C(c) = \inf \{d(a,c) \mid a \in A\}\]
+          Then let $A \subset \bigcup_{a \in A} B(a,d_A(a)) = U$ and 
+          $C \subset \bigcup_{c \in C} B(c,d_C(c)) = V$. 
+          Now we show $U \cap V = \varnothing$. For the sake of contradiction suppose 
+          $p \in U \cap V$. Then $p \in B(a,d_A(a)/2)$ and $p \in B(c,d_C(c)/2)$ for some 
+          $a \in A$ and $c \in C$. Then we have 
+          $d(a,p) < d_A(a)/2$ and $d(p,c) < d_C(c)/2$. Then by the triangle inequality 
+          we have $d(a,c) < d_A(a)/2 + d_C(c)/2$. Note $d_A(a)/2 \leq d(a,c)/2$ and 
+          $d_C(c)/2 \leq d(a,c)/2$. The altogether we have
+          \[d(a,c) < d_A(a)/2 + d_C(c)/2 \leq d(a,c)\]
+          This is a contradiction. Hence, $U \cap V = \varnothing$. Hence, $\mathbb{R}^2$
+          is normal.
 
         </div>
+
         <!--4.7-->
         <div class="theorem">
           Show the following three properties hold.
@@ -1092,6 +1901,242 @@
           $U$ and $V$ such that $A \subset U$, $\overline{U} \subset W_1$, $B \subset V$,
           and $\overline{V} \subset W_2$. Since $W_1 \cap W_2 = \varnothing$, it follows 
           $\overline{U} \cap \overline{V} = \varnothing$. The reverse direction is trivial.
+        </div>
+
+        <!--4.11-->
+        <div class="theorem">
+
+        </div>
+
+        <!--4.12-->
+        <div class="exercise">
+
+        </div>
+
+        <!--4.13-->
+        <div class="exercise">
+
+        </div>
+
+        <!--4.14-->
+        <div class="exercise">
+
+        </div>
+
+        <!--4.15-->
+        <div class="theorem">
+
+        </div>
+
+        <h4>4.2 Separation Properties and Products</h4>
+        <!--4.16-->
+        <div class="theorem">
+          Let $X$ and $Y$ be Hausdorff. Then $X \times Y$ is Hausdorff.
+        </div>
+        <div class="proof">
+          Let $(a,b),(c,d) \in X \times Y$ where $(a,b) \ne (c,d)$. Consider 
+          the case where $a=c$ and $b \ne d$. Since $b,d \in Y$ and $Y$ 
+          is Hausdorff there exist open sets $V_1, V_2 \in \tau_Y$ such that 
+          $b \in V_1$, $d \in V_2$, and $V_1 \cap V_2 = \varnothing$. There 
+          exists an open set in $\tau_X$ such that $a,c \in U$. For example, 
+          take $U = X$. Then $(a,b) \in U \times V_1$, $(c,d) \in U \times V_2$, 
+          and $(U \times V_1) \cap (U \times V_2) = \varnothing$. A similar 
+          argument applies when $a \ne c$ and $b = d$. Now consider the case 
+          where $a \ne c$ and $b \ne d$. Then there exists sets $U_1,U_2 \in \tau_X$
+          and $V_1,V_2 \in \tau_Y$ such that $a \in U_1, c \in U_2, U_1 \cap U_2 = 
+          \varnothing, b \in V_1, d \in V_2, V_1 \cap V_2 = \varnothing$ since 
+          $X$ and $Y$ are Hausdorff. It follows $(a,b) \in U_1 \times V_1$ and 
+          $(c,d) \in U_2 \times V_2$ and $U_1 \times V_1 \cap U_2 \times V_2 = \varnothing$.   
+        </div>
+
+        <!--4.17-->
+        <div class="theorem">
+          Let $X$ and $Y$ be regular. Then $X \times Y$ is regular.
+        </div>
+        <div class="proof">
+          Let $W$ be open in $X \times Y$. Then $W = \cup_{\alpha \in \lambda}
+          U_\alpha \times V_\alpha$. Now let $(a,b) \in W$. Then $(a,b) \in 
+          U_\alpha \times V_\alpha$ for some $\alpha$. Since $X$ and $Y$ are regular 
+          there exist sets $U' \in \tau_X$ and $V' \in \tau_Y$ such that 
+          $a \in U'$, $b \in V'$, $\overline{U'} \subset U$, and $\overline{V'} \subset V$.
+          It follows $(a,b) \in U' \times V'$ and $\overline{U'} \times \overline{V'} 
+          \subset U_\alpha \times V_\alpha$. Now we show 
+          $\overline{U' \times V'} \subset \overline{U'} \times \overline{V'}$. 
+          Suppose $(c,d)$ is a limit point of $U' \times V'$. Then 
+          for all open sets $F$ in $X \times Y$ we have 
+          \[(F - \{(c,d)\}) \cap (U' \times V') \ne \varnothing\]
+          where $F = \cup_{\beta \in \Lambda} G_\beta \times H_\beta$ and 
+          $G_\beta \in \tau_X$ and $H_\beta \in \tau_Y$. It follows 
+          $(G-\{c\}) \cap U' \ne \varnothing$ and $(H-\{d\}) \cap V' \ne \varnothing$. 
+          for all $G \in \tau_X$ and $H \in \tau_Y$. Then $c \in \overline{U'}$
+          and $d \in \overline{V'}$. Hence, $\overline{U' \times V'} \subset \overline{U'} \times \overline{V'}$
+          Then 
+          \[\overline{U' \times V'} \subset \overline{U'} \times \overline{V'} 
+          \subset U_\alpha \times V_\alpha \subset W\]
+          Altogether we have $(a,b) \in U' \times V'$ and $\overline{U'\times V'} \subset W$
+          Hence, $X \times Y$ is regular.
+        </div>
+
+        <!--4.18-->
+        <div class="exercise">
+
+        </div>
+
+        <div class="definition">
+
+        </div>
+
+        <!--4.19-->
+        <div class="theorem">
+          Every Hausdorff space is hereditarily Hausdorff.
+        </div>
+        <div class="proof">
+          Let $Y \subset X$. Let $p,q \in Y$. Also $p,q \in X$ and 
+          $X$ is Hausdorff so there exist sets $U,V \in \tau_X$ such 
+          that $p \in U$, $q \in V$, and $U \cap V = \varnothing$. 
+          Then take $U' = Y \cap U$ and $V' = Y \cap V$. Then 
+          $p \in U'$, $q \in V'$, and $U' \cap V' = \varnothing$. 
+          Moreover, $U', V' \in \tau_Y$. It follows $Y$ is Hausdorff.
+        </div>
+
+        <!--4.20-->
+        <div class="theorem">
+          Every regular space is hereditarily regular.
+        </div>
+        <div class="proof">
+          Let $X$ be regular and $Y \subset X$. We show $Y$ is regular. 
+          Let $p \in Y$ and $U \in \tau_Y$ such that $p \in U$. Then 
+          there exists $U' \in \tau_X$ such that $U = Y \cap U'$. Then 
+          $p \in U'$ and $U' \in \tau_X$. Since $X$ is regular there 
+          exists an open neighborhood $V'$ of $p$ in $X$ such that 
+          $p \in V'$ and $\text{Cl}_X(V') \subset U'$. Take $V = Y \cap V'$. 
+          It follows $p \in V$. Now we show $\text{Cl}_Y(V) \subset U$.
+          Let $q \in \text{Cl}_Y(V)$. If $q \in V$ then $q \in U$ since 
+          $V' \subset U'$ and $V = Y \cap V'$ and $U = Y \cap U'$. 
+          Now suppose $q$ is a limit point of $V$ in the subspace topology. 
+          Then for every open neighborhood $W$ of $q$ in $Y$ we have
+          $(W-\{q\}) \cap V \ne \varnothing$. It follows for all 
+          $A \in \tau_X$ that $((A \cap Y)-\{q\}) \cap V \ne \varnothing$. 
+          Then $(A-\{q\}) \cap V \ne \varnothing$. Moreover, since $V \subset V'$
+          it follows for all $A$ that $(A-\{q\}) \cap V' \ne \varnothing$. 
+          Then $q$ is a limit point of $V'$ in $(X,\tau_X)$. It follows 
+          $q \in \text{Cl}_X(V') \subset U'$. Then $q \in U'$. Moreover, $q \in Y$
+          so then $q \in U' \cap Y = U$. Hence, $\text{Cl}_Y(V) \subset U$. 
+          Therefore, $(Y,\tau_Y)$ is regular.
+        </div>
+
+        <!--4.21-->
+        <div class="exercise">
+
+        </div>
+
+        <!--4.22-->
+        <div class="exercise">
+
+        </div>
+
+        <!--4.23-->
+        <div class="theorem">
+          Let $A$ be a closed subset of a normal space $X$. Then $A$ is normal 
+          when given the relative topology. 
+        </div>
+        <div class="proof">
+          Let $A$ be a closed subset of a normal space $X$. Now let $B$ be a
+          subset of $A$ and closed in $(A,\tau_A)$. Let $U \in \tau_A$ such that 
+          $U \supset B$. Then there exist $U' \in \tau_X$ such that $U = A \cap U'$ 
+          and $B'$ closed in $X$ such that $B = A \cap B'$. Since $A$ and $B'$ are 
+          closed in $X$ and intersections of closed sets are closed, it follows 
+          $B$ must be closed in $X$. By normality of $X$ there is a set $W \in \tau_X$
+          such that $B \subset W$ and $\text{Cl}_X(W) \subset U'$. 
+          Moreover, $B \subset W \cap A$. Now we show $\text{Cl}_A(W \cap A) \subset U$. 
+          Let $p \in \text{Cl}_A(W \cap A)$. If $p \in W \cap A$ then $p \in U$
+          since $W \subset U'$. Now suppose $p$ is a limit point of $W \cap A$ in 
+          $(A, \tau_A)$. Then for every neighborhood $S \in \tau_A$ of $p$ we have
+          $(S-\{p\}) \cap (W \cap A) \ne \varnothing$. It follows for every 
+          open neighborhood $S' \in \tau_X$ we have 
+          $(S'-\{p\}) \cap W \ne \varnothing$. Then $p$ is a limit point of $W$ 
+          in $(X,\tau_X)$. Then $p \in \text{Cl}_X(W) \subset U'$. Then $p \in U'$.
+          Moreover, $p \in A$ so $p \in A \cap U' = U$. Hence, $\text{Cl}_A(W \cap A) 
+          \subset U$. It follows $A$ is normal. 
+        </div>
+
+        <!--4.24-->
+        <div class="exercise">
+
+        </div>
+
+        <!--4.25-->
+        <div class="exercise">
+          Let $Y$ be a subspace of a topological space $X$, and let $A$ and 
+          $B$ be two disjoint closed subsets of $Y$ in the subspace topology. 
+          Show that both $\overline{A} \cap B = \varnothing$ and 
+          $A \cap \overline{B} = \varnothing$, where the closures are taken 
+          in $X$. 
+        </div>
+        <div class="proof">
+          For the sake of contradiction let $p \in \text{Cl}_X(A) \cap B$. Note 
+          that $A \cap B = \varnothing$ so $p$ must be a limit point of $A$ in $X$.
+          Then for every open set $U \in \tau_X$ that contains $p$ we have 
+          $(U - \{p\}) \cap A \ne \varnothing$. Note that $A \subset Y$ so then 
+          equivalently we have $((U \cap Y) - \{p\}) \cap A \ne \varnothing$. This 
+          implies for any open set $V \in \tau_Y$ that contains $p$ we have 
+          $(V - \{p\}) \cap A \ne \varnothing$. Then $p \in \text{Cl}_Y(A)$. Note 
+          $A$ is closed in $Y$ so then $p \in A$. Also $p \in B$ but this is 
+          a contradiction since $A$ and $B$ are disjoint.  
+        </div>
+
+        <div class="definition">
+          Two sets $A$ and $B$ in a space $X$ are <strong>separated</strong> if 
+          and only if both $\overline{A} \cap B = \varnothing$ and 
+          $A \cap \overline{B} = \varnothing$. 
+        </div>
+
+        <div class="definition">
+          A space $X$ is <strong>completely normal</strong> if and only if for any 
+          two separated sets $A$ and $B$ there exist disjoint open sets $U$ and 
+          $V$ such that $A \subset U$ and $B \subset V$. A $T_5$-space is any 
+          space that is both $T_1$ and completely normal.
+        </div>
+
+        <!--4.26-->
+        <div class="theorem">
+          The space $X$ is a completely normal space if and only if $X$ is 
+          hereditarily normal.
+        </div>
+
+        <!--4.27-->
+        <div class="exercise">
+
+        </div>
+
+        <!--4.28-->
+        <div class="theorem">
+
+        </div>
+        <h4>4.4 The Normality Lemma</h4>
+        <!--4.29-->
+        <div class="theorem">
+
+        </div>
+
+        <!--4.30-->
+        <div class="theorem">
+
+        </div>
+
+        <!--4.31-->
+        <div class="theorem">
+
+        </div>
+
+        <!--4.32-->
+        <div class="theorem">
+
+        </div>
+
+        <!--4.33-->
+        <div class="theorem">
+
         </div>
 
         <h2 class="chapter" id="ch5">5 Countable Features of Spaces: Size Restrictions</h2>
