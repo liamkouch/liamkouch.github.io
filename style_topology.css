@@ -411,6 +411,20 @@ dl dd {
   font-style: normal;
 }
 
+/* Definition */
+.my-thm {
+  /*counter-increment: definition;*/
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+.my-thm::before {
+  /*content: 'Definition ' counter(definition) '. ';*/
+  content: 'Theorem.';
+  font-weight: normal;
+  font-style: italic;
+}
+
 /* Lemma */
 .lemma {
   counter-increment: lemma;

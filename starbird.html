@@ -16,7 +16,7 @@
     <header>
         <h1>
           <span class="latex">
-            L<span>a</span>T<span>e</span>X 
+            Topology
           </span>
         </h1>
         <p class="author">
@@ -26,7 +26,7 @@
         </p>
       </header>
       <div class="abstract">
-        <h2>Abstract</h2>
+        <h2>Introduction</h2>
         <p>Notes from Topology Through Inquiry. Here is a pdf file for 
           what I had previously worked on so far. For some of the exercises 
           I will be just using what I have already done in the pdf 
@@ -44,13 +44,13 @@
         <ol>
           <li><a href="#ch1">Cardinality: To Infinity and Beyond</a>
             <ol>
-              <li><a>Sets and Functions</a></li>
-              <li><a>Cardinality and Countable Sets</a></li>
-              <li><a>Uncountable Sets and Power Sets</a></li>
-              <li><a>The Schroeder-Bernstein Theorem</a></li>
-              <li><a>Axiom of Choice</a></li>
-              <li><a>Ordinal Numbers</a></li>
-              <li><a>To Infinity and Beyond</a></li>
+              <li><a href="#1.1">Sets and Functions</a></li>
+              <li><a href="#1.2">Cardinality and Countable Sets</a></li>
+              <li><a href="#1.3">Uncountable Sets and Power Sets</a></li>
+              <li><a href="#1.4">The Schroeder-Bernstein Theorem</a></li>
+              <li><a href="#1.5">Axiom of Choice</a></li>
+              <li><a href="#1.6">Ordinal Numbers</a></li>
+              <li><a href="#1.7">To Infinity and Beyond</a></li>
             </ol>
           </li>
           <li><a href="#ch2">Topological Spaces: Fundamentals</a>
@@ -59,15 +59,55 @@
               <li><a href="#2.2">Open Sets and the Definition of a Topological Space</a></li>
               <li><a href="#2.3">Limit Points and Closed Sets</a></li>
               <li><a href="#2.4">Interior and Boundary</a></li>
-              <li><a>Convergence of Sequences</a></li>
-              <li><a>Topological Essentials</a></li>
+              <li><a href="#2.5">Convergence of Sequences</a></li>
             </ol>
           </li>
 
-          <li><a href="#ch3">Bases, Subspaces, Products: Creating New Spaces</a></li>
-          <li><a href="#ch4">Separation Properties: Separating This from That</a></li>
-          <li><a href="#ch5">Countable Features of Spaces: Size Restrictions</a></li>
-          <li><a href="#ch6">Compactness: The Next Best Thing to Being Finite</a></li>
+          <li><a href="#ch3">Bases, Subspaces, Products: Creating New Spaces</a>
+            <ol>
+              <li><a href="#3.1">Bases</a></li>
+              <li><a href="#3.2">Subbases</a></li>
+              <li><a href="#3.3">Order Topology</a></li>
+              <li><a href="#3.4">Subspaces</a></li>
+              <li><a href="#3.5">Product Spaces</a></li>
+            </ol>
+          </li>
+
+          <li><a href="#ch4">Separation Properties: Separating This from That</a>
+            <ol>
+              <li><a href="#4.1">Hausdorff, Regular, and Normal Spaces</a></li>
+              <li><a href="#4.2">Separation Properties and Products</a></li>
+              <li><a href="#4.3">A Question of Heredity</a></li>
+              <li><a href="#4.4">The Normality Lemma</a></li>
+            </ol>
+          </li>
+          <li><a href="#ch5">Countable Features of Spaces: Size Restrictions</a>
+            <ol>
+              <li><a href="#5.1">Separable Spaces, An Unfortunate Name</a></li>
+              <li><a href="#5.2">2nd Countable Spaces</a></li>
+              <li><a href="#5.3">1st Countable Spaces</a></li>
+              <li><a href="#5.4">The Souslin Property</a></li>
+            </ol>
+          </li>
+          <li><a href="#ch6">Compactness: The Next Best Thing to Being Finite</a>
+            <ol>
+              <li><a href="#6.1">Compact Sets</a></li>
+              <li><a href="#6.2">The Heine-Borel Theorem</a></li>
+              <li><a href="#6.3">Compactness and Products</a></li>
+              <li><a href="#6.4">Countably Compact, Lindelof Spaces</a></li>
+              <li><a href="#6.5">Paracompactness</a></li>
+            </ol>
+          </li>
+          <li><a href="#ch7">Continuity: When Nearby Points Stay Together</a>
+            <ol>
+              <li><a href="#7.1">Continuous Functions</a></li>
+              <li><a href="#7.2">Properties Preserved by Continuous Functions</a></li>
+              <li><a href="#7.3">Homeomorphisms</a></li>
+              <li><a href="#7.4">Product Spaces and Continuity</a></li>
+              <li><a href="#7.5">Quotient Maps and Quotient Spaces</a></li>
+              <li><a href="#7.6">Urysohn's Lemma and the Tietze Extension</a></li>
+            </ol>
+          </li>
         </ol>
       </nav>
 
@@ -75,7 +115,7 @@
         <h2 class="chapter" id="ch1">
           1 Cardinality: To Infinity and Beyond
         </h2>
-        <h4>1.1 Sets and Functions</h4>
+        <h4 id="1.1">1.1 Sets and Functions</h4>
         <div class="exercise">
           For sets $A_1,A_2 \subset X$ show that 
           \[X - (A_1 \cup A_2) = (X-A_1) \cap (X-A_2)\]
@@ -116,7 +156,7 @@
           If $f \colon X \to Y$ is surjective and $y \in Y$, then $f^{-1}(y)$ contains at 
           least one point. 
         </div>
-        <h4>1.2 Cardinality and Countable Sets</h4>
+        <h4 id="1.2">1.2 Cardinality and Countable Sets</h4>
 
         <div class="theorem">
           Let $2\mathbb{N}$ denote the set of positive even integers. Then $2\mathbb{N}$ 
@@ -176,7 +216,35 @@
           can explode one depth charge each hour in such a way that you will be 
           guaranteed to eventually hit the submarine.
         </div>
-        <h4>1.3 Uncountable Sets and Power Sets</h4>
+        <div class="proof">
+          Say the submarine is in the $\mathbb{R}^2$ plane. 
+          Since we don't know the direction, speed, or position of the 
+          submarine in the plane, the general form of the position of 
+          the submarine with respect to time is
+          \[(x_0 + at, y_0 + bt)\]
+          where $x_0$ is the initial x-coordinate, 
+          $a$ is the horizontal velocity, $y_0$ is the initial 
+          y-coordinate, $b$ is the vertical velocity, and $t$ is the 
+          time past the starting time. We have $x_0,a,y_0,b \in \mathbb{Z}$ 
+          and $t \in \mathbb{N}$.  We know $\mathbb{Z}^4$ is a finite 
+          cartesian product of countably infinite sets and is therefore 
+          countable.  Then there is the bijection 
+          $f \colon \mathbb{N} \to \mathbb{Z}^4$ defined as 
+          \[f(t) = (f_x(t),f_a(t), f_y(t), f_b(t))\]
+          Since $f$ is a bijection it follows for any choice of 
+          $x_0, a, y_0,$ and $b$ there exists some $t \in \mathbb{N}$
+          such that $f(t) = (x_0,a,y_0,b)$. Since $\mathbb{Z}^4$ is 
+          countable it follows we can check every possible direction, 
+          speed, and original position of the submarine.  Suppose we want 
+          to hit the submarine with initial horizontal position $x_0$, 
+          horizontal velocity $a$, initial vertical position $y_0$, and 
+          vertical velocity $b$. Then at time $t_0 = f^{-1}(x_0,a,y_0,b)$
+          we explode a depth charge at coordinate
+          \[(x,y) = (f_x(t_0) + f_a(t_0)t_0, f_y(t_0) + f_b(t_0)t_0)\]
+          It follows we can be guaranteed to eventually hit the submarine.
+        </div>
+
+        <h4 id="1.3">1.3 Uncountable Sets and Power Sets</h4>
         <div class="theorem">
           The cardinality of the set of natural numbers is not the same as the 
           cardinality of the set of real numbers. That is the set of real numbers 
@@ -221,10 +289,10 @@
           There is no surjection from a set $A$ onto $2^A$. Thus for any set $A$, the cardinality 
           of $A$ is not the same as the cardinality of its power set. 
         </div>
-        <h4>1.4 The Schroeder-Bernstein Theorem</h4>
-        <h4>1.5 Axiom of Choice</h4>
-        <h4>1.6 Ordinal Numbers</h4>
-        <h4>1.7 To Infinity and Beyond</h4>
+        <h4 id="1.4">1.4 The Schroeder-Bernstein Theorem</h4>
+        <h4 id="1.5">1.5 Axiom of Choice</h4>
+        <h4 id="1.6">1.6 Ordinal Numbers</h4>
+        <h4 id="1.7">1.7 To Infinity and Beyond</h4>
 
         <h2 class="chapter" id="ch2">
           2 Topological Spaces: Fundamentals
@@ -957,7 +1025,7 @@
         <div class="exercise">
           
         </div>
-        <h4>2.5 Convergence of Sequences</h4>
+        <h4 id="2.5">2.5 Convergence of Sequences</h4>
         <div class="definition">
           A <strong>sequence</strong> in a topological space $X$ is a function 
           from $\mathbb{N}$ to $X$. The image of $i$ under this function is a 
@@ -1015,7 +1083,7 @@
         </div>
 
         <h2 class="chapter" id="ch3">3 Bases, Subspaces, Products: Creating New Spaces</h2>
-        <h4>3.1 Bases</h4>
+        <h4 id="3.1">3.1 Bases</h4>
         <div class="definition">
           Let $\tau$ be a topology on a set $X$, and let $\mathcal{B} \subset \tau$. 
           Then $\mathcal{B}$ is a <strong>basis</strong> for the topology $\tau$ if 
@@ -1299,7 +1367,7 @@
 
         </div>
 
-        <h4>3.2 Subbases</h4>
+        <h4 id="3.2">3.2 Subbases</h4>
         <div class="definition">
           Let $(X,\tau)$ be a top. space and let $S$ be a collection of subsets 
           of $X$. Then $S$ is a <strong>subbasis</strong> for $\tau$ if and only 
@@ -1393,7 +1461,7 @@
           For what topology on $\mathbb{R}$ is $S$ a subbasis?
         </div>
 
-        <h4>3.3 Order Topology</h4>
+        <h4 id="3.3">3.3 Order Topology</h4>
         <div class="definition">
           Let $X$ be a set totally ordered by $\leq$. Let $\mathcal{B}$ be the 
           collection of all subsets of $X$ that are any of the following terms:
@@ -1444,7 +1512,7 @@
         <div class="theorem">
 
         </div>
-        <h4>3.4 Subspaces</h4>
+        <h4 id="3.4">3.4 Subspaces</h4>
         <div class="definition">
           Let $(X,\tau)$ be a topological space. For $Y \subset X$, the collection 
           \[\tau_Y = \{U \mid U = V \cap Y, V \in \tau\}\]
@@ -1545,7 +1613,7 @@
 
         </div>
 
-        <h4>3.5 Product Spaces</h4>
+        <h4 id="3.5">3.5 Product Spaces</h4>
         <div class="definition">
           Let $X$ and $Y$ be two sets. The <strong>projection functions</strong> 
           $\pi_X \colon X \times Y \to X$ and $\pi_Y\colon X \times Y \to Y$ are 
@@ -1672,7 +1740,7 @@
         </div>
 
         <h2 class="chapter" id="ch4">4 Separation Properties: Separating This from That</h2>
-        <h4>4.1 Hausdorff, Regular, and Normal Spaces</h4>
+        <h4 id="4.1">4.1 Hausdorff, Regular, and Normal Spaces</h4>
         <div class="definition">
           Let $(X,\tau)$ be a top. space. 
           <ol>
@@ -1928,7 +1996,7 @@
 
         </div>
 
-        <h4>4.2 Separation Properties and Products</h4>
+        <h4 id="4.2">4.2 Separation Properties and Products</h4>
         <!--4.16-->
         <div class="theorem">
           Let $X$ and $Y$ be Hausdorff. Then $X \times Y$ is Hausdorff.
@@ -1985,6 +2053,8 @@
         <div class="definition">
 
         </div>
+
+        <h4 id="4.3">4.3 A Question of Heredity</h4>
 
         <!--4.19-->
         <div class="theorem">
@@ -2113,38 +2183,146 @@
         <div class="theorem">
 
         </div>
-        <h4>4.4 The Normality Lemma</h4>
+        <h4 id="4.4">4.4 The Normality Lemma</h4>
         <!--4.29-->
         <div class="theorem">
-
+          Let $A$ and $B$ be subsets of a topological space $X$, and let 
+          $\{U_i\}_{i\in\mathbb{N}}$ and $\{V_i\}_{i\in\mathbb{N}}$ be 
+          two collections of open sets such that 
+          <ol>
+            <li>$A \subset \bigcup_{i\in\mathbb{N}}U_i$</li>
+            <li>$B \subset \bigcup_{i\in\mathbb{N}}V_i$</li>
+            <li>for each $i \in \mathbb{N}$, 
+              $\overline{U_i} \cap B = \varnothing$ and 
+              $\overline{V_i} \cap A = \varnothing$
+            </li>
+          </ol>
+          Then there exist open sets $U$ and $V$ such that 
+          $A \subset U$, $B \subset V$, and $U \cap V = \varnothing$.
+        </div>
+        <div class="proof">
+          We contruct two new collections of open sets $\{U_i'\}$ and 
+          $\{V_i'\}$ recursively and show their unions are disjoint and 
+          are open covers of $A$ and $B$ respectively. Moreover, our goal 
+          is for every point covered in $A$ by $U_i$ that $U_i'$ also contains
+          those points and same goes for $V_i'$. However, the additional 
+          constraint is $U_i'$ is disjoint from $V_1,V_2,\dots,V_{i-1}$ and 
+          $V_j'$ is disjoint from $U_1,U_2,\dots,U_j$. 
+          Let $U_1' = U_1$. Now 
+          we construct $V_1'$. Let $p \in V_1 \cap B$. Then 
+          $p \in X - \cup_{i=1}^1\overline{U_i'}$ and $p \in V_1$. These are both 
+          open sets so their intersection is open and contains $p$. Then 
+          there exists an open set $W_{1,p}$ such that 
+          $W_{1,p} \subset (X-\cup_{i=1}^1\overline{U_i'})$ and $W_{1,p} \subset 
+          V_1$. Take $V_1' = \cup_{p \in V_1 \cap B} W_{1,p}$. Note $V_1'$ is open, 
+          contains $B \cap V_1$, $V_1' \cap (\cup_{i=1}^1 U_i')$, and 
+          $\overline{V_1'} \cap A = \varnothing$. 
+          <br><br>
+          Suppose $V_i'$ is constructed such that $\overline{V_i'} \cap A = 
+          \varnothing$ for all $i = 1,2,\dots,n-1$. Then we construct $U_n'$
+          as follows. Let $p \in U_n \cap A$. Since $\overline{V_i'} \cap A = 
+          \varnothing$ for all $i$ we have 
+          $(\cup_{i=1}^{n-1}\overline{V_i'}) \cap A = \varnothing$. 
+          Then $A \subset X-\cup_{i=1}^{n-1}\overline{V_i'}$. It follows 
+          $p \in X-\cup_{i=1}^{n-1}\overline{V_i'}$ and $p \in U_n$. Since 
+          both of these sets are open their intersection is open. 
+          Then there exists an open set $T_{n,p}$ such that 
+          $T_{n,p} \subset \cup_{i=1}^{n-1}\overline{V_i'}$ and 
+          $T_{n,p} \subset U_n$. Then take $U_n' = \cup_{p \in U_n \cap A} T_{n,p}$. 
+          Note that $\overline{U_n'} \cap B = \varnothing$ since $U_n' \subset U_n$ 
+          and also $U_n'$ is open.
+          <br><br>
+          Suppose $U_i'$ is constructed such that $\overline{U_i}\cap B = \varnothing$
+          for all $i = 1,2,\dots,n$. Then we construct $V_n'$ as follows. 
+          Let $p \in V_n \cap B$. Then 
+          $p \in X - \cup_{i=1}^n \overline{U_i'}$ and $p \in V_n$. 
+          Then there is an open set $W_{n,p}$ such that 
+          $W_{n,p} \subset X - \cup_{i=1}^n \overline{U_i'}$ and 
+          $W_{n,p} \subset V_n$. 
+          Then take $V_n' = \cup_{p \in V_n \cap B} W_{n,p}$. Note 
+          $\overline{V_n'} \cap A = \varnothing$ and $V_n'$ is open.
+          <br><br>
+          Take $U = \cup_{i\in\mathbb{N}}U_i'$ and $V = \cup_{i\in\mathbb{N}}V_i'$. 
+          By nature of construction $U$ and $V$ are both open since arbitrary unions 
+          of open sets are open.
+          Now we show $A\subset U$. Let $p \in A$. Then $p \in U_i$ for some $i$. 
+          Note $U_i' = \cup_{q \in U_i \cap A} T_{i,q}$ so then 
+          $p \in T_{i,p} \subset U_i'$. Hence, $p \in U_i'$ and $A \subset U$. 
+          An analogous argument shows $B \subset V$. Now we show $U \cap V = \varnothing$. 
+          For the sake of contradiction let $p \in U \cap V$. Then 
+          $p \in U_i' \cap V_j'$ for some $i,j$. Suppose $j \geq i$. Then 
+          note $V_j \subset X - \cup_{k=1}^j \overline{U_k'}$. Then 
+          $V_j' \cap U_i' = \varnothing$. This contradicts $p \in V_j' \cap U_i'$. 
+          Now suppose $j \lt i$. Then note $U_i' \subset X-\cup_{k=1}^{i-1}\overline{V_k'}$.
+          Then $U_i' \cap V_j' = \varnothing$ which contradicts $p \in U_i' \cap V_j'$. 
+          Hence, $U \cap V = \varnothing$. 
         </div>
 
         <!--4.30-->
         <div class="theorem">
-
+          If $X$ is normal and $C=\bigcup_{i\in\mathbb{N}}K_i$ is the union 
+          of closed sets $K_i$ in $X$, then the subspace $C$ is normal. 
         </div>
 
         <!--4.31-->
         <div class="theorem">
-
+          Suppose a space $X$ is regular and countable. Then $X$ is normal. 
+        </div>
+        <div class="proof">
+          Let $A$ and $B$ be closed disjoint sets in $X$. Since $X$ is countable 
+          $A$ and $B$ are countable. Then let $A = \cup_{i\in I} \{a_i\}$ and 
+          $B = \cup_{j \in J} \{b_j\}$ where $I,J$ are countable index sets. 
+          Since $X$ is regular, for every point $a_i$ there are open sets 
+          $U_i$ and $V_i$ such that $a_i \in U_i$, $B \subset V_i$ and 
+          $U_i \cap V_i = \varnothing$. Then $U_i \in X-V_i$. It follows 
+          $\overline{U_i} \subset \overline{X-V_i}$. Note that $X-V_i$ is closed 
+          so then it is equal to its closure. Then $\overline{U_i} \subset X-V_i$. 
+          Moreover, $B \subset V_i$ so then $\overline{U_i} \cap B = \varnothing$. 
+          Take $U = \cup_{i \in I}U_i$. Then $A \subset U$. Similarly, define 
+          $W_j$ such that $b_j \in W_j$ and $\overline{W_j} \cap A = \varnothing$
+          for all $j \in J$. Then take $W = \cup_{j \in J}W_j$ so then $B \subset W$. 
+          Then by the Normality Lemma there exists disjoint open sets $U'$ and $W'$ 
+          such that $A \subset U'$ and $B \subset W'$. Hence, $X$ is normal. 
         </div>
 
         <!--4.32-->
         <div class="theorem">
+          Suppose a space $X$ is regular and has a countable basis. Then 
+          $X$ is normal.
+        </div>
+        <div class="proof">
+          Let $A$ and $B$ be disjoint closed sets in $X$. Then let $p \in A$. 
+          By regularity there exist disjoint open sets $U$ and $V$ such that 
+          $p \in U_p$ and $B \subset V_p$. Moreover, $\overline{U_p} \cap B = \varnothing$
+          by the same reasoning for the proof of Theorem 4.31. 
+          Then take $U = \cup_{p \in A} U_p$. Similarly for every point $q \in B$
+          there is an open set $W_q$ such that $q \in W_q$ and $\overline{W_q} 
+          \cap A = \varnothing$. Then take $W = \cup_{q \in B} W_q$. 
+          Furthermore, we have $A \subset U$ and $B \subset W$. Since $X$
+          has a countable basis, say $\mathcal{B}$, we can rewrite $U$ and $W$ 
+          as countable unions. Then $U = \cup_{i\in\mathbb{N}}U_i'$ and 
+          $W = \cup_{i\in\mathbb{N}}W_i'$. For the sake of contradiction 
+          suppose for some $i$ we have $\overline{U_i'} \cap B \ne \varnothing$. Let 
+          $x \in \overline{U_i'} \cap B$. If $x \in U_i'$ then $x \in U_p$ for some 
+          $p \in U$ but $U_p \cap B = \varnothing$. Assume $x$ is a limit point 
+          of $U_i'$. Then for every open neighborhood $W$ of $x$ we have 
+          $(W-\{x\}) \cap U_i' \ne \varnothing$. Proof is not finished.
+          
+        </div>
 
+        <div class="definition">
+          A space $X$ is <strong>perfectly normal</strong> if and only if 
+          $X$ is normal and each closed set $A$ in $X$ is the intersection 
+          of countably many open sets.
         </div>
 
         <!--4.33-->
         <div class="theorem">
-
-        </div>
-
-        <div class="definition">
-
+          Let $X$ be a perfectly normal space. Then $X$ is completely normal.
         </div>
 
         <h2 class="chapter" id="ch5">5 Countable Features of Spaces: Size Restrictions</h2>
-        <h4>5.1 Separable Spaces, An Unfortunate Name</h4>
+        <h4 id="5.1">5.1 Separable Spaces, An Unfortunate Name</h4>
         <div class="definition">
           Let $A$ be a subset of a top. space $X$. Then $A$ is 
           <strong>dense</strong> in $X$ if and only if $\overline{A} = X$.
@@ -2156,9 +2334,17 @@
           set of $X$ contains a point of $A$.
         </div>
         <div class="proof">
-          We prove the forward direction first. We prove by contradiction. Suppose 
-          there exists some non-empty open set $U$ that does not contain 
-          a point of $A$. Then $U \cap A = \varnothing$. 
+          We prove the reverse direction first. Let $p \in X$. If $p \in A$ 
+          then $p \in \overline{A}$. Now suppose $p \notin A$. Then for 
+          every non-empty open set $U$ we have $(U-\{p\}) \cap A \ne \varnothing$. 
+          It follows $p$ is a limit point of $A$. Then $p \in \overline{A}$. 
+          Hence, every point of $X$ is in $\overline{A}$. Now we prove 
+          the forward direction. Let $A$ be dense in $X$. Let $U$ be a 
+          non-empty open set of $X$. Let $p \in U$. If $p \in A$ we are 
+          done. Suppose $p \notin A$. Then $p$ is a limit point of $A$. Then 
+          $(U-\{p\}) \cap A \ne \varnothing$. Then there exists a point 
+          $q \in A$ such that $q \in U$. Thus every non-empty open set of $X$
+          contains a point of $A$. 
         </div>
 
         <div class="definition">
@@ -2171,6 +2357,13 @@
           Show that $\mathbb{R}_\text{std}$ is separable. With which of the 
           topologies on $\mathbb{R}$ that you have studied is $\mathbb{R}$ 
           not separable?
+        </div>
+        <div class="proof">
+          We show $\overline{\mathbb{Q}} = \mathbb{R}$. Consider any 
+          non-empty open set $(a,b)$. By the archimedean property of the real 
+          numbers, there exists a rational number $q$ such that 
+          $a < q < b$. Hence, by Theorem 5.1 $\mathbb{Q}$ is dense in $\mathbb{R}$. 
+          Moreover, we know the rationals are countable.
         </div>
         
 
@@ -2186,7 +2379,24 @@
 
         <!--5.5-->
         <div class="theorem">
-
+          If $X$ and $Y$ are separable spaces, then $X \times Y$ is separable.
+        </div>
+        <div class="proof">
+          Let $U$ and $V$ be countable dense subsets of $X$ and 
+          $Y$ respectively. Then we show $U \times V$ is a countable 
+          dense subset of $X \times Y$. Now $U \times V$ is a finite 
+          product of countable sets which is countable. Now we show
+          $U \times V$ is dense in $X \times Y$. Let $W$ be any open set 
+          in $X \times Y$. Then $W = \cup_{\alpha \in \lambda} 
+          U_\alpha \times V_\alpha$ where 
+          $U_\alpha$ is open in $X$ and $V_\alpha$ is open in $Y$ 
+          for all $\alpha$. Then consider some $\alpha$, 
+          say $\alpha_1$. Since $U$ and $V$ are dense in $X$ and $Y$ 
+          respectively, there exists $u \in U$ and $v \in V$ such that 
+          $u \in U_{\alpha_1}$ and $v \in V_{\alpha_1}$. It follows
+          $(u,v) \in W$. Moreover, $(u,v) \in U \times V$. Hence by Theorem 
+          5.1, $U \times V$ is dense in $X \times Y$. Hence, $U \times V$
+          is a countable dense subset and $X \times Y$ is separable.
         </div>
 
         <!--5.6-->
@@ -2204,7 +2414,7 @@
 
         </div>
 
-        <h4>5.2 2$^\text{nd}$ Countable Spaces</h4>
+        <h4 id="5.2">5.2 2$^\text{nd}$ Countable Spaces</h4>
         <div class="definition">
           A space $X$ is 2$^\text{nd}$ <strong>countable</strong> 
           if and only if $X$ has a countable basis.
@@ -2214,22 +2424,80 @@
         <div class="theorem">
           Let $X$ be a 2$^\text{nd}$ countable space. Then $X$ is separable.
         </div>
+        <div class="proof">
+          Let $\mathcal{B}$ be a countable basis for $X$. Then let 
+          $\mathcal{B} = \{B_i\}_{i\in\mathbb{N}}$. Then by the axiom of choice 
+          there exists a function $f$ 
+          $f\colon \mathbb{N} \to \bigcup_{i\in\mathbb{N}} B_i$ such that 
+          for each $i \in \mathbb{N}$, $f(i) \in B_i$. Then let 
+          $A = \{f(i) \mid i \in \mathbb{N}\}$. It follows $A$ is countable. 
+          Now we show $A$ is dense in $X$. Take any open set $U$ in $X$. Since 
+          $X$ has a countable basis $\mathcal{B}$ we have $U = \cup_{i \in I}B_i$
+          where $B_i \in \mathcal{B}$ for all $i \in I$ and $I$ is the countable 
+          index set. Then for any $B_i$, say $B_j$, we have $f(j) \in B_j$. Moreover, 
+          $f(j) \in A$. It follows every open set contains a point of $A$. Hence, 
+          $A$ is a countable dense subset of $X$ and $X$ is separable.
+        </div>
 
         <!--5.10-->
         <div class="exercise">
-
+          There are three parts 
+          <ol>
+            <li>The space $\mathbb{R}_\text{std}$ is 2nd countable.</li>
+            <li>Lower limit topology is separable but not 2nd countable.</li>
+            <li>The stickly bubbly topology is separable but not 2nd countable.</li>
+          </ol>
         </div>
 
         <!--5.11-->
-        <div class="theorem"></div>
+        <div class="theorem">
+          Every uncountable set in a 2nd countable space has a limit point.
+        </div>
+        <div class="proof">
+          
+        </div>
 
         <!--5.12-->
-        <div class="exercise"></div>
+        <div class="exercise">
+          A $2^\text{nd}$ countable space is hereditarily $2^\text{nd}$ countable.
+        </div>
+        <div class="proof">
+          Let $X$ be 2nd countable. Then $X$ has a countable basis $\mathcal{B}$. 
+          Let $Y \subset X$ and consider the subspace topology $\tau_Y$ on $Y$, 
+          Then the basis for the subspace is defined as 
+          $\mathcal{B}_Y = \{B \cap Y \mid B \in \mathcal{B}\}$. 
+          It follows the map $f\colon \mathcal{B} \to \mathcal{B}_Y$ defined as 
+          $f(B) = B \cap Y$ where $B \in \mathcal{B}$ is a bijection. Hence, 
+          $|\mathcal{B}| = |\mathcal{B}_Y|$. Therefore, $\mathcal{B}_Y$ is countable. 
+          Thus, $(Y,\tau_Y)$ has a countable basis and is 2nd countable.
+        </div>
 
         <!--5.13-->
-        <div class="exercise"></div>
+        <div class="exercise">
+          If $X$ and $Y$ are $2^\text{nd}$ countable spaces, then $X\times Y$ is 
+          $2^\text{nd}$ countable.
+        </div>
+        <div class="proof">
+          Let $\mathcal{B}_1$ and $\mathcal{B}_2$ be countable bases for $X$ and 
+          $Y$ respectively. We show $\mathcal{B}_1 \times \mathcal{B}_2$ is 
+          a countable basis for the product topology $X \times Y$. We implement 
+          Theorem 3.1. Let $W$ be an open set in $X \times Y$. Then by definition 
+          of the product topology, $W = \cup_{\alpha \in \lambda}U_\alpha \times 
+          V_\alpha$ where $U_\alpha$ is open in $X$ and $V_\alpha$ is open in $Y$. 
+          Then consider some point $(a,b) \in W$. Then 
+          $(a,b) \in U_\alpha \times V_\alpha$ for some $\alpha$ in $\lambda$. 
+          Then $a \in U_\alpha$ and $b \in V_\alpha$. Since $\mathcal{B}_1$ and 
+          $\mathcal{B}_2$ are bases for $X$ and $Y$ and $U_\alpha \in \tau_X$ and 
+          $V_\alpha \in \tau_Y$ it follows there are basic open sets $B_1 \in 
+          \mathcal{B}_1$ and $B_2 \in \mathcal{B}_2$ such that 
+          $a \in B_1 \subset U_\alpha$ and $b \in B_2 \subset V_\alpha$. 
+          Then $(a,b) \in B_1 \times B_2 \subset W$. Moreover, 
+          $B_1 \times B_2$ is open in $X \times Y$. It follows by Theorem 3.1 
+          that $\mathcal{B}_1 \times \mathcal{B}_2$ is a basis. Moreover, it is 
+          countable. Therefore, $X \times Y$ is 2nd countable.
+        </div>
 
-        <h4>5.3 1$^\text{st}$ Countable Spaces</h4>
+        <h4 id="5.3">5.3 1$^\text{st}$ Countable Spaces</h4>
         <div class="definition">
           Let $p$ be a point in a space $X$. A collection of open sets 
           $\{U_\alpha\}_{\alpha \in \lambda}$ in $X$ is a <strong>
@@ -2248,15 +2516,148 @@
           Let $X$ be a 2<sup>nd</sup> countable space. Then $X$ is 
           1<sup>st</sup> countable.
         </div>
+        <div class="proof">
+          Let $X$ be 2nd countable. Then $X$ has a countable basis 
+          $\mathcal{B}$. Let $p \in X$. Then define the set 
+          $V = \{B \in \mathcal{B} \mid p \in B\}$. Since $V \subset 
+          \mathcal{B}$ it follows we can enumerate the elements of $V$ such 
+          as $\{V_i\}_{i\in\mathbb{N}}$
+          Then let $U$ be an open set that contains $p$. Then 
+          $U = \cup_{\alpha \in \lambda}U_\alpha$ where $U_\alpha \in \mathcal{B}$
+          for all $\alpha \in \lambda$. Note $p \in U$ so 
+          $p \in U_\alpha$ for some $\alpha$. Then $U_\alpha = V_i$ for some $i$.
+          It follows $p \in V_i \subset U$. Hence, $\{V_i\}_{i\in\mathbb{N}}$ is 
+          a countable neighborhood basis. Thus, $X$ is 1st countable. 
+        </div>
 
         <!--5.15-->
         <div class="theorem">
           If $X$ is a top. space, $p \in X$, and $p$ has a countable neighborhood 
           basis, then $p$ has a nested countable neighborhood basis.
         </div>
+        <div class="proof">
+          Let $X$ be a top. space and $p \in X$ with $p$ having a countable 
+          neighborhood basis $\{U_i\}_{i \in \mathbb{N}}$. Then we define a nested 
+          countable neighborhood basis $\{V_i\}_{i \in \mathbb{N}}$ inductively.
+          Let $V_1 = U_1$. Now assuming that we have constructed $V_1,V_2,\dots,V_n$
+          such that $V_{i+1} \subset V_{i}$ for all $i=1,2,\dots,n-1$, and 
+          $p \in V_i$ for all $i = 1,2,\dots,n$ we construct $V_{n+1}$. 
+          Since $p \in V_n$ and is open it follows there exists $U_j$ such that 
+          $U_j \subset V_n$ and $p \in U_j$. Take $V_{n+1} = U_j$. Then 
+          $p \in V_{n+1}$ and $V_{n+1} \subset V_n$. Thus the induction may proceed.  
+          It follows $V_{i+1} \subset V_i$  and $p \in V_i$ 
+          for all $i \in \mathbb{N}$. Hence, $\{V_i\}_{i\in\mathbb{N}}$ is a 
+          nested countable neighborhood basis. 
+        </div>
+
+        <!--5.16-->
+        <div class="exercise">
+
+        </div>
+
+        <!--5.17-->
+        <div class="exercise">
+
+        </div>
+
+        <!--5.18-->
+        <div class="theorem">
+          Suppose $x$ is a limit point of the set $A$ in a 1st countable space 
+          $X$. Then there is a sequence of points $\{a_i\}_{i \in \mathbb{N}}$
+          in $A$ that converges to $x$.
+        </div>
+        <div class="proof">
+          Let $x$ be a limit point of the set $A$ in a 1st countable space $X$. 
+          Then there is a nested countable neighborhood basis 
+          $\{V_i\}_{i\in\mathbb{N}}$ about $x$. We construct a sequence $\{a_i\}$ in $A$ 
+          as follows. Take $a_i \in V_i \cap A$. Moreover, we know $V_i \cap A$
+          is nonempty since $x$ is a limit point of $A$ and $V_i$ is an open 
+          neighborhood of $x$ for all $i$. Now we show the sequence of points 
+          $\{a_i\}_{i\in\mathbb{N}}$ converges to $x$. Let $U$ be an open 
+          set containing $x$. Then for some $i$ we have $x \in V_i \subset U$. 
+          Then $a_j \in V_i \subset U$ for all $j \geq i$. Hence, $a_i \to x$.  
+        </div>
+
+        <!--5.19-->
+        <div class="exercise">
+          A 1st countable space is hereditarily 1st countable.
+        </div>
+        <div class="proof">
+          Let $X$ by 1st countable and $Y \subset X$ be endowed with the 
+          subspace topology. Let $p \in Y \subset X$ and have a  
+          countable neighborhood basis $\{V_i\}_{i\in\mathbb{N}}$ in $X$.
+          Define $V_i' = Y \cap V_i$ for all $i$. Then $V_i' \in \tau_Y$. 
+          Now we show $\{V_i\}_{i\in\mathbb{N}}$ is a 
+          countable neighborhood basis for $p$ in $Y$. Let 
+          $W'$ be an open neighborhood of $x$ in $Y$. Then there exists 
+          $W$ open in $X$ such that $W' = Y \cap W$. Then 
+          $p \in V_i \subset W$ for some $i \in \mathbb{N}$
+          If $V_i \subset W$ then $Y \cap V_i \subset Y \cap W$ so then 
+          $p \in V_i' \subset W'$. Moreover $\{V_i'\}$ is countable since 
+          $\{V_i\}$ is countable. It follows $Y$ is 1st countable. 
+        </div>
+
+        <!--5.20-->
+        <div class="exercise">
+          If $X$ and $Y$ are 1st countable spaces, then $X \times Y$
+          is 1st countable.
+        </div>
+        <div class="proof">
+          Let $X$ and $Y$ be 1st countable spaces. Let $(a,b) \in X \times Y$. 
+          Then $a \in X$ and $b \in Y$. Then there exists nested countable neighborhood
+          bases $\{U_i\}$ and $\{V_i\}$ for $a$ in $X$ and $b$ in $Y$ respectively. 
+          Then we show $\{U_i \times V_i\}_{i\in\mathbb{N}}$ is a countable 
+          neighborhood basis for $(a,b)$. Let $W$ be an open neighborhood of 
+          $(a,b)$. then $W = \cup_{\alpha \in \lambda}U_\alpha' \times V_\alpha'$. Then 
+          $a \in U_\alpha'$ and $b \in V_\alpha'$ for some $\alpha$. Then 
+          we have $a \in U_i \subset U_\alpha'$ and $b \in V_j \subset V_\alpha'$
+          for some $i$ and $j$. Then take $m = \max\{i,j\}$. Then 
+          $(a,b) \in U_r \times V_r \subset W$. It follows $\{U_i \times V_i\}_{i\in\mathbb{N}}$
+          is a countable neighborhood basis.
+        </div>
+
+        <h4 id="5.4">5.4 The Souslin Property</h4>
+        <div class="definition">
+          A space $X$ has the <strong>Souslin property</strong> if and only 
+          if $X$ does not contain an uncountable collection of disjoint open 
+          sets. 
+        </div>
+
+        <!--5.21-->
+        <div class="exercise">
+          Show that the real line with the standard topolgoy is Souslin.
+        </div>
+        <div class="proof">
+          Suppose there is an uncountable collection of disjoint open sets
+          $\{U_\alpha\}_{\alpha \in \lambda}$. 
+          Note that $\mathbb{Q}$ is dense in $\mathbb{R}$. Then every open 
+          set $U_\alpha$ contains a rational number. 
+          Then $|\{U_\alpha\}| \leq |\mathbb{Q}|$ and $\{U_\alpha\}$ is 
+          uncountable which implies the set of rationals is uncountable. This 
+          is a contradiction.
+        </div>
+
+        <!--5.22-->
+        <div class="theorem">
+          A separable space has the Souslin property.
+        </div>
+        <div class="proof">
+          Let $X$ be a separable space. Suppose there is an uncountable 
+          collection of disjoint open sets
+          $\{U_\alpha\}_{\alpha \in \lambda}$. Since the space is separable 
+          let $A$ be a countable dense subset of $X$. Then every open set 
+          $U_\alpha$ must contain 
+          at least one element in $A$. Each $U_\alpha$ contains a different 
+          element of $A$ since if $\alpha_1 \ne \alpha_2$ then 
+          $U_{\alpha_1} \cap U_{\alpha_2} = \varnothing$.
+          This implies $A$ is uncountable which 
+          is a contradiction. Hence, there does not exist an uncountable
+          collection of disjoint open sets. Therefore, $X$ is Souslin.
+        </div>
+        
 
         <h2 class="chapter" id="ch6">6 Compactness: The Next Best Thing to Being Finite</h2>
-        <h4>6.1 Compact Sets</h4>
+        <h4 id="6.1">6.1 Compact Sets</h4>
         <div class="definition">
           Let $A$ be a subset of $X$ and let $\mathcal{C} = \{C_\alpha\}_{\alpha\in\lambda}$
           be a collection of subsets of $X$. Then $\mathcal{C}$ is a <strong>cover</strong> 
@@ -2277,12 +2678,30 @@
         <div class="theorem">
           Let $X$ be a finite top. space. Then $X$ is compact.
         </div>
+        <div class="proof">
+          Consider an open cover of $X \subset \cup_{\alpha \in \lambda}U_\alpha$. 
+          We construct a subcover as follows. For every point $p$ in $X$ 
+          take associate a $U_{\alpha_p}$ such that $p \in U_{\alpha_p}$. 
+          Then $X = \cup_{p \in X} U_{\alpha_p}$. Since $X$ is finite, this subcover 
+          is also finite. Therefore, $X$ is compact.  
+        </div>
 
         <!--6.2-->
         <div class="theorem">
-          Let $C$ be a compact subset of $\mathbb{R}_\text{std}$. Them $C$ has 
+          Let $C$ be a compact subset of $\mathbb{R}_\text{std}$. Then $C$ has 
           maximum point, that is, there is a point $m \in C$ such that for every 
           $x \in C$, $x \leq m$.
+        </div>
+        <div class="proof">
+          For the sake of contradiction suppose there were not a maximum point of $C$. 
+          Then consider an open cover $C \subset \cup_{p \in C}U_p$ where 
+          $U_p = (p-1,p+1)$. Then there cannot be a finite subcover of $C$ since 
+          if there were $C$ would be bounded above and have a least upper bound 
+          $\alpha = \sup U_{p_1} \cup \dots \cup U_{p_n}$. Moreover, since $X$ has 
+          no maximum point, then there exists a point $x \in C$ such that 
+          $x \geq \alpha + 1$. Then $x \notin U_{p_1} \cup \dots \cup U_{p_n}$. 
+          Hence, there is not finite subcover. It follows, there must be a maximum point 
+          of $C$.
         </div>
 
         <!--6.3-->
@@ -2290,11 +2709,29 @@
           If $X$ is a compact space, then every infinite subset of $X$ has a 
           limit point. 
         </div>
+        <div class="proof">
+          Let $X$ be compact and let $A$ be an infinite subset of $X$. Then 
+          suppose there is no limit point. Then for every point $p$ in $X$, 
+          there is an open neighborhood $U_p$ such that 
+          $(U_p-\{p\}) \cap A = \varnothing$. Then for each $p \in X$, 
+          $U_p$ contains at most one point of $A$. 
+          Consider the open cover $X \subset \cup_{p \in X}U_p$. Then since 
+          $X$ is compact there is a finite subcover. Then we have
+          \[A \subset X \subset U_{p_1} \cup \dots \cup U_{p_n}\]
+          This finite subcover contains at most a finite number of points of 
+          $A$ yet contains $A$ which is infinite. This is a contradiction. 
+          Hence, every infinite subset of $X$ has a limit point. 
+        </div>
 
         <!--6.4-->
         <div class="corollary">
           If $X$ is compact and $E$ is a subset of $X$ with no limit points, then 
           $E$ is finite.
+        </div>
+        <div class="proof">
+          Let $X$ be compact and $E$ be a subset with no limit points. Then $E$ could 
+          not be infinite, for if it were then it would have a limit point in $X$. 
+          Thus, $E$ is finite.
         </div>
 
         <div class="definition">
@@ -2307,6 +2744,29 @@
           A space $X$ is compact if and only if every collection of closed sets with 
           the finite intersection property has a non-empty intersection.
         </div>
+        <div class="proof">
+          We prove the forward direction first. Let $\{K_\alpha\}_{\alpha \in \lambda}$
+          be a collection of closed sets with the finite intersection property. 
+          For the sake of contradiction suppose $\cap K_\alpha = \varnothing$. 
+          Then $K_{\alpha'} \subset \cup_{\alpha \ne \alpha'}(X-K_\alpha)$. 
+          Then $\cup_{\alpha \in \lambda} (X-K_\alpha)$ is an open cover of $X$. 
+          Since $X$ is compact there is a finite subcover. Then we have 
+          \[K_{\alpha'} \subset X \subset (X-K_{\alpha_1}) \cup \dots (X-K_{\alpha_n})\]
+          Then $K_{\alpha'} \cap K_{\alpha_1} \cap \dots K_{\alpha_n} = \varnothing$. 
+          But this contradictions $\{K_\alpha\}$ having the finite intersection 
+          property. Hence, $\cap_{\alpha \in \lambda} K_\alpha \ne \varnothing$. 
+          <br><br>
+          Now we prove the reverse direction. We prove the contrapositive. Suppose 
+          $X$ is not compact. Then there exists an open cover 
+          $\{U_\alpha\}_{\alpha \in \lambda}$ of $X$ that has no finite subcover. 
+          It follows all finite intersections are non-empty, that is,
+          $U_{\alpha_1} \cap \dots \cap U_{\alpha_n} \ne \varnothing$. 
+          Yet $X \subset \cup_{\alpha \in \lambda}U_\alpha$ so then 
+          $\cap_{\alpha \in \lambda} (X-U_\alpha) = \varnothing$. Then 
+          $\{X-U_\alpha\}_{\alpha \in \lambda}$ is a collection of 
+          closed sets that has the finite intersection property yet 
+          the intersection over the entire collection is empty.
+        </div>
 
         <!--6.6-->
         <div class="theorem">
@@ -2315,13 +2775,1066 @@
           such that $\bigcap_{\alpha \in \lambda} K_\alpha \subset U$, there 
           exist a finite number of $K_\alpha$'s whose intersection lies in $U$.
         </div>
+        <div class="proof">
+          We prove the forward direction first. Let $X$ be compact. Then let 
+          $U$ be an open set in $X$ and let $\{K_\alpha\}_{\alpha \in \lambda}$
+          be a collection of closed sets such that $\bigcap_{\alpha \in \lambda} 
+          K_\alpha \subset U$. Then $X \subset U \cup \bigcup_{\alpha \in \lambda}(X-K_\alpha)$. 
+          Since $X$ is compact there is a finite subcover. Then 
+          \[X \subset U \cup (X-K_{\alpha_1} \cup \dots \cup K_{\alpha_n})\]
+          Then $U \cap \bigcap_{i=1}^n K_{\alpha_i} = \varnothing$ so then 
+          $K_{\alpha_1} \cap \dots \cap K_{\alpha_n} \subset U$. Hence, 
+          there is a finite number of $K_\alpha$'s whose intersection lies in 
+          $U$. Now we prove the reverse direction. Suppose there is an open 
+          cover of $X$ that is $\bigcup_{\alpha \in \lambda}U_\alpha$. Then 
+          $\bigcap_{\alpha \in \lambda} (X-U_\alpha) \subset \varnothing$. Then 
+          by Theorem 6.5 we have $(X-U_{\alpha_1}) \cap \dots (X-U_{\alpha_n}) 
+          \subset \varnothing$. Then $X \subset U_{\alpha_1} \cup \dots \cup U_{\alpha_n}$. 
+          It follows there is a finite subcover and $X$ is compact.
+
+        </div>
 
         <!--6.7-->
         <div class="exercise">
           If $A$ and $B$ are compact subsets of $X$, then $A \cup B$ is compact. 
           Suggest and prove a generalization.
         </div>
+        <div class="proof">
+          Let $A$ and $B$ be compact subsets of $X$. We show $A \cup B$ is compact. 
+          Let ${K_\alpha}$ be an open cover of $A \cup B$. Then $\{A \cap K_\alpha\}$
+          is an open cover of $A$. Since $A$ is compact, there is a finite subcover. 
+          Then we have $A \subset A \cap (K_{\beta_1} \cup \dots \cup K_{\beta_n})$. 
+          Similarly for $B$ we have 
+          $B \subset B \cap (K_{\gamma_1} \cup \dots \cup K_{\gamma_m})$. 
+          Then 
+          \[A \cup B \subset K_{\beta_1} \cup \dots \cup K_{\beta_n} \cup 
+          K_{\gamma_1} \cup \dots \cup K_{\gamma_m}\]
+          It follows $A \cup B$ is compact. We can show that a finite union 
+          of compact sets is compact by induction.
+        </div>
+
+        <!--6.8-->
+        <div class="theorem">
+          Let $A$ be a closed subspace of a compact space. Then $A$ is compact. 
+        </div>
+        <div class="proof">
+          Let $X$ be a compact space. Let $A$ be a closed subspace of $X$. We 
+          show $A$ is compact. Let $\{U_\alpha\}_{\alpha \in \lambda}$ be an 
+          open cover of $A$. Then for every $U_\alpha$ there exists 
+          $U_\alpha'$ open in $X$ such that $U_\alpha = A \cap U_\alpha'$. 
+          Then $A \subset \cup_{\alpha \in \lambda} U_\alpha'$. Then 
+          \[X \subset (X-A) \cup (\cup_{\alpha \in \lambda} U_\alpha')\]. 
+          Since $X$ is compact, there is a finite subcover.
+          \[X \subset X-A \cup U_{\alpha_1}' \cup \dots \cup U_{\alpha_n}'\]
+          Then $A \subset U_{\alpha_1}' \cup \dots \cup U_{\alpha_n}'$. 
+          Then $A \subset U_{\alpha_1} \cup \dots \cup U_{\alpha_n}$. Hence, 
+          $A$ is compact.
+        </div>
+
+        <!--6.9-->
+        <div class="theorem">
+          Let $A$ be a compact subspace of a Hausdorff space $X$. Then $A$ is closed. 
+        </div>
+        <div class="proof">
+          We show that $X-A$ is open. Let $p \in X-A$. Then for every point $q \in A$
+          define two disjoint open sets $U_q$ and $V_q$ in $X$ such that $q \in U_q$
+          and $p \in V_q$ which is possible since $X$ is Hausdorff. Then 
+          $A \subset \cup_{p \in A} (A \cap U_q)$. Since $A$ is compact we have 
+          a finite subcover $A \subset (A \cap U_{q_1}) \cup \dots \cup (A \cap U_{q_n})$. 
+          Then $A \subset U_{q_1} \cup \dots \cup U_{q_n}$. 
+          Take $U = U_{q_1} \cup \dots \cup U_{q_n}$ and 
+          $V = V_{q_1} \cap \dots \cap V_{q_n}$. 
+          Note $V$ and $U$ are both open in $X$. Moreover, $V \cap U = \varnothing$. 
+          Since $A \subset U$ and $V \cap U = \varnothing$, it follows $V \cap A = \varnothing$. 
+          Then $V \subset X-A$. Altogether we have $p \in V \subset X-A$. Hence, 
+          $X-A$ is open. Then $A$ is closed.
+        </div>
+
+        <!---->
+        <div class="exercise">
+
+        </div>
+
+        <!---->
+        <div class="exercise">
+
+        </div>
+
+        <!--6.12-->
+        <div class="theorem">
+          Every compact, Hausdorff space is normal.
+        </div>
+        <div class="proof">
+          Let $X$ be compact and Hausdorff. We first show $X$ is regular. Let $A$ be a 
+          closed subset of $X$ and $p$ a point not in $A$. Then for every point
+          $q$ in $A$ there exists two disjoint open sets $U_q$ and $V_q$ such that 
+          $q \in U_q$ and $p \in V_q$. 
+          Then $A \subset \cup_{q\in A}U_q$. Note $X$ is compact so then 
+          $A$ must be compact since it is a closed subspace. Then 
+          $A \subset U_{q_1} \cup \dots \cup U_{q_n}$. 
+          Take $U = U_{q_1} \cup \dots \cup U_{q_n}$ and take 
+          $V = V_{q_1} \cap \dots \cap V_{q_n}$.
+          Then $U \cap V = \varnothing$, $p \in V$, and $A \subset U$. It 
+          follows $X$ is regular. 
+          <br><br>
+          Now we show $X$ is normal. Let $A$ and $B$ be two disjoint closed 
+          subsets of $X$. Then for every point $p$ in $A$ there exist
+          two disjoint open sets $W_p$ and $T_p$ such that 
+          $p \in W_p$ and $B \subset T_p$. Then 
+          $A \subset \cup_{p \in A}W_p$ and because $A$ is closed and $X$
+          is compact, it follows there is a finite subcover. Then we have 
+          $A \subset W_{p_1} \cup \dots \cup W_{p_n}$. Then take 
+          $W = W_{p_1} \cup \dots \cup W_{p_n}$ and 
+          let $T = T_{p_1} \cap \dots \cap T_{p_n}$. Then 
+          $W \cap T = \varnothing$, $A \subset W$, and $B \subset T$. 
+          It follows $X$ is normal.
+        </div>
+
+        <!--6.13-->
+        <div class="theorem">
+          Let $\mathcal{B}$ be a basis for a space $X$. Then $X$ is compact if 
+          and only if every open cover of $X$ by basic open sets in $\mathcal{B}$
+          has a finite subcover. 
+        </div>
+        <div class="proof">
+          Let $\mathcal{B}$ be a basis for $X$. We prove the forward direction first.
+          Let $\{U_\alpha\}_{\alpha \in \lambda}$ be an open cover of $X$. Then 
+          by definition of a basis this cover is a union of basic open sets 
+          $X \subset \cup_{\alpha \in \lambda}U_\alpha = \cup_{\beta \in \mu}B_\beta$ 
+          where $B_\beta \in \mathcal{B}$ for all $\beta \in \mu$. Since $X$ 
+          is compact there is a finite subcover. Then 
+          \[X \subset B_{\beta_1} \cup \dots \cup B_{\beta_n}\]
+          Now we prove the reverse direction. Let $\{V_\alpha\}_{\alpha\in\lambda}$
+          be an open cover of $X$. Then we know this can be rewritten as 
+          $X \subset \cup_{\alpha \in \lambda} V_\alpha = \cup_{\beta \in \mu}B_\beta$
+          where for all $B_\beta$, there exists some $V_\alpha$ such that 
+          $B_\beta \subset V_\alpha$ which is possible because $B_\beta$'s 
+          are basic open sets. 
+          Then the cover of basic open sets has a finite subcover so then 
+          $X \subset B_{\beta_1} \cup \dots \cup B_{\beta_n}$. Then for 
+          each $B_{\beta_i}$ there exists some $V_{\alpha_i}$ such that 
+          $B_{\beta_i} \subset V_{\alpha_i}$. 
+          Then $X \subset V_{\alpha_1} \cup \dots \cup V_{\alpha_n}$. 
+          Hence, $X$ is compact.
+        </div>
+
+        <h4 id="6.2">6.2 The Heine-Borel Thoerem</h4>
+        <!--6.14-->
+        <div class="theorem">
+          For any $a \leq b$ in $\mathbb{R}$, the subspace $\left[a,b\right]$
+          is compact.
+        </div>
+
+        <!--6.15-->
+        <div class="theorem">
+
+        </div>
+
+        <!--6.16-->
+        <div class="exercise">
+
+        </div>
+
+        <!--6.17-->
+        <div class="theorem">
+
+        </div>
+        <h4 id="6.3">6.3 Compactness and Products</h4>
+
+        <!--6.18-->
+        <div class="theorem">
+          Let $X \times Y$ be a product space with $Y$ compact. If $U$ 
+          is an open set of $X \times Y$ containing the set 
+          $x_0 \times Y$, then there is some open set $W$ in $X$ 
+          containing $x_0$ such that $U$ contains $W \times Y$ (called 
+          a "tube" around $x_0 \times Y$). 
+        </div>
+        <div class="proof">
+          Let $U$ be an open set of $X \times Y$ that contains the set $x_0 \times Y$. 
+          Note $U = \cup_{\alpha \in \Lambda}W_\alpha \times V_\alpha$ where 
+          $W_\alpha$ is open in $X$ and $V_\alpha$ is open in $Y$ for all 
+          $\alpha \in \Lambda$. Then define $\lambda$ such that $\lambda \in \Lambda$
+          and $\alpha \in \lambda$
+          if and only if $x_0 \in U_\alpha$. 
+          It follows $x_0 \times Y \subset \cup_{\alpha \in \lambda} W_\alpha \times 
+          V_\alpha$. Then $Y \subset \cup_{\alpha \in \lambda}V_\alpha$. Since 
+          $Y$ is compact, there is a finite subcover. Then 
+          $Y \subset V_{\alpha_1} \cup \dots \cup V_{\alpha_n}$. 
+          Take $W = W_{\alpha_1} \cap \dots \cap W_{\alpha_n}$. 
+          Now we show $W \times Y \subset \cup_{\alpha \in \lambda} W_\alpha \times 
+          V_\alpha$. Let $(a,b) \in W \times Y$. Then $b \in Y$. Then 
+          $b \in V_{\alpha_i}$ for some $i = 1,2,\dots,n$. Now $a \in W$
+          and $W \subset W_{\alpha_i}$. Then $a \in W_{\alpha_i}$. 
+          Then $(a,b) \in W_{\alpha_i} \times V_{\alpha_i}$. Moreover, 
+          $\alpha_i \in \lambda$. It follows $(a,b) \in \cup_{\alpha \in \lambda} 
+          W_\alpha \times V_\alpha$. Therefore, $W \times Y \subset 
+          \cup_{\alpha \in \lambda} W_\alpha \times V_\alpha$. It follows 
+          \[x_0 \times Y \subset W \times Y \subset \cup_{\alpha \in \Lambda} W_\alpha \times V_\alpha = U\]
+        </div>
         
+
+        <!--6.19-->
+        <div class="theorem">
+          Let $X$ and $Y$ be compact spaces. Then $X \times Y$ is compact.
+        </div>
+        <div class="proof">
+          Let $X$ and $Y$ be compact spaces. To show $X \times Y$ is compact, we 
+          use Theorem 6.13; that is, if any open cover of basic open sets has a finite 
+          subcover then the space is compact. Let 
+          $\{U_\alpha \times V_\alpha\}_{\alpha\in\lambda}$ be an open 
+          cover of $X \times Y$. Consider the set $x \times Y$ for 
+          some $x \in X$. Define $\lambda_x$ as $\lambda_x \subset \lambda$ 
+          and $\alpha \in \lambda_x$ if and only if $x \in U_\alpha$. 
+          Then $x \times Y \subset \cup_{\alpha \in \lambda_x} U_\alpha \times V_\alpha$. 
+          Note $Y \subset \cup_{\alpha \in \lambda_x} V_\alpha$. By compactness 
+          \[Y \subset V_{\alpha_1} \cup \dots \cup V_{\alpha_n}\]
+          Then $x \times Y \subset \cup_{i=1}^n U_{\alpha_i} \times V_{\alpha_i}$. 
+          Take $W_x = \cap_{i=1}^n U_{\alpha_i}$. Then 
+          \[x \times Y \subset W_x \times Y \subset \cup_{i=1}^n U_{\alpha_i} 
+          \times V_{\alpha_i}\]
+          Then $X \times Y \subset \cup_{x \in X} W_x \times Y$. 
+          Note $X \subset \cup_{x \in X}W_x$. Then by compactness 
+          \[X \subset W_{x_1} \cup \dots \cup W_{x_m}\]
+          Then $X \times Y \subset \cup_{j=1}^m W_{x_j} \times Y$. 
+          Moreover, each $W_{x_j} \times Y$ is covered by a finite union of elements 
+          of $\{U_\alpha \times V_\alpha\}_{\alpha \in \lambda}$. It follows 
+          there is a finite subcover of basic open sets for $X \times Y$. It follows 
+          there is a finite subcover of basic open sets for $X \times Y$. Thus 
+          $X \times Y$ is compact.
+
+        </div>
+
+        <!--6.20-->
+        <div class="theorem">
+
+        </div>
+
+        <!--6.21-->
+        <div class="theorem">
+          Let $S$ be a subbasis for a space $X$. Then $X$ is compact if and 
+          only if every subbasic open cover has a finite subcover. 
+        </div>
+        <div class="proof">
+
+        </div>
+
+        <!--6.22-->
+        <div class="exercise">
+
+        </div>
+
+        <!--6.23-->
+        <div class="theorem">
+          Any product of compact spaces is compact.
+        </div>
+
+        <!--6.24-->
+        <div class="exercise">
+
+        </div>
+        <h4 id="6.4">6.4 Countably Compact, Lindelof Spaces</h4>
+
+        <div class="definition">
+          A space $X$ is <strong>countably compact</strong> if and only if 
+          every countable open cover of $X$ has a finite subcover. 
+        </div>
+        <div class="definition">
+          A space $X$ is <strong>Lindelof</strong> if and only if every open 
+          cover of $X$ has a countable subcover.
+        </div>
+
+        <!--6.25-->
+        <div class="theorem">
+          Every countably compact and Lindelof space is compact.
+        </div>
+        <div class="proof">
+          Let $X$ be countably compact and Lindelof. Then let 
+          $\{U_\alpha\}_{\alpha\in\lambda}$. Without a loss of generality 
+          let $\lambda$ be uncountable. Since $X$ is Lindelof, there is a countable 
+          subcover. Then 
+          $X \subset \cup_{i \in \mathbb{N}}U_{\alpha_i}$. 
+          Moreover, since $X$ is countably compact and this is a countable cover, 
+          there exists a finite subcover. 
+          Then $X \subset U_{{\alpha_i}_1} \cup U_{{\alpha_i}_2} \cup \dots 
+        \cup U_{{\alpha_i}_n}$. It follows $X$ is compact. 
+        </div>
+
+        <!--6.26-->
+        <div class="theorem">
+          Let $X$ be a $T_1$ space. Then $X$ is countably compact if and only if 
+          every infinite subset of $X$ has a limit point. 
+        </div>
+
+        <!--6.27-->
+        <div class="theorem">
+          If $X$ is a Lindelof space, then every uncountable subset of $X$ has 
+          a limit point. 
+        </div>
+        <div class="proof">
+          Let $X$ be a Lindelof space and let $A$ be an uncountable subset of $X$. 
+          For the sake of contradiction, suppose there does not exist a limit point 
+          of $A$. Then for every point $p$ in $X$, there is an open neighborhood $U_p$
+          of $p$ such that $(U-\{p\}) \cap A = \varnothing$. Note each $U_p$ contains 
+          at most one point of $A$. Then $X \subset \cup_{p \in X}U_p$. This is a 
+          open cover of $X$. Since $X$ is Lindelof there is a countable subcover. 
+          Then $X \subset \cup_{i\in\mathbb{N}} U_{p_i}$. Since $U_{p_i}$ contains 
+          at most one point of $A$ for all $i \in \mathbb{N}$, it follows 
+          $X$ contains at most a countable number of points of $A$, yet $A$ is 
+          uncountable so this is a contradiction. Therefore, there is a limit 
+          point of $A$ in $X$. 
+        </div>
+
+        <!--6.28-->
+        <div class="exercise">
+          Formulate and prove theorems about Lindelof and countably compact spaces 
+          analogous to the theorems you proved relating compactness with collections 
+          of closed sets with the finite intersection property. 
+        </div>
+        <!--
+        <div class="my-thm">
+          A space $X$ is Lindelof if every collection of closed sets with the finite 
+          intersection property has a non-empty intersection. If a space $X$ is 
+          Lindelof then every collection of closed sets with the countable 
+          intersection property has a non-empty intersection. 
+        </div>
+        -->
+
+        <!--6.29-->
+        <div class="theorem">
+          If A is a closed subspace of a countably compact (respectively, Lindelof)
+          space, then $A$ is a countably compact (respectively, Lindelof). 
+        </div>
+        <div class="proof">
+          We prove the case for a countably compact space first. Let $A$ 
+          be a closed subspace of a countably compact space $X$. We show 
+          $A$ is countably compact. Let $\{U_i\}$ be a countable open cover of $A$. 
+          Since every $U_i$ is open in $A$, there is an associated open 
+          set $U_i'$ in $X$ such that $U_i = A \cap U_i'$. Then 
+          $\{U_i'\}$ is an open cover of $A$ with respect to $X$. Then 
+          $X \subset (X-A) \cup (\cup_{i \in \mathbb{N}} U_i')$. Since, 
+          $X$ is countably compact, there is a finite subcover. Then 
+          $X \subset (X-A) \cup U_{i_1'} \cup \dots \cup U_{i_n'}$. Then 
+          $A \subset U_{i_1} \cup \dots \cup U_{i_n}$. Hence, $A$ is 
+          countably compact. 
+          <br><br>
+          Now we prove the case for a Lindelof space. Let $A$ be a closed 
+          subspace of a Lindelof space $X$. Now let $\{U_\alpha\}_{\alpha \in \lambda}$
+          be an open cover of $A$. Then there is an open cover of $A$ 
+          $\{V_\alpha\}_{\alpha \in \lambda}$ in $X$ where $U_\alpha = A \cap V_\alpha$. 
+          Then $X \subset (X-A) \cup (\cup_{\alpha \in \lambda}V_\alpha)$. 
+          Since $X$ is Lindelof there is a countable subcover. Then 
+          $X \subset (X-A) \cup V_{\alpha_1} \cup V_{\alpha_2} \cup \dots$. 
+          Then $A \subset U_{\alpha_1} \cup U_{\alpha_2} \cup \dots$. Hence, 
+          $A$ is Lindelof. 
+        </div>
+
+        <!--6.30-->
+        <div class="theorem">
+          Every regular, Lindelof space is normal.
+        </div>
+        <div class="proof">
+          Let $X$ be regular and Lindelof. Let $A$ and $B$ be two disjoint 
+          closed subsets of $X$. Since $X$ is regular, for every point $p$ in 
+          $A$ there exist two disjoint open sets $U_p$ and $W_p$ such that 
+          $p \in U_p$ and $B \subset W_p$. Moreover, $\overline{U_p} \cap B = \varnothing$. 
+          Then $A \subset \cup_{p \in A}U_p$. Moreover, since $X$ is Lindelof and 
+          $A$ is a closed subset of $X$, $A$ is Lindelof. Then 
+          $A \subset U_{p_1} \cup U_{p_2} \cup \dots$. Using the same method, we 
+          construct a countable collection of open sets in $X$ that cover $B$. That 
+          is $B \subset V_{q_1} \cup V_{q_2} \cup \dots$. Furthermore, 
+          $\overline{U_{p_i}} \cap B = \varnothing$ and $\overline{V_{q_i}} \cap A 
+          = \varnothing$. Then by the Normality Lemma there exist disjoint open 
+          sets $U$ and $V$ such that $A \subset U$ and $B \subset V$. It follows, 
+          $X$ is normal. 
+        </div>
+
+        <!--6.31-->
+        <div class="theorem">
+          Let $\mathcal{B}$ be a basis for a space $X$. Then $X$ is Lindelof 
+          if and only if every open cover of $X$ by basic open sets in 
+          $\mathcal{B}$ has a countable subcover.
+        </div>
+        <div class="proof">
+          We prove the forward direction first. Let $\{B_\alpha\}_{\alpha \in \lambda}$ 
+          be a collection of basic open sets that cover $X$. Since $X$ is Lindelof 
+          there is a countable subcover. Then $X \subset B_{\alpha_1} \cup B_{\alpha_2}
+          \cup \dots$. Now we prove the reverse direction. Let 
+          $\{U_\alpha\}_{\alpha \in \lambda}$ be a collection of open 
+          sets that covers $X$. Then $X \subset \cup_{\alpha \in \lambda}U_\alpha$. 
+          Since $\mathcal{B}$ is a basis for $X$, we can rewrite this cover. 
+          For each $\alpha$ we have 
+          \[U_\alpha = \bigcup_{\beta \in \mu_\alpha}B_\beta\]
+          Then we have 
+          \[\cup_{\alpha \in \lambda}U_\alpha = 
+          \bigcup_{\alpha \in \lambda} (\cup_{\beta \in \mu_\alpha}B_\beta)\]
+          This is a cover of basic open sets. Then we have 
+          \[\cup_{\alpha \in \lambda}U_\alpha = \cup_{\beta \in \mu}B_\beta\]
+          where $B_\beta \in \mathcal{B}$ for all $\beta \in \mu$ and 
+          $\mu = \cup_{\alpha \in \lambda}\mu_\alpha$.
+          Then
+          there is an a countable subcover of basic open sets. 
+          $X \subset \cup_{i \in \mathbb{N}}B_{\beta_i}$. 
+          Then we construct a countable subcover $\{U_{\alpha_i}\}_{i \in \mathbb{N}}$ 
+          as follows. $U_{\alpha_i} = U_\alpha$ for some $\alpha \in \lambda$ such that 
+          $U_\alpha \supset B_i$. Note such a $U_\alpha$ exists since 
+          each $B_\beta$ is some subset of some $U_\alpha$. 
+          Now we show  
+          \[X \subset \cup_{i \in \mathbb{N}}U_{\alpha_i}\]
+          Let $p \in X$. Then $p \in B_i$ for some $i \in \mathbb{N}$. Then 
+          $p \in U_{\alpha_i}$. It follows $X$ is Lindelof. 
+        </div>
+
+        <!--6.32-->
+        <div class="corollary">
+          Every 2nd countable space is Lindelof.
+        </div>
+        <div class="proof">
+          If $X$ is 2nd countable then every open cover of basic open sets 
+          has a countable subcover. Then by Theorem 6.31 it follows $X$
+          is Lindelof.
+        </div>
+
+        <!--6.33-->
+        <div class="exercise">
+
+        </div>
+
+        <!--6.34-->
+        <div class="exercise">
+          Show that $\mathbb{R}_\text{LL}$ is Lindelof, but 
+          $\mathbb{R}_\text{LL} \times \mathbb{R}_\text{LL}$ is not Lindelof.
+        </div>
+
+        <!--6.35-->
+        <div class="theorem">
+          
+        </div>
+
+        <!--6.36-->
+        <div class="theorem">
+          
+        </div>
+
+        <!--6.37-->
+        <div class="exercise">
+          
+        </div>
+        <h4 id="6.5">6.5 Paracompactness</h4>
+        <div class="definition">
+          A collection $\mathcal{B} = \{B_\alpha\}_{\alpha \in \lambda}$ of 
+          subsets of a space $X$ is <strong>locally finite</strong> if 
+          and only if for each point $p$ in $X$ there is an open set $U$ 
+          containing $p$ such that $U$ intersects only finitely many 
+          elements of $\mathcal{B}$
+        </div>
+        <!--6.38-->
+        <div class="theorem">
+          Let $\mathcal{B} = \{B_\alpha\}_{\alpha \in \lambda}$ be a locally 
+          finite collection of subsets of a space $X$. Then 
+          \[\overline{(\bigcup_{\alpha\in\lambda}B_\alpha)} = 
+          \bigcup_{\alpha\in\lambda}\overline{B}_\alpha\]
+        </div>
+
+     
+        <div class="definition">
+          Let $\mathcal{B} = \{B_\alpha\}_{\alpha\in\lambda}$ be a cover of $X$. 
+          Then $\mathcal{C} = \{C_\beta\}_{\beta\in\mu}$ is a <strong>refinement</strong>
+          of $\mathcal{B}$ if and only if (i) $\mathcal{C}$ is a cover of $X$ and 
+          (ii) for each $\beta \in \mu$ there is an $\alpha \in \lambda$ such that 
+          $C_\beta \subset B_\alpha$. The collection $\mathcal{C}$ is an 
+          <strong>open refinement</strong> if and only if each $C_\beta$ is 
+          an open set. 
+        </div>
+
+        <div class="definition">
+          A space $X$ is <strong>paracompact</strong> if and only if every open 
+          cover of $X$ has a locally finite open refinement and $X$ is 
+          Hausdorff.
+        </div>
+
+        <!--6.39-->
+        <div class="theorem">
+          Let $A$ be a closed subspace of a paracompact space. Then $A$ is 
+          paracompact. 
+        </div>
+        <div class="proof">
+          Let $X$ be a paracompact space and $A$ be a closed subspace. 
+          We show $A$ is paracompact. Let $\mathcal{U} = \{U_\alpha\}_{\alpha \in \lambda}$ be 
+          an open cover of $A$. Then for every $U_\alpha$ there exist 
+          a set $U_\alpha'$ open in $X$. 
+          $X \subset (X-A) \cup (\cup_{\alpha \in \lambda}U_\alpha')$. This is 
+          an open cover of $X$. Since $X$ is paracompact, there is a locally 
+          finite open refinement of this cover, say 
+          $\mathcal{V}' = \{V_\beta'\}_{\beta \in \mu}$. Then $\mathcal{V}$ is 
+          an open cover and for every $\beta \in \mu$ there is an 
+          $\alpha \in \lambda$ such that $V_\beta' \subset U_\alpha'$.
+          Then define $V_\beta = A \cap V_\beta'$. Then $\mathcal{V}$ 
+          is an open cover of $A$. Now we show $\mathcal{V}$ is locally finite. 
+          Let $W$ be an open neighborhood of some point $p$ in $A$. Then there 
+          exists a set $W'$ open in $X$ that contains $p$ such that $W'$ intersects 
+          finitely many elements of $\mathcal{V}'$. It follows $W$ intersects 
+          finitely many elments of $\mathcal{V}$. Hence, $\mathcal{V}$ is 
+          locally finite. Now we show $\mathcal{V}$ is an open refinement of 
+          $\mathcal{U}$. Consider some $\beta \in \mu$. Then there exists some 
+          $\alpha \in \lambda$ such that $V_\beta' \subset U_\alpha'$. It follows 
+          $V_\beta \subset U_\alpha$ as well. Moreover, each $V_\beta$ is open 
+          in $A$ and $\mathcal{V}$ is a cover of $A$. Thus, 
+          $\mathcal{V}$ is a locally finite open refinement of the open cover 
+          $\mathcal{U}$. Hence, $A$ is paracompact. 
+        </div>
+
+        <!--6.40-->
+        <div class="theorem">
+          Every paracompact space is normal.
+        </div>
+        <div class="proof">
+          Let $X$ be paracompact. We first show $X$ is regular. Let $p$ be 
+          a point in $X$ and let $A$ be a closed subset of $X$ such that 
+          $p \notin A$. Note $X$ is Hausdorff.
+          Then for every point $q \in A$ there exist two disjoint 
+          open sets $U_q$ and $V_q$ such that $p \in U_q$ and $q \in V_q$. 
+          Then $A \subset \cup_{q \in A}V_q$. 
+          Take $\mathcal{V} = \{X-A\} \cup \{V_q \mid q \in A\}$. 
+          $X \subset \cup_{V \in \mathcal{V}}V$. Then this is an open 
+          cover of $X$. Since $X$ is paracompact, there exist a locally 
+          finite open refinement of this open cover, say 
+          $\mathcal{W} = \{W_\beta\}_{\beta \in \mu}$. 
+          Then there exist an open set $G_0$ of $p$ such that $G_0$ intersects 
+          finitely many elements in $\mathcal{W}$, 
+          say $W_{\beta_1}, W_{\beta_2}, \dots, W_{\beta_n}$. 
+          <!--
+          Note that $X-A$ is the only element in $\mathcal{V}$ that 
+          contains point $p$. Then there exists some element $W_{\beta_0}$ in 
+          $\mathcal{W}$ such that $W_{\beta_0} \subset X-A$. Moreover, 
+          $A \subset \cup_{\beta \in \mu - \{\beta_0\}}W_\beta$. 
+          -->
+          <br><br>
+          Then we construct $G'$ as follows. We construct $G_1,G_2,\dots,G_n$
+          in that order. 
+          $G_0$ intersects elements $W_{\beta_1}, W_{\beta_2},\dots,W_{\beta_n}$. 
+          For each $i = 1,2,\dots,n$
+          if $W_{\beta_i} \subset V_q$ for some $q \in A$ then take 
+          $G_i = G_{i-1} - \overline{W_i}$. Otherwise, take $G_i = G_{i-1}$. 
+          Note that $p \notin \overline{W_{\beta_i}}$ and $G_i$ remains open 
+          for all $i$. 
+          Then take $G' = G_n$. Then $p \in G'$ and $G'$ is open.
+          Take $W' = (\cup_{\beta \in \mu-\{\beta_0\}}W_{\beta})$.
+          Moreover, we know $A \subset W'$ and $G' \cap W' = \varnothing$. 
+          Hence, $X$ is regular. 
+          <br><br>
+          Now we show $X$ is normal. Let $A$ and $B$ be two disjoint closed subsets 
+          of $X$. Since $X$ is Hausdorff, for every point $p$ in $A$ there 
+          exist two disjoint open sets $U_p$ and $V_p$ such that $p \in U_p$ 
+          and $B \subset V_p$. Then take
+          \[\mathcal{U} = \{U_\alpha\}_{\alpha \in \lambda}
+          = \{U_p\}_{p \in A} \cup \{X-A\}\]
+          Then $\mathcal{U}$ is a cover of $X$. Since $X$ is paracompact, 
+          there is a locally finite open refinement 
+          $\mathcal{W} = \{W_\beta\}_{\beta \in \mu}$ of $\mathcal{U}$.
+          Note that the only element in $\mathcal{U}$ that intersects $B$ 
+          is $X-A$. And since $\mathcal{W}$ is an open cover of $X$, 
+          there is some $W_{\beta_0}$ such that $W_{\beta_0} \subset X-A$. It 
+          follows $W_{\beta_0}$ is the only element of $\mathcal{W}$ that 
+          has a non-empty intersection with $B$. Then $W_{\beta_0}$ contains $B$.
+          Furthermore take $W' = \cup_{\beta \in \mu-\{\beta_0\}}W_\beta$ 
+          and then $A \subset W'$.  
+          By paracompactness of $X$, for every point $q \in B$ there 
+          exist open set $T_q$ such that $T_q$ intersects finitely 
+          many elements of $\mathcal{W}$, say 
+          $W_{\beta_1},W_{\beta_2},\dots,W_{\beta_{n_q}}$. Now we construct 
+          $T_q'$ by constructing $T_0,T_1,\dots,T_{n_q}$. 
+          Take $T_0 = T_q$. For $i=1,2,\dots,n_q$, if $W_{\beta_i} = W_{\beta_0}$
+          then $T_i = T_{i-1}$ otherwise $T_i = T_{i-1} - \overline{W}_{\beta_i}$. 
+          Then take $T_q' = T_n$. Note that $\overline{W}_{\beta} \cap B = \varnothing$ 
+          for all $\beta \in \mu$
+          so then $q \in T_q'$. Moreover, $T_q'$ is open and $T_q' \cap 
+          W' = \varnothing$. Take $T' = \cup_{q \in B}T_q'$. 
+          Then $T'$ is open, $B \subset T'$, and $T' \cap W' = \varnothing$. 
+          Moreover, $W'$ is open and $A \subset W'$. It follows $W'$ and 
+          $T'$ are two disjoint open sets that separate $A$ and $B$. Then 
+          $X$ is normal.
+
+        </div>
+
+        <!--6.41-->
+        <div class="theorem">
+          Every regular, $T_1$, Lindelof space is paracompact.
+        </div>
+
+        <h2 class="chapter" id="ch7">
+        7 Continuity: When Nearby Points Stay Together
+        </h2>
+        <h4 id="7.1">7.1 Continuous Functions</h4>
+
+        <div class="definition">
+          Let $X$ and $Y$ be topological spaces. A function or map 
+          $f \colon X \to Y$ is a <strong>continuous function</strong>
+          if and only if for every open set $U$ in $Y$, 
+          $f^{-1}(U)$ is open in $X$. 
+        </div>
+
+        <!--7.1-->
+        <div class="theorem">
+          Let $X$ and $Y$ be topological spaces, and let $f \colon X \to Y$ 
+          be a function. Then the following are equivalent:
+          <ol>
+            <li>The function $f$ is continuous</li>
+            <li>For every closed set $K$ in $Y$, the 
+              inverse image $f^{-1}(K)$ is closed in $X$. 
+            </li>
+            <li>For every limit point $p$ of a set $A$ in $X$, the 
+              image $f(p)$ belongs to $\overline{f(A)}$. 
+            </li>
+            <li>
+              For every $x \in X$ and open set $V$ containing $f(x)$, there 
+              is an open set $U$ containing $x$ such that $f(U) \subset V$. 
+            </li>
+          </ol>
+        </div>
+        <div class="proof">
+          We first show (1) implies (2). Let $K$ be closed in $Y$. Then 
+          $Y-K$ is open. Then $f^{-1}(Y-K)$ is open in $X$. Now we show 
+          $f^{-1}(Y-K) = X - f^{-1}(K)$. Let $p \in f^{-1}(Y-K)$. Then 
+          $f(p) \in Y-K$. Then $p \in X - f^{-1}(K)$. Since $X - f^{-1}(K)$ 
+          is open it follows $f^{-1}(K)$ is closed.
+          <br><br>
+          Now we show (2) implies (3). Let $p$ be a limit point of $A$. 
+          If $p \in A$ then $f(p) \in \overline{f(A)}$. Now suppose 
+          $p \notin A$. For the sake of contradiction suppose 
+          $f(p) \notin \overline{f(A)}$. 
+          Then $p \in X - f^{-1}(\overline{A})$. Note $X - f^{-1}(\overline{A})$ is 
+          open by part (2). Then there is some open neighborhood $U$ of $p$ 
+          such that $U \subset X - f^{-1}(\overline{A})$. Moreover, 
+          $p$ is a limit point of $A$ so then 
+          $(U - \{p\}) \cap A \ne \varnothing$. 
+          Let $a \in (U-\{p\}) \cap A$. Then 
+          $a \in f^{-1}(\overline{f(A)})$. But $a \in U \subset X - 
+          f^{-1}(\overline{f(A)})$. This is a contradiction. Hence, 
+          $f(p) \in \overline{f(A)}$. 
+          <br><br>
+          Now we show (3) implies (4). Let $x \in X$ and $V$ be an open set 
+          that contains $f(x)$. For the sake of contradiction suppose 
+          for every open set $U$ containing $x$ we have $f(U) \cap (X-V) 
+          \ne \varnothing$. Then $(U-\{x\}) \cap f^{-1}(X-V) \ne \varnothing$. 
+          Then $x$ is a limit point of $f^{-1}(X-V)$. 
+          Then by part (3) we have $f(x)$ belonging to $\overline{X-V}$
+          and since $X-V$ is closed $\overline{X-V} = X-V$. 
+          Then $f(x) \in X-V$ and $f(x) \in V$. This is a contradiction. 
+          Hence, there is an open set $U$ containing $x$ such that 
+          $f(U) \subset V$. 
+          <br><br>
+          Now we show part (4) implies part (1). Let $V$ be an open set 
+          in $Y$. Then we show $f^{-1}(V)$ is open. If $f(X) \cap V = \varnothing$ 
+          then $f^{-1}(V) = \varnothing$ which is open. Now suppose 
+          $V \cap f(X) \ne \varnothing$. Then let $p \in f^{-1}(V)$. 
+          Then by part (4) there is an open neighborhood $U_p$ of $p$ such that 
+          $f(U) \subset V$. Then consider the set $W = \cup_{p \in f^{-1}(V)} U_p$. 
+          This is a union of open sets which is open. 
+          Now we show $W = f^{-1}(V)$. Let $p \in W$. Then $p \in U_q$ for 
+          some $q \in f^{-1}(V)$. Moreover, $f(U_q) \subset V$. Hence, 
+          $p \in f^{-1}(V)$. It follows $W \subset f^{-1}(V)$. Now let 
+          $x \in f^{-1}(V)$. Then $x \in U_x \subset W$. It follows 
+          $W = f^{-1}(V)$. Since $W$ is open it follows $f^{-1}(V)$ is open. 
+        </div>
+
+        <div class="theorem">
+          Let $X,Y$ be topological spaces and $y_0 \in Y$. The constant 
+          map $f \colon X \to Y$ defined by $f(x) = y_0$ is continuous. 
+        </div>
+        <div class="proof">
+          We first use the definition a continuous function. Let $V$ be an
+          open set in $Y$. Then we show $f^{-1}(V)$ is open. 
+          Suppose $y_0 \in V$. Then $f^{-1}(V) = X$ and $X$ is open. 
+          Now suppose $y_0 \notin V$. Then $f^{-1}(V) = \varnothing$ which 
+          is also open in $X$. It follows $f$ is continuous.
+          <br><br>
+          We use the 2nd alternative definition of a continuous function. 
+          Let $K$ be a closed set in $Y$. We show $f^{-1}(K)$ is also 
+          closed. Suppose $y_0 \in K$. Then $f^{-1}(K) = X$ which is closed. 
+          Now suppose $y_0 \notin K$. Then $f^{-1}(K) = \varnothing$ which 
+          is also closed. Hence, $f$ is continuous.
+          <br><br>
+          Consider the third definition. Let $A \subset X$ and let 
+          $p$ be a limit point of $A$. Then we show $f(p) \in 
+          \overline{f(A)}$. Note that $f(A) = y_0$ and $f(p) = y_0$. 
+          Hence, $f(p) \in f(A)$. It follows $f$ is continuous. 
+          <br><br>
+          Consider the fourth definition. Let $p \in X$ and let 
+          $V$ be an open set in $Y$ such that $f(p) \in V$. 
+          Then take $U = X$. Then $U$ is an open set in $X$ that 
+          contains $p$ and $f(U) = \{y_0\} \subset V$. Hence, 
+          $f$ is continuous.
+        </div>
+
+        <!--7.3-->
+        <div class="theorem">
+          Let $X \subset Y$ be topological spaces. The inclusion map 
+          $i \colon X \to Y$ defined by $i(x) = x$ is continuous.
+          
+        </div>
+        <div class="proof">
+          We use the first definition. Let $V$ be an open set in $Y$. 
+          Then take $V_1 = X \cap V$ and 
+          $V_2 = V - V_1$. Then $i^{-1}(V_1 \cup V_2) = i^{-1}(V_1) 
+          \cup i^{-1}(V_2)$. Note that $i^{-1}(V_2) = \varnothing$. 
+          Since $i(x) = x$ it follows $i^{-1}(V_1) = V_1$. 
+          Note $V_1 = V \cap Y$ so $V_1$ is open in $X$ given the subspace 
+          topology. Hence, $f$ is continuous. 
+          <br><br>
+          Let $K$ be a closed set in $Y$. Then take $K_1 = X \cap K$ 
+          and $K_2 = K - K_1$. Then $i^{-1}(K) = i^{-1}(K_1)$. 
+          Then $i^{-1}(K_1) = K_1$. Note that $K_1$ is closed in $Y$ 
+          and $K_1 \subset X$. Then $\text{Cl}_Y(K_1) \cap X = K_1$. 
+          Hence, $K_1$ is closed in $X$ by Corollary 3.29.
+          <br><br>
+          Let $A \subset X$ and $p$ a limit point of $A$. Note
+          $i(A) = A$ and $i(p) = p$. Since $p$ is a limit point 
+          of $A$ in the subspace $X$, it follows $p$ is 
+          also a limit point of $A$ with respect to $Y$. Hence, 
+          $p \in \text{Cl}_Y(f(A))$. It follows $i$ is continuous.
+          <br><br>
+          Let $p \in X$ and $V$ be an open set in $Y$ that contains 
+          $i(p)= p$. Take $U = V \cap X$. Then $U$ is open in $X$, 
+          contains $p$, and $i(U)$ is a subset of $V$. Hence, 
+          $i$ is continuous. 
+        </div>
+
+        <!--7.4-->
+        <div class="theorem">
+          Let $f\colon X \to Y$ be a continuous map between 
+          topological spaces, and let $A$ be a subset of $X$. Then the 
+          restriction map $f|_A \colon A \to Y$ defined by 
+          $f|_A(a) = f(a)$ is continuous. 
+        </div>
+        <div class="proof">
+          Let $V$ be an open set in $Y$. Since $f$ is continuous, then 
+          $f^{-1}(V)$ is open in $X$. Note that $f|_A^{-1}(V) = 
+          A \cap f^{-1}(V)$. Since $f^{-1}(V)$ is open in $X$, it follows 
+          $A \cap f^{-1}(V)$ is open in $A$. Then $f|_A^{-1}(V)$ is 
+          open in $A$. 
+        </div>
+
+        <div class="definition">
+          Let $f \colon X \to Y$ be a function between topological 
+          spaces $X$ and $Y$, and let $x \in X$. Then 
+          $f$ is <strong>continuous at the point</strong> x if and only if 
+          for ever open set $V$ containing $f(x)$, there is an open set 
+          $U$ containing $x$ such that $f(U) \subset V$. Thus a 
+          function $f \colon X \to Y$ is continuous if and only if 
+          it is continuous at each point. 
+        </div>
+
+        <!--7.5-->
+        <div class="theorem">
+          A function $f\colon \mathbb{R}_\text{std} \to \mathbb{R}_\text{std}$ 
+          is continuous if and only if for every point $x$ in 
+          $\mathbb{R}$ and $\varepsilon > 0$, there is a $\delta > 0$ such that 
+          for every $y \in \mathbb{R}$ with $d(x,y) \lt \delta$, then 
+          $d(f(x),f(y)) \lt \varepsilon$.
+        </div>
+        <div class="proof">
+          We prove the foward direction first. Let $x \in \mathbb{R}$. Then 
+          Consider the open ball $V = B(f(x), \varepsilon)$. Since $f$ is continuous 
+          there is an open set $U$ such that $x \in U$ and $f(U) \subset V$. 
+          Since $U$ is open, and $x \in U$, there is some open ball 
+          $W = B(x,\delta)$ such that $x \in W \subset U$. It follows 
+          for every $y \in W$ (or equally $d(x,y) \lt \delta$) we have 
+          $d(f(x),f(y)) \lt \varepsilon$. Now we prove the reverse direction. 
+          Let $p \in \mathbb{R}$ and let $V$ be an open set that contains $f(p)$. 
+          Since $V$ is open in the standard topology on $\mathbb{R}$, it follows 
+          there is an open ball centered around $f(p)$, say $B(f(p),\varepsilon)$. 
+          Then there is a $\delta > 0$ such that for every $y \in \mathbb{R}$
+          with $d(p,y) \lt \delta$ then $d(f(p),f(y)) \lt \varepsilon$. 
+          Take $U = B(p,\delta)$. It follows $p \in U$ and $f(U) \subset V$.   
+        </div>
+
+        <!--7.6-->
+        <div class="theorem">
+          Let $X$ be a 1st countable space, and let $Y$ be a topological space.
+          Then a function $f \colon X \to Y$ is continuous if and only if for 
+          each convergent sequence $x_n \to x$ in $X$, $f(x_n)$ converges 
+          to $f(x)$ in $Y$. 
+        </div>
+        <div class="proof">
+          We prove the forward direction. Let $V$ be an open set that contains 
+          $f(x)$. Since $f$ is continuous there exists an open set $U$ such that 
+          $x \in U$ and $f(U) \subset V$. Since $x_n \to x$, there exists $N \in \mathbb{N}$
+          such that $x_n \in U$ for all $n > N$. It follows 
+          $f(x_n) \in f(U) \subset V$ for all $n > N$. Hence, $f(x_n) \to f(x)$. 
+          Now we prove the reverse direction. Let $A \subset X$ and let $x$ be 
+          a limit point of $A$. Moreover, since $X$ is 1st countable, $x$ 
+          has a nested countable neighborhood basis $\{W_i\}_{i \in \mathbb{N}}$. 
+          We construct a sequence $(x_i)_{i \in \mathbb{N}}$ that converges 
+          to $x$ as follows. For every natural number $i$ take
+          $x_i \in W_i \cap A$. This intersection is non-empty since, 
+          $x$ is a limit point of $A$. Now we show the sequence converges. 
+          Take an open set $U$ that contains $x$. Since $\{W_i\}_{i \in \mathbb{N}}$ 
+          is a nested countable neighborhood basis, $W_j \subset U$ for
+          all $j \geq n$ for some $n \in \mathbb{N}$. Moreover, $x_i \in W_i$
+          for all $i$ so then $x_j \in U$ for all $j \geq n$. Hence, 
+          $x_i \to x$. Now consider the sequence $(f(x_i))_{i\in\mathbb{N}}$ 
+          in $f(A)$. We know $f(x_i) \to f(x)$. Then for any open set $V$ 
+          that contains $f(x)$ we have $(V-\{f(x)\}) \cap A \ne \varnothing$. 
+          Hence, $f(x) \in \overline{f(A)}$. It follows $f$ is continuous. 
+        </div>
+
+        <!--7.7-->
+        <div class="theorem">
+          Let $X$ be a space with a dense set $D$, and let $Y$ be Hausdorff. 
+          Let $f \colon X \to Y$ and $g \colon X \to Y$ be continuous 
+          functions such that for every $d$ in $D$, $f(d) = g(d)$. Then 
+          for all $x \in X$, $f(x) = g(x)$. 
+        </div>
+        <div class="proof">
+          For the sake of contradiction suppose for some $x \in X$ we have
+          $f(x) = y_1 \ne y_2 = g(x)$. Since $Y$ is Hausdorff there 
+          exist two disjoint open sets $V_1$ and $V_2$ such that 
+          $y_1 \in V_1$ and $y_2 \in V_2$. Since $f$ and $g$ are continuous there exist 
+          open sets $U_1$ and $U_2$ such that $x \in U_1$, $f(U_1) \subset V_1$, 
+          $x \in U_2$, and $g(U_2) \subset V_2$. Then take $U = U_1 \cap U_2$. 
+          Then $x \in U$, $f(U) \subset V_1$, and $g(U) \subset V_2$. 
+          Since $D$ is dense in $X$, there exist some $d \in D \cap U$. Then 
+          $f(d) \in f(U) \subset V_1$ and $g(d) \in g(U) \subset V_2$. Note that 
+          $V_1 \cap V_2 = \varnothing$ yet $f(d) = g(d)$. This is a contradiction. 
+        </div>
+
+        <!--7.8-->
+        <div class="theorem">
+
+        </div>
+
+        <!--7.9-->
+        <div class="theorem">
+          If $f\colon X \to Y$ and $g \colon Y \to Z$ are continuous, then 
+          their composition $g \circ f \colon X \to Z$ is continuous. 
+        </div>
+        <div class="proof">
+          Let $z = (g \circ f)(x) = g(f(x))$ and let $y = f(x)$. Let 
+          $W$ be an open set that contains $z$. Since $g$ is continuous 
+          there exist an open set $V$ in $Y$ such that $y \in V$ and 
+          $g(V) \subset W$. Since $f$ is continuous there exist 
+          an open set $U$ in $X$ such that $x \in U$ and $f(U) \subset V$. 
+          Then $g(f(U)) \subset g(V) \subset W$. It follows $g \circ f$ 
+          is continuous.
+        </div>
+
+        <!--7.10-->
+        <div class="theorem">
+          Let $X = A \cup B$, where $A,B$ are closed in $X$. Let 
+          $f \colon A \to Y$ and $g \colon B \to Y$ be continuous functions 
+          that agree on $A \cap B$. Then the function 
+          $h \colon A \cup B \to Y$ defined by $h = f$ on $A$ and $h = g$ 
+          on $B$ is continuous. 
+        </div>
+        <div class="proof">
+
+        </div>
+
+        <!--7.11-->
+        <div class="theorem">
+
+        </div>
+
+        <!--7.12-->
+        <div class="exercise">
+
+        </div>
+
+        <!--7.13-->
+        <div class="theorem">
+          Let $f \colon X \to Y$ be a function and let $\mathcal{B}$ be 
+          a basis for $Y$. Then $f$ is continuous if and only if for 
+          every open set $B$ in $\mathcal{B}$, $f^{-1}(B)$ is open 
+          in $X$. 
+        </div>
+        <div class="proof">
+          We prove the forward direction. Let $B$ be in $mathcal{B}$. Then 
+          $B$ is an open set by definition of a basis. Since $f$ is 
+          continuous it follows $f^{-1}(B)$ is open. Now we prove the 
+          reverse direction. Let $V$ be an open set in $Y$. Then 
+          $V = \cup_{\beta \in \mu}V_\beta$ where $V_\beta \in \mathcal{B}$
+          for all $\beta \in \mu$. Then 
+          \[f^{-1}(V) = f^{-1}(\cup_{\beta_\in\mu}V_\beta) = 
+          \cup_{\beta\in\mu} f^{-1}(V_\beta)\]
+          Note that $\cup_{\beta\in\mu} f^{-1}(V_\beta)$ is a union 
+          of open sets. Hence, $f^{-1}(V)$ is open. It follows $f$ 
+          is continuous. 
+        </div>
+
+        <!--7.14-->
+        <div class="theorem">
+          Let $f \colon X \to Y$ be a function and let $\mathcal{S}$ be 
+          a subbasis for $Y$. Then $f$ is continuous if and only if for 
+          every open set $S$ in $\mathcal{S}$, $f^{-1}(S)$ is open 
+          in $X$. 
+        </div>
+        <h4 id="7.2">7.2 Properties Preserved by Continuous Functions</h4>
+        
+        <!--7.15-->
+        <div class="theorem">
+          If $X$ is compact and $f \colon X \to Y$ is continuous and 
+          surjective, then $Y$ is compact. 
+        </div>
+        <div class="proof">
+          Let $\{V_\alpha\}_{\alpha \in \lambda}$ be an open cover of $Y$. 
+          Then $\{f^{-1}(V_\alpha)\}_{\alpha \in \lambda}$ is an open 
+          cover of $X$ since $f$ is surjective and continuous. Since $X$ 
+          is compact, there is a finite subcover. Then we have 
+          $X \subset f^{-1}(V_{\alpha_1}) \cup \dots \cup f^{-1}(V_{\alpha_n})$
+          It follows $Y \subset V_{\alpha_1} \cup \dots \cup V_{\alpha_n}$. 
+          Hence, $Y$ is compact. 
+        </div>
+
+        <!--7.16-->
+        <div class="theorem">
+          If $X$ is Lindelof and $f \colon X \to Y$ is continuous and 
+          surjective, then $Y$ is Lindelof. 
+        </div>
+        <div class="proof">
+          Let $\{V_\alpha\}_{\alpha \in \lambda}$ be an open cover of $Y$. 
+          Then $\{f^{-1}(V_\alpha)\}_{\alpha \in \lambda}$ is an open 
+          cover of $X$ since $f$ is surjective and continuous. Since $X$ 
+          is Lindelof, there is a countable subcover. Then we have 
+          \[X \subset f^{-1}(V_{\alpha_1}) \cup f^{-1}(V_{\alpha_2}) \cup \dots\]
+          It follows 
+          \[Y \subset V_{\alpha_1} \cup V_{\alpha_2} \cup \dots\]
+          Hence, $Y$ is Lindelof. 
+        </div>
+
+        <!--7.17-->
+        <div class="theorem">
+          If $X$ is countably compact and $f \colon X \to Y$ is continuous and 
+          surjective, then $Y$ is countably compact. 
+        </div>
+        <div class="proof">
+          Let $\{V_i\}_{i \in \mathbb{N}}$ be a countable open cover of $Y$. 
+          Then $\{f^{-1}(V_i)\}_{i \in \mathbb{N}}$ is an countable open
+          cover of $X$ since $f$ is surjective and continuous. Since $X$ 
+          is countably compact, there is a finite subcover. Then we have 
+          \[X \subset f^{-1}(V_{i_1}) \cup \dots \cup f^{-1}(V_{i_n})\]
+          It follows 
+          \[Y \subset V_{i_1} \cup \dots \cup V_{i_n}\]
+          Hence, $Y$ is countably compact. 
+        </div>
+
+        <!--7.18-->
+        <div class="theorem">
+          Let $D$ be a dense subset of a topological space $X$, and let 
+          $f \colon X \to Y$ be continuous and surjective. Then 
+          $f(D)$ is dense in $Y$. 
+        </div>
+        <div class="proof">
+          Let $V$ be an open set in $Y$. Then $f^{-1}(V)$ is open in $X$. 
+          Since $D$ is dense in $X$, for some $d \in D$ we have
+          $d \in f^{-1}(V)$. Then $f(d) \in V$. It follows $f(D)$ 
+          is dense in $Y$.
+        </div>
+
+        <!--7.19-->
+        <div class="corollary">
+          Let $X$ be a separable space, and let $f \colon X \to Y$ be 
+          continuous and surjective. Then $Y$ is separable. 
+        </div>
+        <div class="proof">
+          This holds since if $X$ has a dense subset, the $Y$ does as well: 
+          this follows from the theorem above. 
+        </div>
+
+        <div class="definition">
+          A function $f\colon X \to Y$ is <strong>closed</strong> if 
+          and only if for every closed set $A$ in $X$, 
+          $f(A)$ is closed in $Y$. A function $f\colon X \to Y$ is 
+          <strong>open</strong> if and only if for every open set 
+          $U$ in $X$, $f(U)$ is open in $Y$. 
+        </div>
+
+        <!--7.20-->
+        <div class="exercise">
+
+        </div>
+
+        <!--7.21-->
+        <div class="theorem">
+          If $X$ is normal and $f\colon X \to Y$ is continuous, surjective, 
+          and closed, then $Y$ is normal.
+        </div>
+
+        <!--7.22-->
+        <div class="theorem">
+          If $\{B_\alpha\}_{\alpha\in\lambda}$ is a basis for $X$ and 
+          $f\colon X \to Y$ is continuous, surjective, and open, then 
+          $\{f(B_\alpha)\}_{\alpha\in\lambda}$ is a basis for $Y$. 
+        </div>
+        <div class="proof">
+          Let $V$ be an open set in $Y$. Then $f^{-1}(V)$ is open in $X$ 
+          since $f$ is continuous. Then $f^{-1}(V) = \cup_{\beta \in \mu}B_\beta$
+          where $\mu \subset \lambda$. 
+          It follows 
+          $V = \cup_{\beta \in \mu} f(B_\beta)$. 
+          Hence, $\{f(B_\alpha)\}_{\alpha\in\lambda}$ 
+          is a basis for $Y$. 
+        </div>
+
+        <!--7.23-->
+        <div class="corollary">
+          If $X$ is 2nd countable and $f \colon X \to Y$ is continuous, 
+          surjective, and open, then $Y$ is 2nd countable.
+        </div>
+        <div class="proof">
+          Let $\{B_i\}_{i \in \mathbb{N}}$ be a countable basis for $X$. 
+          Then $\{f(B_i)\}_{i \in \mathbb{N}}$ is a countable basis for $Y$ by 
+          Theorem 7.22. It follows $Y$ is 2nd countable.
+        </div>
+
+        <!--7.24-->
+        <div class="theorem">
+          Let $X$ be compact, and let $Y$ be Hausdorff. Then any continuous 
+          function $f\colon X \to Y$ is closed. 
+        </div>
+
+        <!--7.25-->
+        <div class="theorem">
+          Let $X$ be compact and 2nd countable, and let $Y$ be Hausdorff. 
+          If $f \colon X \to Y$ is continuous and surjective, then 
+          $Y$ is 2nd countable.
+        </div>
+
+        <h4 id="7.3">7.3 Homeomorphisms</h4>
+
+        <div class="definition">
+          A function $f\colon X \to Y$ is a <strong>homeomorphism</strong>
+          if and only if $f$ is a continuous bijection and the inverse 
+          map $f^{-1} \colon Y \to X$ is also continuous. 
+        </div>
+        <div class="definition">
+          Two topological spaces, $X$ and $Y$, are 
+          <strong>homeomorphic</strong> or <strong>topologically equivalent
+          </strong> if and only if there exists a homeomorphism 
+          $f \colon X \to Y$. 
+        </div>
+
+        <!--7.26-->
+        <div class="theorem">
+          Being homeomorphic is an equivalence relation on 
+          topological spaces. 
+        </div>
+
+        <!--7.27-->
+        <div class="exercise">
+          Let $a$ and $b$ be points in $\mathbb{R}^1$ with $a \lt b$. Show 
+          that $(a,b)$ with the subspace topology from 
+          $\mathbb{R}_\text{std}^1$ is homeomorphic to $\mathbb{R}_\text{std}^1$.  
+        </div>
+        <div class="proof">
+          Take $f \colon X \to Y$ as $f(x) = (\frac{b-a}{2})\tan^{-1}(x)+\frac{a+b}{2}$ 
+        </div>
+
+      
+
+        <h4 id="7.4">7.4 Product Spaces and Continuity</h4>
+        <h4 id="7.5">7.5 Quotient Maps and Quotient Spaces</h4>
+        <h4 id="7.6">7.6 Urysohn's Lemma and the Tietze Extension Theorem</h4>
+    
       </main>
 
 
