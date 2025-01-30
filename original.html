@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--latex css-->
+    <link rel="stylesheet" href="https://latex.now.sh/style.css">
+    <!--MathJax for writing latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--code highlighting-->
+    <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <title>Liam</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span class="latex">
+          Liam Kouch
+        </span>
+      </h1>
+      <p class="author">
+         
+        
+        Last updated June 2023
+      </p>
+    </header>
+    <div class="abstract">
+      <h2>About me</h2>
+      <p>Hi! I am an undergraduate student 
+        at the University of Texas at Austin, studying Mathematics. 
+        I am currently exploring my career options and open to 
+        opportunities that allow me to grow academically and professionally. 
+        
+
+      </span></p>
+    </div>
+    <button id="dark-mode-toggle">Toggle dark mode</button>
+    <nav class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#note">Note</a></li>
+        <li><a href="#math">Maths</a></li>
+
+
+      </ol>
+    </nav>
+    <main>
+        <article>
+          <h2 id="note">Note</h2>
+          The layout of this website emulates the format of a pdf file generated 
+          by <a href="https://www.latex-project.org/">LaTeX</a>. The source code 
+          for the styling of this site can be found on 
+          <a href="https://github.com/vincentdoerig/latex-css">GitHub</a>.
+          This layout comes from a single CSS file. If you would like to try the layout
+          add the following code in the figure below to the head tag
+          of your project and you should be good to go. That's it. 
+          <pre><code class="language-html"> &lt;link rel="stylesheet" href="https://latex.now.sh/style.css"&gt;</code></pre>
+
+          <h2 id="math">Maths</h2>
+          Here is a list of books I have gone or currently going through. The links
+          take you to the exercises I am writing out. You may have to refresh page 
+          for the math to properly render otherwise you may see a lot of dollar signs.
+          Currently, I am focusing on topology. 
+          <ul>
+            <li><a href="starbird.html">Topology Through Inquiry</a> by Starbird and Su</li>
+            <li><a href="marshall.html">Number Theory Through Inquiry</a> by Marhsall, Odell, and Starbird</li>
+            <li><a href="rudin.html">Principles of Mathematical Analysis</a> by Rudin</li>
+          </ul>
+          
+        </article>
+    </main>
+
+    <script>
+      const darkModeToggle = document.getElementById('dark-mode-toggle')
+      darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('latex-dark')
+      })
+
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+  </body>
+</html>

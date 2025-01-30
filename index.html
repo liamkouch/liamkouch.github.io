@@ -1,85 +1,280 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--latex css-->
-    <link rel="stylesheet" href="https://latex.now.sh/style.css">
-    <!--MathJax for writing latex-->
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!--code highlighting-->
-    <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
-    <title>Liam</title>
-  </head>
-  <body>
-    <header>
-      <h1>
-        <span class="latex">
-          Liam Kouch
-        </span>
-      </h1>
-      <p class="author">
-         
-        
-        Last updated June 2023
-      </p>
-    </header>
-    <div class="abstract">
-      <h2>About me</h2>
-      <p>Hi! I am an undergraduate student 
-        at the University of Texas at Austin, studying Mathematics. 
-        I am currently exploring my career options and open to 
-        opportunities that allow me to grow academically and professionally. 
-        
+<html>
+    <head>
+        <script src="https://randojs.com/1.0.0.js"></script>
+        <script>
+            const isPrime = num => {
+              for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+                  if(num % i === 0) return false;
+              }
+              return num > 1;
+            }
+            function rando(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            function toggleDiv() {
+              for(i = 0; i < 4; i++) {
+                let div = document.getElementById(String.fromCharCode(100 + i));
+                if (div.style.display === "none") {
+                    div.style.display = "block"; // Show the div
+                } else {
+                    div.style.display = "none"; // Hide the div
+                }
+              }
+            }
 
-      </span></p>
-    </div>
-    <button id="dark-mode-toggle">Toggle dark mode</button>
-    <nav class="toc">
-      <h2>Contents</h2>
-      <ol>
-        <li><a href="#note">Note</a></li>
-        <li><a href="#math">Maths</a></li>
+            function showRandomQuadratic() {
+                // Get the range for 'a' from user input
+                let dMin = parseInt(document.getElementById("dMin").value) || 1;
+                let dMax = parseInt(document.getElementById("dMax").value) || 5;
+                let eMin = parseInt(document.getElementById("eMin").value) || -5;
+                let eMax = parseInt(document.getElementById("eMax").value) || 5;
+                let fMin = parseInt(document.getElementById("fMin").value) || 1;
+                let fMax = parseInt(document.getElementById("fMax").value) || 5;
+                let gMin = parseInt(document.getElementById("gMin").value) || -5;
+                let gMax = parseInt(document.getElementById("gMax").value) || 5;
 
+                let d = 0;
+                let e = 0;
+                let f = 0;
+                let g = 0;
+                let checkBox_a = document.getElementById("primeCheck_a");
+                if (checkBox_a.checked) {
+                    while (!isPrime(Math.abs(d * f))) {
+                      d = rando(dMin, dMax);
+                      f = rando(fMin, fMax);
+                    }
+                } else {
+                    while (d == 0) {
+                        d = rando(dMin, dMax);
+                    }
+                    while (f == 0) {
+                        f = rando(fMin, fMax);
+                    }
+                }
+                let checkBox_c = document.getElementById("primeCheck_c");
+                if (checkBox_c.checked) {
+                    while (!isPrime(Math.abs(e * g))) {
+                      e = rando(eMin, eMax);
+                      g = rando(gMin, gMax);
+                    }
+                } else {
+                    while (e == 0) {
+                        e = rando(eMin, eMax);
+                    }
+                    while (g == 0) {
+                        g = rando(gMin, gMax);
+                    }
+                }
 
-      </ol>
-    </nav>
-    <main>
-        <article>
-          <h2 id="note">Note</h2>
-          The layout of this website emulates the format of a pdf file generated 
-          by <a href="https://www.latex-project.org/">LaTeX</a>. The source code 
-          for the styling of this site can be found on 
-          <a href="https://github.com/vincentdoerig/latex-css">GitHub</a>.
-          This layout comes from a single CSS file. If you would like to try the layout
-          add the following code in the figure below to the head tag
-          of your project and you should be good to go. That's it. 
-          <pre><code class="language-html"> &lt;link rel="stylesheet" href="https://latex.now.sh/style.css"&gt;</code></pre>
+                document.getElementById("d").innerHTML = "d = " + d;
+                document.getElementById("e").innerHTML = "e = " + e;
+                document.getElementById("f").innerHTML = "f = " + f;
+                document.getElementById("g").innerHTML = "g = " + g;
 
-          <h2 id="math">Maths</h2>
-          Here is a list of books I have gone or currently going through. The links
-          take you to the exercises I am writing out. You may have to refresh page 
-          for the math to properly render otherwise you may see a lot of dollar signs.
-          Currently, I am focusing on topology. 
-          <ul>
-            <li><a href="starbird.html">Topology Through Inquiry</a> by Starbird and Su</li>
-            <li><a href="marshall.html">Number Theory Through Inquiry</a> by Marhsall, Odell, and Starbird</li>
-            <li><a href="rudin.html">Principles of Mathematical Analysis</a> by Rudin</li>
-          </ul>
-          
-        </article>
-    </main>
+                let a1 = d * f;
+                let a2 = d * g + e * f;
+                let a3 = e * g;
 
-    <script>
-      const darkModeToggle = document.getElementById('dark-mode-toggle')
-      darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('latex-dark')
-      })
+                document.getElementById("equation").innerHTML = 
+                    a1 + "x<sup>2</sup> + " + a2 + "x + " + a3;
+            }
+        </script>
+        <style>
+            #myNumber {
+                font-size: 100px;
+                text-align: center;
+                margin: 50px auto;
+                font-family: Arial, sans-serif;
+            }
+            .container {
+            max-width: 600px; /* Limits the maximum width */
+            width: 100%; /* Makes it responsive */
+            margin: 0 auto; /* Centers the div */
+            background-color: lightblue;
+            padding: 20px;
+            text-align: left;
+            }
+            table.aligned {
+            border-collapse: collapse;
+            font-size: 18px;
+            }
+            td {
+                padding: 5px;
+            }
+            .equal-sign {
+                text-align: center;
+                padding: 0 10px;
+            }
+            table.box, table.box td {
+                border-collapse: collapse;
+                font-size: 18px;
+              border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body onload="showRandomQuadratic();">
+        <div class="container">
+        <h1>Random Quadratic Equation Generator</h1>
+        <p>The quadratic ax<sup>2</sup> + bx + c in factored form is (dx + e)(fx + g). For example, 
+        4x<sup>2</sup> + 5x - 6 (with a = 4, b = 5, c = -6) in factored form is (4x-3)(x+2) 
+        (with d = 4, e = -3, f = 1, g = 2). The goal of this website is for you to practice 
+        factoring, in other words finding d, e, f, and g. The website generates random quadratics 
+        but you get to set the difficulty.</p>
+        <h3>Problem Solving</h3>
+        <p>Factoring a quadratic ax<sup>2</sup> + bx + c is the reverse problem of expanding 
+        (dx + e)(fx + g) like division is the reverse problem of multiplication. Just as 
+        knowing your times tables helps a student perform effective division, understanding 
+        expansion of (dx + e)(fx + g) aids in being proficient at factoring. We know that 
+        ax<sup>2</sup> + bx + c = (dx + e)(fx + g). To find d, e, f, and g, it is illuminating 
+        to carry out an expansion.</p>
+        <table class="aligned">
+          <tr>
+              <td>ax<sup>2</sup> + bx + c</td>
+              <td class="equal-sign">=</td>
+              <td>(dx + e)(fx + g)</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td class="equal-sign">=</td>
+              <td>dx(fx + g) + e(fx + g)</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td class="equal-sign">=</td>
+              <td>dfx<sup>2</sup> + dgx + efx + eg</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="equal-sign">=</td>
+            <td>(df)x<sup>2</sup> + (dg + ef)x + (eg)</td>
+        </tr>
+        </table>
+        <p>Or more visually:</p>
+        <table class="box">
+          <tr>
+            <td>*</td>
+            <td>dx</td>
+            <td>e</td>
+          </tr>
+          <tr>
+            <td>fx</td>
+            <td>dfx<sup>2</sup></td>
+            <td>efx</td>
+          </tr>
+          <tr>
+            <td>g</td>
+            <td>dgx</td>
+            <td>eg</td>
+          </tr>
+        </table>
+        <p>From the expansion, by matching like terms we see that a = df, b = dg + ef, and c = eg.
+          This is useful since d and f must be factors of a, and e and g must be factors of c. Now, 
+          the problem reduces to finding the right set of factors. If we consider the 
+          example 4x<sup>2</sup> + 5x - 6 with a = 4 and c = -6, 
+          then the factors of 4 are 1, 2, and 4, and the factors of -6 are -1, 1, -2, 2, -3, 3, -6.
+          Then the possible choices for d and f are (1, 4) and (2, 2) and the possible 
+          choices for e and g are (-1, 6), (1, -6), (-2, 3), (2, -3). By trying out these combinations, 
+          we find that d = 4, e = -3, f = 1, g = 2 or (4x - 3)(x + 2) = 4x<sup>2</sup> + 5x - 6.
+          There are a lot of different combinations since a = 6 and c = 4 have multiple factors. 
+          Then by looking at the number of factors coefficients a and c have, we can gauge the 
+          difficulty of the problem.</p>
 
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-  </body>
+        <h3>Instructions</h3>
+        <p>Set the minimum and maximum values for d, e, f, and g. Then click the bottom 
+          button to generate equation.</p>
+
+        <h3>Settings</h3>
+        <p>The difficulty of the problem dependent on the number of possible factors.
+          Let n be the number of factors of a and m be the number of factors of c. Then 
+          the total number of choices to consider is proportional to m*n.
+           <ul>
+            <li>Easy: a = 1 so set d = f = 1. Put the following (min val d = 1, max val d = 1, min val f = 1, max val f = 1).</li>
+            <li>Medium: set a to be a small prime number less than or equal to 10 (or other small number by replacing 10). Put in 
+              (min val d = 1, max val d = 10, min val f = 1, max val f = 10, and check off "Coefficient a is prime" box).</li>
+            </li>
+            <li>Harder: use default settings which can be done by refreshing page. 
+            </li>
+           </ul>
+        </p>
+        <label for="dMin">Min value for d:</label>
+        <input type="number" id="dMin" value="1">
+        <label for="dMax">Max value for d:</label>
+        <input type="number" id="dMax" value="5">
+        <br><br>
+        <label for="eMin">Min value for e:</label>
+        <input type="number" id="eMin" value="-5">
+        <label for="eMax">Max value for e:</label>
+        <input type="number" id="eMax" value="5">
+        <br><br>
+        <label for="fMin">Min value for f:</label>
+        <input type="number" id="fMin" value="1">
+        <label for="fMax">Max value for f:</label>
+        <input type="number" id="fMax" value="5">
+        <br><br>
+        <label for="gMin">Min value for g:</label>
+        <input type="number" id="gMin" value="-5">
+        <label for="gMax">Max value for g:</label>
+        <input type="number" id="gMax" value="5">
+        <br><br>
+
+        <div id="equation"></div>
+        <button onclick="showRandomQuadratic();">Generate Random Equation</button>
+        <div id="d"></div>
+        <div id="e"></div>
+        <div id="f"></div>
+        <div id="g"></div>
+        <button onclick="toggleDiv()">Hide/Show Solutions</button>
+        <div>
+          <input type="checkbox" id="primeCheck_a">
+          <label for="primeCheck_a">Coefficient a is prime</label>
+        </div>
+        <div>
+          <input type="checkbox" id="primeCheck_c">
+          <label for="primeCheck_c">Coefficient c is prime</label>
+        </div>
+        </div>
+    </body>
 </html>
+
+<!--
+<html>
+    <head>
+        <script src="https://randojs.com/1.0.0.js"></script>
+        <script>
+            function rando(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            function showRandomQuadratic(){
+                let a = rando(5, 10);
+                let b = rando(5, 10);
+                let c = rando(5, 10);
+                let d = rando(5, 10);
+                document.getElementById("a").innerHTML = a;
+                document.getElementById("b").innerHTML = b;
+                document.getElementById("c").innerHTML = c;
+                document.getElementById("d").innerHTML = d;
+                let a1 = a * c;
+                let a2 = a * d + b * c;
+                let a3 = c * d;
+                document.getElementById("equation").innerHTML = a1 + "x<sup>2</sup> + " + a2 + "x + " + a3;
+            }
+        </script>
+        <style>
+            #myNumber{
+                font-size:100px;
+                text-align:center;
+                margin:50px auto;
+                font-family:Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body onload="showRandomNumber();">
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+        <div id="d"></div>
+        <div id="equation"></div>
+        <button onclick="showRandomQuadratic();">Generate Random Equation</button>
+    </body>
+</html>
+-->
