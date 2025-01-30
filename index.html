@@ -20,6 +20,12 @@
                     div.style.display = "none"; // Hide the div
                 }
               }
+              let div = document.getElementById("solution");
+              if (div.style.display === "none") {
+                    div.style.display = "block"; // Show the div
+                } else {
+                    div.style.display = "none"; // Hide the div
+                }
             }
 
             function showRandomQuadratic() {
@@ -77,6 +83,8 @@
 
                 document.getElementById("equation").innerHTML = 
                     a1 + "x<sup>2</sup> + " + a2 + "x + " + a3;
+                document.getElementById("solution").innerHTML = 
+                    "(" + d + "x + " + e + ")(" + f + "x + " + g + ")";
             }
         </script>
         <style>
@@ -223,6 +231,7 @@
         <div id="e"></div>
         <div id="f"></div>
         <div id="g"></div>
+        <div id="solution"></div>
         <button onclick="toggleDiv()">Hide/Show Solutions</button>
         <div>
           <input type="checkbox" id="primeCheck_a">
