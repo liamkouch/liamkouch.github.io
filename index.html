@@ -37,12 +37,18 @@
                     //arr = [1, 0, 2, 3, -1, -7, 1, 3]
                     //console.log(arr)
                     let a = arr[2]*arr[6]-arr[0]*arr[6]-arr[2]*arr[4];
+                    if (a === 0) {
+                      continue;
+                    }
                     let b = arr[2]*arr[7]+arr[3]*arr[6]-arr[0]*arr[7]-arr[1]*arr[6]-arr[2]*arr[5]-arr[3]*arr[4];
                     let c = arr[3]*arr[7]-arr[1]*arr[7]-arr[3]*arr[5];
+                    if (c === 0) {
+                      continue
+                    }
                     //console.log(a, b, c)
                     let delta = b*b - 4*a*c;
                     //console.log(delta)
-                    if(Number.isInteger(Math.sqrt(delta))) {
+                    if(Number.isInteger(Math.sqrt(delta)) && delta > 0) {
                       break;
                     }
                 }

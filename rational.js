@@ -39,7 +39,7 @@ function getRationalParameters2(min, max) {
         let c = arr[3]*arr[7]-arr[1]*arr[7]-arr[3]*arr[5];
         //console.log(a, b, c)
         let delta = b*b - 4*a*c;
-        if (Number.isInteger(Math.sqrt(delta))) {
+        if (Number.isInteger(Math.sqrt(delta)) && delta > 0) {
             count++;
         }
     }
