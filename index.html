@@ -18,6 +18,72 @@
               }
               return result;
             }
+            function gcd(a, b) {
+              if (b === 0) {
+                  return a;
+              }
+              return gcd(b, a % b);
+            }
+            function showRandomRadical(min, max) {
+              let arr = getRadicalParameters(min, max);
+              console.log(arr);
+              let sols = getRadicalSolutions(arr);
+              console.log(sols);
+              document.getElementById("rad1").innerHTML = arr[0] + "x + ";
+              document.getElementById("rad2").innerHTML = arr[1] + "x + " + arr[2];
+              document.getElementById("rad3").innerHTML = " = " + arr[3];
+              document.getElementById("factored_radical").innerHTML = "(" + sols[0] + "x + " + sols[1] + ")(" + sols[2] + "x + " + sols[3] + ") = 0"; 
+              document.getElementById("solution_radical").innerHTML = "x = " + sols[5] + " " + sols[4] + ", " + sols[7] + " " + sols[6];
+            }
+            function getRadicalParameters(min, max) {
+              let arr = new Array(4);
+              let start = true;
+              while (true) {
+                  arr = arr.fill(0).map(() => rando2(min, max));
+                  let a = arr[0]*arr[0];
+                  if (a === 0) {
+                      continue;
+                  }
+                  let b = - (2 * arr[0] * arr[3] + arr[1]);
+                  let c = - arr[2] + arr[3] * arr[3];
+                  if (c === 0) {
+                      continue;
+                  }
+                  let delta = b*b - 4*a*c;
+                  if (Number.isInteger(Math.sqrt(delta)) && delta > 0) {
+                      break;
+                  }
+              }
+              return arr;
+            }
+            function getRadicalSolutions(arr) {
+              let a = arr[0]*arr[0];
+              let b = - (2 * arr[0] * arr[3] + arr[1]);
+              let c = - arr[2] + arr[3] * arr[3];
+              let delta = b*b - 4*a*c;
+              let x1 = (-b + Math.sqrt(delta))/(2*a);
+              let x2 = (-b - Math.sqrt(delta))/(2*a);
+              let d = 2*a;
+              let e = b - Math.sqrt(delta);
+              let g1 = gcd(Math.abs(d), Math.abs(e));
+              d = d / g1;
+              e = e / g1;
+              let f = 2*a;
+              let g = b + Math.sqrt(delta);
+              let g2 = gcd(Math.abs(f), Math.abs(g));
+              f = f / g2;
+              g = g / g2;
+              let x1Label = "";
+              let x2Label = "";
+              //Check for extranesous solutions
+              if (Math.abs(arr[0]*x1+Math.sqrt(arr[1]*x1+arr[2]) - arr[3]) > 0.0001) {
+                  x1Label = "(extraneous)";
+              }
+              if (Math.abs(arr[0]*x2+Math.sqrt(arr[1]*x2+arr[2]) - arr[3]) > 0.0001) {
+                  x2Label = "(extraneous)";
+              }
+              return [d, e, f, g, x1, x1Label, x2, x2Label];
+            }
             function showRandomRational(min, max) {
                 let arr = getRationalParameters(min, max);
                 console.log(arr);
@@ -64,8 +130,14 @@
                 let x2 = (-b - Math.sqrt(delta))/(2*a);
                 let d = 2*a;
                 let e = b - Math.sqrt(delta);
+                let g1 = gcd(Math.abs(d), Math.abs(e));
+                d = d / g1;
+                e = e / g1;
                 let f = 2*a;
                 let g = b + Math.sqrt(delta);
+                let g2 = gcd(Math.abs(f), Math.abs(g));
+                f = f / g2;
+                g = g / g2;
                 return [d, e, f, g, x1, x2];
             }
             function toggleDiv() {
@@ -99,7 +171,20 @@
                     div.style.display = "none"; // Hide the div
                 }
             }
-
+            function toggleDivRadical() {
+              let div = document.getElementById("solution_radical");
+              if (div.style.display === "none") {
+                    div.style.display = "block"; // Show the div
+                } else {
+                    div.style.display = "none"; // Hide the div
+                }
+              div = document.getElementById("factored_radical");
+              if (div.style.display === "none") {
+                    div.style.display = "block"; // Show the div
+                } else {
+                    div.style.display = "none"; // Hide the div
+                }
+            }
             function showRandomQuadratic() {
                 // Get the range for 'a' from user input
                 let dMin = parseInt(document.getElementById("dMin").value) || 1;
@@ -343,6 +428,18 @@
         <div id="factored_rational"></div>
         <div id="solution_rational"></div>
         <button onclick="toggleDivRational()">Hide/Show Solutions</button>
+        <h3>Equation with Radical</h3>
+        <math display="block">
+          <mrow>
+            <mtext id="rad1">2x + 3</mtext>
+            <msqrt><mtext id="rad2">x+5</mtext></msqrt>
+            <mtext id="rad3">= 11</mtext>
+          </mrow>
+        </math>
+        <button onclick="showRandomRadical(1, 10);">Generate Radical Equation</button>
+        <div id="solution_radical"></div>
+        <div id="factored_radical"></div>
+        <button onclick="toggleDivRadical()">Hide/Show Solutions</button>
         </div>
     </body>
 </html>
