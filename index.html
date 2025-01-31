@@ -75,7 +75,7 @@
               g = g / g2;
               let x1Label = "";
               let x2Label = "";
-              //Check for extranesous solutions
+              //Check for extraneous solutions
               if (Math.abs(arr[0]*x1+Math.sqrt(arr[1]*x1+arr[2]) - arr[3]) > 0.0001) {
                   x1Label = "(extraneous)";
               }
@@ -429,6 +429,8 @@
         <div id="solution_rational"></div>
         <button onclick="toggleDivRational()">Hide/Show Solutions</button>
         <h3>Equation with Radical</h3>
+        To clarify, nn the two solutions listed below, the first one is extraneous while the 
+        second is not extraneous.
         <math display="block">
           <mrow>
             <mtext id="rad1">2x + 3</mtext>
